@@ -48,6 +48,8 @@ export default {
   text-decoration: none;
   display: inline-block;
   margin: 20px 50px;
+  background : #2b2b2b;
+  cursor:pointer;
   p {
     font-size: 10px;
   }
