@@ -4,7 +4,7 @@
       <img src="@/assets/not-text.png" alt="Developers Conference 2020 - Mauritius - 16.-18. April 2020">
     </div>
     <div class="btnCont">
-      <a href="https://github.com/mscraftsman/devcon2020/blob/master/assets/DevCon2020_PartnershipProposal.pdf"
+      <a href="https://github.com/mscraftsman/devcon2020/raw/master/assets/DevCon2020_PartnershipProposal.pdf"
          download class="sponsor-button"><img src="@/assets/btn_download-brochure.png" alt=""></a>
       <a href="https://sessionize.com/devconmu2020"
          download class="cfp-button"><img src="@/assets/btn_callforpaper.png" alt=""></a>
