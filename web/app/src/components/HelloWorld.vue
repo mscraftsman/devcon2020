@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <div class="announcement">
-      <img src="@/assets/not-text.png" alt="Developers Conference 2020 - Mauritius - 16.-18. April 2020">
+      <img src="@/assets/not-text.png" alt="Developers Conference 2020 - Mauritius - 2.-4. April 2020">
     </div>
     <div class="btnCont">
       <a href="https://github.com/mscraftsman/devcon2020/raw/master/assets/DevCon2020_PartnershipProposal.pdf"
