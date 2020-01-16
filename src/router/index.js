@@ -1,14 +1,63 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
+
+import PageHome from "../views/PageHome.vue";
+import PageCoc from "../views/PageCoc.vue";
+import PageExtras from "../views/PageExtras.vue";
+import PagePastEvents from "../views/PagePastEvents.vue";
+import PagePress from "../views/PagePress.vue";
+import PageSessions from "../views/PageSessions.vue";
+import PageSessionSingle from "../views/PageSessionSingle.vue";
+import PageSpeakers from "../views/PageSpeakers.vue";
+import PageSpeakerSingle from "../views/PageSpeakerSingle.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
-    name: "home",
-    component: Home
+    name: "pagehome",
+    component: PageHome
+  },
+  {
+    path: "/PageCoc",
+    name: "PageCoc",
+    component: PageCoc
+  },
+  {
+    path: "/PageExtras",
+    name: "PageExtras",
+    component: PageExtras
+  },
+  {
+    path: "/PagePastEvents",
+    name: "PagePastEvents",
+    component: PagePastEvents
+  },
+  {
+    path: "/PagePress",
+    name: "PagePress",
+    component: PagePress
+  },
+  {
+    path: "/PageSessions",
+    name: "PageSessions",
+    component: PageSessions
+  },
+  {
+    path: "/PageSessionSingle",
+    name: "PageSessionSingle",
+    component: PageSessionSingle
+  },
+  {
+    path: "/PageSpeakers",
+    name: "PageSpeakers",
+    component: PageSpeakers
+  },
+  {
+    path: "/PageSpeakerSingle",
+    name: "PageSpeakerSingle",
+    component: PageSpeakerSingle
   }
 ];
 

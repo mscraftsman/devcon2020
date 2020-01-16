@@ -3,16 +3,14 @@
 	<div
 		class="main-menu container mx-auto font-bold md:flex justify-center md:justify-between items-center py-3 md:py-10"
 	>
-		<nuxt-link class="hidden text-center md:inline text-3xl" :to="'/'"
-			>Developers Conference 2020</nuxt-link
-		>
+		<router-link class="hidden text-center md:inline text-3xl" :to="'/'">Developers Conference 2020</router-link>
 
 		<ul class="flex mr-3">
 			<li>
-				<a href="#" target="_blank">Home</a>
-				<a href="#" target="_blank">Schedule</a>
-				<a href="#" target="_blank">Speakers</a>
-				<a href="#" target="_blank">Extras</a>
+				<router-link :to="{name: 'pagehome'}">Home</router-link>
+				<router-link :to="{name: 'PageSessions'}">Sessions</router-link>
+				<router-link :to="{name: 'PageSpeakers'}">Speakers</router-link>
+				<a href="#" target="_blank">Sponsors</a>
 			</li>
 		</ul>
 	</div>
