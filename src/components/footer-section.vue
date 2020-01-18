@@ -51,7 +51,7 @@
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 	grid-gap: 20px;
-	padding: 20px 0;
+	// padding: 20px 0;
 
 	// a {
 	// 	@apply pl-2;

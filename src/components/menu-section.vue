@@ -10,7 +10,7 @@
 				<router-link :to="{name: 'pagehome'}">Home</router-link>
 				<router-link :to="{name: 'PageSessions'}">Sessions</router-link>
 				<router-link :to="{name: 'PageSpeakers'}">Speakers</router-link>
-				<a href="#" target="_blank">Sponsors</a>
+				<a href="#">Sponsors</a>
 			</li>
 		</ul>
 	</div>
