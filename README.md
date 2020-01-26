@@ -11,7 +11,7 @@ Website of Developers Conference 2020 in Mauritius
 
 ### Usage
 
-`$ cd /web/app`
+`$ cd devcon2020`
 
 `$ npm install`
 
