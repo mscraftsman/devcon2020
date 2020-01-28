@@ -5,7 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --dest docs",
-    "netlify": "vue-cli-service build --mode development --dest docs"
+    "ghbuild": "NODE_ENV=ghpages vue-cli-service build --dest docs"
   },
   "dependencies": {
     "core-js": "^3.4.4",
