@@ -3,7 +3,7 @@
 	<div
 		class="main-menu container mx-auto font-bold md:flex justify-center md:justify-between items-center py-3 md:py-10"
 	>
-		<router-link class="hidden text-center md:inline text-3xl" :to="'/'">Developers Conference 2020</router-link>
+		<router-link class="hidden text-center md:inline text-4xl font-hulksmash font-hairline tracking-wide" :to="'/'">Developers Conference 2020</router-link>
 
 		<ul class="flex mr-3">
 			<li>
