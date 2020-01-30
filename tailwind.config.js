@@ -249,6 +249,13 @@ module.exports = {
         '"Courier New"',
         'monospace',
       ],
+      hulksmash: [
+        'Bangers'
+      ],
+      spiderman: [
+        '"Open Sans"'
+      ]
+
     },
     fontSize: {
       xs: '0.75rem',
