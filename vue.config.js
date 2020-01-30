@@ -1,3 +1,3 @@
 module.exports = {
-  publicPath: process.env.NODE_ENV === "production" ? "/devcon2020/" : "/"
+  publicPath: process.env.NODE_ENV === "ghpages" ? "/devcon2020/" : "/"
 };
