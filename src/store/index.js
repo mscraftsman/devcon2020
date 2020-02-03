@@ -127,7 +127,7 @@ export default new Vuex.Store({
 
       commit(SET_SPEAKERS, payload);
 
-      let groupById = payload.reduce(function (r, a) {
+      let groupById = (payload || []).reduce(function (r, a) {
         r[a.id] = r[a.id] || [];
         r[a.id] = a;
         return r;
@@ -156,8 +156,8 @@ export default new Vuex.Store({
 
       commit(SET_SESSIONS, payload);
 
-      const flatSessionList = payload.flatMap(({ sessions }) => sessions)
-      let groupedById = flatSessionList.reduce(groupById, Object.create(null));
+      const flatSessionList = (payload || []).flatMap(({ sessions }) => sessions)
+      let groupedById = (flatSessionList || []).reduce(groupById, Object.create(null));
       commit(SET_SESSIONS_BY_ID, groupedById);
 
       return payload;
