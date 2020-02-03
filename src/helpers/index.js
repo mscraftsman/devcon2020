@@ -55,8 +55,21 @@ export const getDay = function (str) {
   return days[day.getDay()];
 };
 
-export function fetchJson(url) {
-  return fetch(url).then(response => response.json())
+export async function fetchJson(url) {
+  try {
+    const response = await fetch(url)
+    return await response.json()
+  } catch (error) {
+    const isJsonError =
+      error.message.includes("Unexpected token") &&
+      error.message.includes("in JSON at position")
+
+    if (isJsonError) {
+      return null
+    }
+
+    throw new Error("Response is not JSON", url)
+  }
 }
 
 export function groupById(r, a) {
