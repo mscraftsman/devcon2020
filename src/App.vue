@@ -30,7 +30,7 @@ export default {
     console.table(removeVueSparkles(sessions));
 
     function removeVueSparkles(list) {
-      return list.map(element => {
+      return (list || []).map(element => {
         const string = JSON.stringify(element);
         const cleaned = JSON.parse(string);
         return cleaned;
