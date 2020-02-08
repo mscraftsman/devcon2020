@@ -1,9 +1,10 @@
 <template>
-  <div>
+  <div class="sponsor-level-wrapper"
+       :class="tierClass">
     <h4 class="tier-title">{{tier}}</h4>
 
     <section class="sponsors-wrapper"
-             :class="getWrapperSize(tier)">
+             :class="getWrapperSize">
       <SponsorItem v-for="(sponsor, index) of sponsors"
                    :key="index"
                    :sponsor="sponsor" />
@@ -44,8 +45,13 @@ export default {
     SponsorItem
   },
 
-  methods: {
-    getWrapperSize(tier) {
+  computed: {
+    tierClass() {
+      const formatted = this.tier.split(" ").join("-");
+      return formatted.toLowerCase();
+    },
+
+    getWrapperSize() {
       const MEDIUM_TIERS = ["Speaker Sponsor", "Speaker", "Silver"];
       const SMALL_TIERS = [
         "Happy Hour Partner",
@@ -56,8 +62,8 @@ export default {
         "Day Care"
       ];
 
-      const medium = MEDIUM_TIERS.find(item => item === tier);
-      const small = SMALL_TIERS.find(item => item === tier);
+      const medium = MEDIUM_TIERS.find(item => item === this.tier);
+      const small = SMALL_TIERS.find(item => item === this.tier);
 
       let className = "";
 
@@ -71,7 +77,6 @@ export default {
 
       className = className ? `${className}-wrapper` : "";
 
-      console.log(tier, className);
       return className;
     }
   }
