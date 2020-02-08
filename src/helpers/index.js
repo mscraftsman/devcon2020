@@ -77,3 +77,48 @@ export function groupById(r, a) {
   r[a.id] = a;
   return r;
 }
+
+export function groupBy(objectArray, property) {
+  return objectArray.reduce(function (acc, obj) {
+    var key = obj[property];
+    if (!acc[key]) {
+      acc[key] = [];
+    }
+    acc[key].push(obj);
+    return acc;
+  }, {});
+}
+
+export function sortBy(list, rules) {
+  const isArray = Array.isArray(list)
+  if (isArray) {
+    return list.sort(list, rules)
+  }
+
+  const entries = Object.entries(list)
+
+  const rulesMap = entries.map(entry => {
+    const [label, group] = entry
+    const order = rules[label]
+    return { label, group, order }
+  })
+
+  const sortedList = rulesMap.sort(function (a, b) {
+    var orderA = a.order;
+    var orderB = b.order;
+    if (orderA < orderB) {
+      return -1;
+    }
+    if (orderA > orderB) {
+      return 1;
+    }
+
+    return 0;
+  })
+
+  const sortedObject = sortedList.reduce((acc, { label, group, order }) => {
+    return acc = { ...acc, [label]: group }
+  }, {})
+
+  return sortedObject
+}
