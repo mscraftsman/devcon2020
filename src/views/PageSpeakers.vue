@@ -1,6 +1,6 @@
 <template>
-	<div class="container page-speakers">
-		<h1 class="text-2xl">Speakers</h1>
+	<div class="page-speakers">
+		<h1>Speakers</h1>
 		<div class="page-all-speakers page-session">
 			<div class="page-content">
 				<div class="speakers-wrapper" v-if="speakers">

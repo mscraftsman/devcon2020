@@ -1,20 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Bangers&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Bangers&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
 
 @tailwind base;
 
-h1, h2 {
-    @apply font-hulksmash;
-    @apply font-hairline;
-    @apply leading-loose;
-    @apply tracking-wider;
-}
-
-h3, p, small {
-    @apply font-spiderman;
-}
-
 @tailwind components;
 
-
 @tailwind utilities;
+
+@import url("./typography.css");
