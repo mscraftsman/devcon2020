@@ -16,6 +16,7 @@ import extraMaker from "@/components/extras/extra-maker.vue";
 import extraCommunity from "@/components/extras/extra-community.vue";
 
 export default {
+	layout: "contained",
 	name: "pageextras",
 	components: {
 		extraGdg,
@@ -28,5 +29,6 @@ export default {
 
 
 <style lang="scss">
-  .page-extras {}
+.page-extras {
+}
 </style>
