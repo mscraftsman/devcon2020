@@ -24,10 +24,10 @@ export default {
     const speakers = await this.$store.dispatch("FETCH_SPEAKERS");
     const sessions = await this.$store.dispatch("FETCH_SESSIONS");
 
-    console.table(removeVueSparkles(stats));
-    console.table(removeVueSparkles(sponsors));
-    console.table(removeVueSparkles(speakers));
-    console.table(removeVueSparkles(sessions));
+    // console.table(removeVueSparkles(stats));
+    // console.table(removeVueSparkles(sponsors));
+    // console.table(removeVueSparkles(speakers));
+    // console.table(removeVueSparkles(sessions));
 
     function removeVueSparkles(list) {
       return (list || []).map(element => {
@@ -46,5 +46,4 @@ export default {
   border: 0;
   margin: 0;
 }
-
 </style>
