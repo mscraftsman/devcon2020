@@ -17,7 +17,10 @@ const routes = [
   {
     path: "/",
     name: "pagehome",
-    component: PageHome
+    component: PageHome,
+    meta: {
+      layout: "full"
+    }
   },
   {
     path: "/PageCoc",
