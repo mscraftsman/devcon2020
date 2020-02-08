@@ -3,14 +3,16 @@
 	<div
 		class="main-menu container mx-auto font-bold md:flex justify-center md:justify-between items-center py-3 md:py-10"
 	>
-		<router-link class="hidden text-center md:inline text-4xl font-hulksmash font-hairline tracking-wide" :to="'/'">Developers Conference 2020</router-link>
+		<router-link
+			class="hidden text-center md:inline text-4xl font-hulksmash font-hairline tracking-wide"
+			:to="'/'"
+		>Developers Conference 2020</router-link>
 
 		<ul class="flex mr-3">
 			<li>
 				<router-link :to="{name: 'pagehome'}">Home</router-link>
 				<router-link :to="{name: 'PageSessions'}">Sessions</router-link>
 				<router-link :to="{name: 'PageSpeakers'}">Speakers</router-link>
-				<a href="#">Sponsors</a>
 			</li>
 		</ul>
 	</div>
