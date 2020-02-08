@@ -1,8 +1,8 @@
 <template>
 	<div id="community">
 		<div>
-			<small>Communication and Exchange with Others</small>
-			<h2 class="text-2xl">Networking & Community</h2>
+			<div class="tagline">Communication and Exchange with Others</div>
+			<h2 class="group-title">Networking & Community</h2>
 		</div>
 		<div>
 			<p>

@@ -1,10 +1,8 @@
 <template>
 	<div>
 		<div>
-			<small>
-				Promoting Free Libre Open Source Software in our beautiful island
-			</small>
-			<h2 class="text-2xl">Linux User Group of Mauritius</h2>
+			<div class="tagline">Promoting Free Libre Open Source Software in our beautiful island</div>
+			<h2 class="group-title">Linux User Group of Mauritius</h2>
 		</div>
 		<div>
 			<p>

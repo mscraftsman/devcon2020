@@ -1,20 +1,16 @@
 <template>
   <div class="flex min-h-screen flex-col">
-    <menu-section></menu-section>
-    <router-view class="container mx-auto flex-grow" />
-    <footer-section />
+    <vue-extend-layouts />
   </div>
 </template>
 
 <script>
-import MenuSection from "./components/menu-section.vue";
-import FooterSection from "./components/footer-section.vue";
+import VueExtendLayouts from "vue-extend-layout";
 
 export default {
-  components: {
-    MenuSection,
-    FooterSection
-  },
+  name: "App",
+
+  components: { VueExtendLayouts },
 
   // ! For Dev purpose only.
   // ! REMOVE before merge.

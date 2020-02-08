@@ -1,8 +1,8 @@
 <template>
 	<div>
 		<div>
-			<small>Google Developers Group</small>
-			<h2 class="text-2xl">GDG Mauritius</h2>
+			<div class="tagline">Google Developers Group</div>
+			<h2 class="group-title">GDG Mauritius</h2>
 		</div>
 		<div>
 			<p>

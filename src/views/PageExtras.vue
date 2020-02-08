@@ -1,6 +1,6 @@
 <template>
 	<div class="page-extras">
-		<h1 class="text-3xl">Extra Activities</h1>
+		<h1 class="page-title">Extra Activities</h1>
 
 		<extra-community></extra-community>
 		<extra-gdg></extra-gdg>
@@ -16,6 +16,7 @@ import extraMaker from "@/components/extras/extra-maker.vue";
 import extraCommunity from "@/components/extras/extra-community.vue";
 
 export default {
+	layout: "contained",
 	name: "pageextras",
 	components: {
 		extraGdg,
@@ -28,5 +29,7 @@ export default {
 
 
 <style lang="scss">
-  .page-extras {}
+small {
+	@apply text-2xl;
+}
 </style>
