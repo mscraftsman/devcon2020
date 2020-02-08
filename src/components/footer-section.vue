@@ -25,7 +25,7 @@
 				<router-link :to="{name: 'PageSpeakers'}">Speakers</router-link>
 			</li>
 			<li>
-				<a href="https://github.com/mscraftsman/devcon2020/issues">Contribute</a>
+				<a target="_blank" href="https://github.com/mscraftsman/devcon2020/issues">Contribute</a>
 			</li>
 			<li>
 				<router-link :to="{name: 'PageSessionSingle'}">Sample Session</router-link>

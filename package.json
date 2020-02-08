@@ -8,21 +8,22 @@
     "ghbuild": "NODE_ENV=ghpages vue-cli-service build --dest docs"
   },
   "dependencies": {
-    "core-js": "^3.4.4",
+    "core-js": "^3.6.4",
     "jslint": "^0.12.1",
     "vue": "^2.6.10",
-    "vue-router": "^3.1.3",
+    "vue-extend-layout": "^2.0.6",
+    "vue-router": "^3.1.5",
     "vuex": "^3.1.2"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.1.0",
-    "@vue/cli-plugin-router": "^4.1.0",
-    "@vue/cli-plugin-vuex": "^4.1.0",
-    "@vue/cli-service": "^4.1.0",
+    "@vue/cli-plugin-babel": "^4.2.2",
+    "@vue/cli-plugin-router": "^4.2.2",
+    "@vue/cli-plugin-vuex": "^4.2.2",
+    "@vue/cli-service": "^4.2.2",
     "prettier": "^1.19.1",
-    "sass": "^1.23.7",
-    "sass-loader": "^8.0.0",
-    "vue-cli-plugin-tailwind": "^1.1.0",
+    "sass": "^1.25.0",
+    "sass-loader": "^8.0.2",
+    "vue-cli-plugin-tailwind": "^1.2.0",
     "vue-template-compiler": "^2.6.10"
   }
 }

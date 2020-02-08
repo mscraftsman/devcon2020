@@ -17,7 +17,10 @@ const routes = [
   {
     path: "/",
     name: "pagehome",
-    component: PageHome
+    component: PageHome,
+    meta: {
+      layout: "full"
+    }
   },
   {
     path: "/PageCoc",
@@ -64,7 +67,15 @@ const routes = [
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
-  routes
+  routes,
+  scrollBehavior(to, from, savedPosition) {
+    if (to.hash) {
+      return {
+        selector: to.hash,
+        offset: { x: 0, y: 10 }
+      };
+    }
+  }
 });
 
 export default router;
