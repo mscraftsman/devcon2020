@@ -65,8 +65,8 @@ automatically trigger a new build pipeline and after a few minutes the changes w
 
 You can reach the maintainers on [Twitter](https://twitter.com/MSCraftsman) or [MSCC Slack](https://msccmu.slack.com/) !
 
-- Sandeep Ramgolam: 🐦 `@__sun__`
+- Sandeep Ramgolam: 🐦 [`@__sun__`](https://twitter.com/__sun__)
 
-- Cedric Poilly: 🐦 `@cedpoilly`
+- Cedric Poilly: 🐦 [@cedpoilly](https://twitter.com/cedpoilly)
 
-- Jochen Kirstaetter: 🐦 `@JKirstaetter`
+- Jochen Kirstaetter: 🐦 [@JKirstaetter](https://twitter.com/JKirstaetter)
