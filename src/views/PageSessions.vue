@@ -1,36 +1,43 @@
 <template>
 	<div class="page-sessions">
-		<h1 class="text-2xl">sessions</h1>
+		<!-- <h1 class="text-2xl">sessions</h1> -->
 		<!-- <pre>
 			{{ currentDaySessions }} 
 		</pre>-->
 		<div class="schedule-container">
 			<div class="date-track">
 				<!-- <div class="date-item" v-for="date in dates">{{ date }}</div> -->
-				<div class="text-2xl">{{ dates}}</div>
+				<div class="day-item" :class="{active: currentDay == 0}" @click="currentDay = 0">Day 1</div>
+				<div class="day-item" :class="{active: currentDay == 1}" @click="currentDay = 1">Day 2</div>
+				<div class="day-item" :class="{active: currentDay == 2}" @click="currentDay = 2">Day 3</div>
 			</div>
 			<!-- <div class="time-track">
 				<div class="time-item" v-for="time in times.slice(timeStart, timeEnd)">{{ time }}</div>
 			</div>-->
-			<div class="channel-track">
-				<!-- <div class="channel-item" v-for="channel in channels">{{ channel }}</div> -->
+			<div class="room-track">
+				<!-- <div class="room-item" v-for="room in rooms">{{ room }}</div> -->
 
 				<css-grid :columns="currentGrid.columns" :rows="currentGrid.rows" :areas="currentGrid.areas">
 					<css-grid-item
-						:area="channel"
-						class="channel-item uppercase text-sm"
-						v-for="channel in channels"
-					>{{ channel }}</css-grid-item>
+						:area="room"
+						class="room-item uppercase text-sm"
+						v-for="room in rooms"
+					>{{ room }}</css-grid-item>
 				</css-grid>
 			</div>
 			<div class="programme-track">
-				<css-grid :columns="currentGrid.columns" :rows="currentGrid.rows" :areas="currentGrid.areas">
+				<css-grid
+					:columns="currentGrid.columns"
+					:rows="currentGrid.rows"
+					:areas="currentGrid.areas"
+					class="programme-track-container"
+				>
 					<!-- <div class="time-item" >{{ time }}</div> -->
 					<!-- Time -->
 					<css-grid-item
 						area="Time"
 						class="time-item"
-						v-for="time in times"
+						v-for="time in times.slice(timeStart, timeEnd)"
 						:style="timeStartCoordinate(time)"
 					>
 						{{ time }}
@@ -39,12 +46,15 @@
 
 					<!-- Programmes -->
 					<css-grid-item
-						:area="programme.roomId + ''"
+						:area="'r'+ programme.roomId"
 						class="programme-item"
 						v-for="programme in currentDaySessions"
 						:style="programmeStartCoordinate(programme)"
 					>
-						{{ programme.title }}
+						<router-link :to="{ name: 'session', params: { id: programme.id } }">
+							{{
+							programme.title }}
+						</router-link>
 						<!-- {{ programmeStartCoordinate(programme.date) }} -->
 					</css-grid-item>
 				</css-grid>
@@ -116,37 +126,25 @@ export default {
 				"23:30"
 			],
 			timeStart: 0,
-			timeSpan: 24,
-			timeScale: 4,
-			channels: ["Time", "4090", "Earth", "Knowhere", "Titan"],
+			timeSpan: 48,
+			timeScale: 8,
+			rooms: ["Time", "r4090", "r4091", "r4092", "r4093"],
 			currentDay: 0,
 			currentGrid: {
 				columns: ["1fr"],
 				rows: ["30px", "1fr", "1fr", "1fr", "1fr"],
-				areas: [["Time"], ["4090"], ["Earth"], ["Knowhere"], ["Titan"]]
+				areas: [["Time"], ["r4090"], ["r4091"], ["r4092"], ["r4093"]]
 			}
 		};
 	},
 	methods: {
-		// fetchSessions() {
-		// 	fetch("/sampledata/session-small.json")
-		// 		.then(response => response.json())
-		// 		.then(res => {
-		// 			this.programmes = res;
-		// 		})
-		// 		.catch(error => {
-		// 			console.log(error);
-		// 		});
-		// },
-		// Takes a time string "00:00"
 		timeStartCoordinate(time) {
 			let temp = time.split(":");
-			// console.log(temp);
 			let minutes = parseInt(temp[1]);
 			let hours = parseInt(temp[0]) * 60;
 			let result = hours + minutes;
-			// console.log(result);
 			let duration = "30";
+
 			return {
 				left: result * this.timeScale + "px",
 				width: duration * this.timeScale + "px"
@@ -204,7 +202,7 @@ export default {
 	grid-template-areas:
 		". date"
 		". time"
-		"channel programme";
+		"room programme";
 
 	grid-template-columns: 150px 1fr;
 
@@ -212,6 +210,15 @@ export default {
 		grid-area: date;
 		background: rgb(0, 0, 0);
 		color: white;
+
+		.day-item {
+			@apply text-2xl flex-1 text-center;
+			cursor: pointer;
+			&.active {
+				background: red;
+				color: white;
+			}
+		}
 	}
 	.time-track {
 		grid-area: time;
@@ -219,28 +226,36 @@ export default {
 		color: white;
 		font-weight: bold;
 	}
-	.channel-track {
-		grid-area: channel;
-		background: yellow;
+	.room-track {
+		grid-area: room;
+		background: rgb(43, 43, 43);
+		color: white;
 	}
 	.programme-track {
 		grid-area: programme;
-		background: green;
+		// background: green;
 		min-height: 50vh;
 		overflow: scroll;
+		.programme-track-container {
+			scroll-snap-type: y mandatory;
+		}
 	}
 }
 
 .date-track {
 	display: flex;
-	justify-content: space-evenly;
+
+	& > div {
+		flex: 1;
+	}
+	// justify-content: space-between;
 }
 
 .time-track {
 	display: flex;
 	justify-content: space-between;
 }
-.channel-track {
+.room-track {
 	// display: flex;
 	// flex-direction: column;
 	// justify-content: space-around;
@@ -248,7 +263,7 @@ export default {
 	// display: grid;
 	// grid-template-areas: "main" "titan";
 
-	.channel-item {
+	.room-item {
 		text-align: center;
 	}
 }
@@ -260,6 +275,8 @@ export default {
 	text-overflow: ellipsis;
 	overflow: hidden;
 	text-align: center;
+
+	scroll-snap-align: start;
 }
 
 .time-item {
@@ -268,18 +285,18 @@ export default {
 	color: white;
 	font-weight: bold;
 	align-items: center;
-	justify-content: center;
+	justify-content: start;
 	display: flex;
 }
 
-.channel-item:first-child {
+.room-item:first-child {
 	height: 30px;
 }
-.channel-item,
+.room-item,
 .programme-item {
 	align-items: center;
 	justify-content: center;
 	display: flex;
-	height: 100px;
+	height: 120px;
 }
 </style>
