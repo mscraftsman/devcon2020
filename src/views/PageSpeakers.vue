@@ -1,18 +1,16 @@
 <template>
 	<div class="page-speakers">
 		<h1>Speakers</h1>
-		<div class="page-all-speakers page-session">
-			<div class="page-content">
-				<div class="speakers-wrapper" v-if="speakers">
-					<router-link
-						class="speaker-wrapper"
-						v-for="speaker in speakers"
-						:key="speaker.id"
-						:to="{ name: 'speaker', params: { id: speaker.id } }"
-					>
-						<SpeakerBox :speaker="speaker" />
-					</router-link>
-				</div>
+		<div class="page-all-speakers">
+			<div class="speakers-wrapper" v-if="speakers">
+				<router-link
+					class="speaker-wrapper bg-black"
+					v-for="speaker in speakers"
+					:key="speaker.id"
+					:to="{ name: 'speaker', params: { id: speaker.id } }"
+				>
+					<SpeakerBox :speaker="speaker" />
+				</router-link>
 			</div>
 		</div>
 	</div>
@@ -52,4 +50,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.speakers-wrapper {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
 </style>

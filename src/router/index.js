@@ -55,7 +55,10 @@ const routes = [
   {
     path: "/speakers",
     name: "PageSpeakers",
-    component: PageSpeakers
+    component: PageSpeakers,
+    meta: {
+      layout: "full"
+    }
   },
   {
     path: "/speaker/:id",

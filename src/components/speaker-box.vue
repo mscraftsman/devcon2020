@@ -3,9 +3,9 @@
 		<div class="speaker-image">
 			<img :src="speaker.profilePicture" alt />
 		</div>
-		<div class="speaker-meta">
-			<div class="name">{{ speaker.fullName }}</div>
-			<div class="occupation">{{ speaker.tagLine }}</div>
+		<div class="speaker-meta text-center text-white p-2">
+			<div class="name text-xl font-bold">{{ speaker.fullName }}</div>
+			<div class="occupation text-xs uppercase">{{ speaker.tagLine }}</div>
 			<div class="alias"></div>
 			<div class="talk-count" v-if="speaker.sessions.length > 1">
 				{{

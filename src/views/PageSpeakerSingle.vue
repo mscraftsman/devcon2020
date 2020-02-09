@@ -1,9 +1,9 @@
 <template>
 	<div class="page-single-speaker">
-		<div class="page-content">{{ speaker }}</div>
+		<!-- <div class="page-content">{{ speaker }}</div> -->
 		<div class="page-content" v-if="speaker">
 			<!-- <span>{{id}}</span> -->
-			<div class="session-title">{{ speaker.fullName }}</div>
+			<div class="session-title font-hulksmash text-5xl">{{ speaker.fullName }}</div>
 
 			<div class="speakers-wrapper" v-if="speakers">
 				<div class="speaker-wrapper">
@@ -32,12 +32,12 @@
 				<a href="#">To be revealed soon... !</a>
 			</div>
 
-			<!-- <div class="session-title" v-for="session in speaker.sessions" :key="session.name">
-        <router-link :to="{ name: 'session', params: { id: session.id } }">
-          {{
-          session.name }}
-        </router-link>
-			</div>-->
+			<div class="session-title" v-for="session in speaker.sessions" :key="session.name">
+				<router-link :to="{ name: 'session', params: { id: session.id } }">
+					{{
+					session.name }}
+				</router-link>
+			</div>
 		</div>
 		<div class="page-content" v-else>finding speaker details..</div>
 	</div>
