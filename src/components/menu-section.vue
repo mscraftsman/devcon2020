@@ -1,6 +1,6 @@
 
 <template>
-	<div class="w-full" :class="isHome">
+	<div class="w-full">
 		<div
 			class="main-menu container mx-auto font-bold md:flex justify-center md:justify-between items-center py-3 md:py-10"
 		>

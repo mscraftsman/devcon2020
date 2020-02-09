@@ -19,7 +19,7 @@ const routes = [
     name: "pagehome",
     component: PageHome,
     meta: {
-      layout: "full"
+      layout: "home"
     }
   },
   {
@@ -74,7 +74,6 @@ const router = new VueRouter({
   scrollBehavior(to, from, savedPosition) {
     if (to.hash) {
       return {
-        selector: to.hash,
         offset: { x: 0, y: 10 }
       };
     }

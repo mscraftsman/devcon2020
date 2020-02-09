@@ -1,10 +1,6 @@
 <template>
 	<div class="page-single-speaker">
-		<!-- <div class="page-content">{{ speaker }}</div> -->
-		<div class="page-content" v-if="speaker">
-			<!-- <span>{{id}}</span> -->
-			<div class="session-title font-hulksmash text-5xl">{{ speaker.fullName }}</div>
-
+		<div class="page-content grid grid-cols-3" v-if="speaker">
 			<div class="speakers-wrapper" v-if="speakers">
 				<div class="speaker-wrapper">
 					<div class="avatar">
@@ -13,30 +9,27 @@
 				</div>
 			</div>
 
-			<div class="descriptions-row">
-				<div class="des-wrap" v-if="speaker.tagLine">
-					<p>{{ speaker.tagLine }}</p>
+			<div class="col-span-2">
+				<div class="session-title font-hulksmash text-5xl">{{ speaker.fullName }}</div>
+
+				<div class="descriptions-row text-xs uppercase" v-if="speaker.tagLine">{{ speaker.tagLine }}</div>
+
+				<div class="description-text py-5">
+					<p class="text-xl">{{ speaker.bio }}</p>
 				</div>
-			</div>
 
-			<div class="description-text">
-				<p>{{ speaker.bio }}</p>
-			</div>
+				<h2 class="text-2xl">Speaking about :</h2>
+				<div class="descriptions-row"></div>
+				<!-- <div class="session-title">
+					<a href="#">To be revealed soon... !</a>
+				</div>-->
 
-			<div class="descriptions-row">
-				<div class="des-wrap">
-					<p>Speaking about :</p>
+				<div class="session-title text-xl" v-for="session in speaker.sessions" :key="session.name">
+					<router-link :to="{ name: 'session', params: { id: session.id } }">
+						{{
+						session.name }}
+					</router-link>
 				</div>
-			</div>
-			<div class="session-title">
-				<a href="#">To be revealed soon... !</a>
-			</div>
-
-			<div class="session-title" v-for="session in speaker.sessions" :key="session.name">
-				<router-link :to="{ name: 'session', params: { id: session.id } }">
-					{{
-					session.name }}
-				</router-link>
 			</div>
 		</div>
 		<div class="page-content" v-else>finding speaker details..</div>
