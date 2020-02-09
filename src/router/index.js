@@ -45,7 +45,10 @@ const routes = [
   {
     path: "/sessions",
     name: "PageSessions",
-    component: PageSessions
+    component: PageSessions,
+    meta: {
+      layout: "full"
+    }
   },
   {
     path: "/session/:id",
