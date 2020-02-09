@@ -28,10 +28,10 @@
 				<a target="_blank" href="https://github.com/mscraftsman/devcon2020/issues">Contribute</a>
 			</li>
 			<li>
-				<router-link :to="{name: 'PageSessionSingle'}">Sample Session</router-link>
+				<router-link :to="{name: 'session', params: {id:'1234'}}">Sample Session</router-link>
 			</li>
 			<li>
-				<router-link :to="{name: 'PageSpeakerSingle'}">Sample Speaker</router-link>
+				<router-link :to="{name: 'speaker', params: {id:'1234'}}">Sample Speaker</router-link>
 			</li>
 		</ul>
 	</div>

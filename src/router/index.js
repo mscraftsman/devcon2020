@@ -23,43 +23,43 @@ const routes = [
     }
   },
   {
-    path: "/PageCoc",
+    path: "/code-of-conduct",
     name: "PageCoc",
     component: PageCoc
   },
   {
-    path: "/PageExtras",
+    path: "/extras",
     name: "PageExtras",
     component: PageExtras
   },
   {
-    path: "/PagePastEvents",
+    path: "/past-events",
     name: "PagePastEvents",
     component: PagePastEvents
   },
   {
-    path: "/PagePress",
+    path: "/press",
     name: "PagePress",
     component: PagePress
   },
   {
-    path: "/PageSessions",
+    path: "/sessions",
     name: "PageSessions",
     component: PageSessions
   },
   {
-    path: "/PageSessionSingle",
-    name: "PageSessionSingle",
+    path: "/session/:id",
+    name: "session",
     component: PageSessionSingle
   },
   {
-    path: "/PageSpeakers",
+    path: "/speakers",
     name: "PageSpeakers",
     component: PageSpeakers
   },
   {
-    path: "/PageSpeakerSingle",
-    name: "PageSpeakerSingle",
+    path: "/speaker/:id",
+    name: "speaker",
     component: PageSpeakerSingle
   }
 ];
