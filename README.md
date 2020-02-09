@@ -4,21 +4,10 @@
 
 The following is a set of guidelines for contributing to DevCon2020. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
 
-## Technology Stack
-
-- VueJS
-- Tailwind CSS
-- Github
-- Netlify CI
-
-## Theme : Ice & Fire
-
 ## Goals
 
 - A website that has useful information about the conference.
 - A sessions schedule interface that is easy to use.
-
-# 1. Before you start, READ SECTION 1
 
 ## 1.1 Technology Stack
 
