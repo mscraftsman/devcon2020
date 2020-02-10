@@ -17,46 +17,55 @@ const routes = [
   {
     path: "/",
     name: "pagehome",
-    component: PageHome
+    component: PageHome,
+    meta: {
+      layout: "home"
+    }
   },
   {
-    path: "/PageCoc",
+    path: "/code-of-conduct",
     name: "PageCoc",
     component: PageCoc
   },
   {
-    path: "/PageExtras",
+    path: "/extras",
     name: "PageExtras",
     component: PageExtras
   },
   {
-    path: "/PagePastEvents",
+    path: "/past-events",
     name: "PagePastEvents",
     component: PagePastEvents
   },
   {
-    path: "/PagePress",
+    path: "/press",
     name: "PagePress",
     component: PagePress
   },
   {
-    path: "/PageSessions",
+    path: "/sessions",
     name: "PageSessions",
-    component: PageSessions
+    component: PageSessions,
+    meta: {
+      layout: "full"
+    }
   },
   {
-    path: "/PageSessionSingle",
-    name: "PageSessionSingle",
+    path: "/session/:id",
+    name: "session",
     component: PageSessionSingle
   },
   {
-    path: "/PageSpeakers",
+    path: "/speakers",
     name: "PageSpeakers",
-    component: PageSpeakers
+    component: PageSpeakers,
+    meta: {
+      layout: "full"
+    }
   },
   {
-    path: "/PageSpeakerSingle",
-    name: "PageSpeakerSingle",
+    path: "/speaker/:id",
+    name: "speaker",
     component: PageSpeakerSingle
   }
 ];
@@ -64,7 +73,14 @@ const routes = [
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
-  routes
+  routes,
+  scrollBehavior(to, from, savedPosition) {
+    if (to.hash) {
+      return {
+        offset: { x: 0, y: 10 }
+      };
+    }
+  }
 });
 
 export default router;
