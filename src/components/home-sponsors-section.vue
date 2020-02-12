@@ -26,7 +26,7 @@ export default {
 		...mapState(["sponsors"]),
 
 		displayedSponsors() {
-			return this.sponsors.filter(({ support }) => Boolean(support));
+			return this.sponsors.filter(({ support }) => !!Number(support) || false);
 		},
 
 		sponsorsGroups() {
