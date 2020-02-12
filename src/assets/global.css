@@ -1,0 +1,11 @@
+html {
+  scroll-snap-type: y mandatory;
+}
+
+.snap-child {
+  scroll-snap-align: start;
+}
+.snap-child-end {
+  scroll-snap-align: end;
+  /* Magix */
+}

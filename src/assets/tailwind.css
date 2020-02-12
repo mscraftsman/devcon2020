@@ -7,4 +7,5 @@
 
 @tailwind utilities;
 
+@import url("./global.css");
 @import url("./typography.css");
