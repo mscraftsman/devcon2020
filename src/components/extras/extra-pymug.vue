@@ -29,10 +29,19 @@
 				Come join us at Developers Conference 2020 __ROOM__ of Caudan Arts.
 			</p>
 			<p>
-				<a href="https://twitter.com/pymugdotcom"><img src="images/icons/twitter.svg"></a>
-				<a href="https://www.linkedin.com/company/pymug/"><img src="images/icons/linkedin.svg"></a>
-				<a href="https://www.facebook.com/groups/318161658897893/"><img src="images/icons/facebook.svg"></a>
+				<a href="https://twitter.com/pymugdotcom">
+					<img 
+					class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded" src="images/icons/twitter.svg"></a>&nbsp;
+				<a href="https://www.linkedin.com/company/pymug/">
+					<img 
+					class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded" 
+					src="images/icons/linkedin.svg"></a>&nbsp;
+				<a href="https://www.facebook.com/groups/318161658897893/">
+					<img 
+					class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded" 
+					src="images/icons/facebook.svg"></a>&nbsp;
 			</p>
 		</div>
 	</div>
 </template>
+
