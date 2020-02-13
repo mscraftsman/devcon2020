@@ -3,8 +3,10 @@
 		<div class="container mx-auto h-screen flex flex-col align-center justify-center text-center">
 			<div class>
 				<h2 class="section-title">Featured Speakers</h2>
-				<div class="featured-speakers-container w-1/2">
-					<SpeakerBox v-for="speaker in getFeaturedSpeakers" :key="speaker.id" :speaker="speaker" />
+				<div class="featured-speakers-container  w-1/2">
+					<div class="bg-black border-4 border-black m-1" v-for="speaker in getFeaturedSpeakers"> 
+							<SpeakerBox  :key="speaker.id" :speaker="speaker" />
+					</div>
 				</div>
 			</div>
 		</div>
