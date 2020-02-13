@@ -1,13 +1,13 @@
 <template>
-  <div class="sponsor-level-wrapper"
-       :class="tierClass">
-    <h4 class="tier-title">{{tier}}</h4>
+  <div class="sponsor-level-wrapper" :class="tierClass">
+    <h4 class="tier-title">{{ tier }}</h4>
 
-    <section class="sponsors-wrapper"
-             :class="getWrapperSize">
-      <SponsorItem v-for="(sponsor, index) of sponsors"
-                   :key="index"
-                   :sponsor="sponsor" />
+    <section class="sponsors-wrapper" :class="getWrapperSize">
+      <SponsorItem
+        v-for="(sponsor, index) of sponsors"
+        :key="index"
+        :sponsor="sponsor"
+      />
     </section>
   </div>
 </template>
@@ -100,43 +100,6 @@ export default {
   align-items: center;
   &:last-child {
     // border-bottom: 1px solid rgba(#fff, 0.3);
-  }
-}
-
-.medium-wrapper {
-  .sponsor-logo {
-    img {
-      width: 190px;
-    }
-  }
-  // @media screen and (max-width: $tablet) {
-  @media screen and (max-width: 768px) {
-    .sponsor-logo {
-      &:nth-child(even) {
-        padding: 5px;
-      }
-      img {
-        width: 150px;
-      }
-    }
-  }
-}
-.small-wrapper {
-  .sponsor-logo {
-    img {
-      width: 150px;
-    }
-  }
-  // @media screen and (max-width: $tablet) {
-  @media screen and (max-width: 768px) {
-    .sponsor-logo {
-      &:nth-child(even) {
-        padding: 5px;
-      }
-      img {
-        width: 100px;
-      }
-    }
   }
 }
 </style>

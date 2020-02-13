@@ -7,15 +7,27 @@
     <div class="schedule-container">
       <div class="date-track">
         <!-- <div class="date-item" v-for="date in dates">{{ date }}</div> -->
-        <div class="day-item"
-             :class="{active: currentDay == 0}"
-             @click="currentDay = 0">Day 1</div>
-        <div class="day-item"
-             :class="{active: currentDay == 1}"
-             @click="currentDay = 1">Day 2</div>
-        <div class="day-item"
-             :class="{active: currentDay == 2}"
-             @click="currentDay = 2">Day 3</div>
+        <div
+          class="day-item"
+          :class="{ active: currentDay == 0 }"
+          @click="currentDay = 0"
+        >
+          Day 1
+        </div>
+        <div
+          class="day-item"
+          :class="{ active: currentDay == 1 }"
+          @click="currentDay = 1"
+        >
+          Day 2
+        </div>
+        <div
+          class="day-item"
+          :class="{ active: currentDay == 2 }"
+          @click="currentDay = 2"
+        >
+          Day 3
+        </div>
       </div>
       <!-- <div class="time-track">
 				<div class="time-item" v-for="time in times.slice(timeStart, timeEnd)">{{ time }}</div>
@@ -23,37 +35,49 @@
       <div class="room-track">
         <!-- <div class="room-item" v-for="room in rooms">{{ room }}</div> -->
 
-        <css-grid :columns="currentGrid.columns"
-                  :rows="currentGrid.rows"
-                  :areas="currentGrid.areas">
-          <css-grid-item :area="room"
-                         class="room-item uppercase text-sm"
-                         v-for="room in rooms">{{ room }}</css-grid-item>
+        <css-grid
+          :columns="currentGrid.columns"
+          :rows="currentGrid.rows"
+          :areas="currentGrid.areas"
+        >
+          <css-grid-item
+            :area="room"
+            class="room-item uppercase text-sm"
+            v-for="room in rooms"
+            >{{ room }}</css-grid-item
+          >
         </css-grid>
       </div>
       <div class="programme-track">
-        <css-grid :columns="currentGrid.columns"
-                  :rows="currentGrid.rows"
-                  :areas="currentGrid.areas"
-                  class="programme-track-container">
+        <css-grid
+          :columns="currentGrid.columns"
+          :rows="currentGrid.rows"
+          :areas="currentGrid.areas"
+          class="programme-track-container"
+        >
           <!-- <div class="time-item" >{{ time }}</div> -->
           <!-- Time -->
-          <css-grid-item area="Time"
-                         class="time-item"
-                         v-for="time in times.slice(timeStart, timeEnd)"
-                         :style="timeStartCoordinate(time)">
+          <css-grid-item
+            area="Time"
+            class="time-item"
+            v-for="time in times.slice(timeStart, timeEnd)"
+            :style="timeStartCoordinate(time)"
+          >
             {{ time }}
             <!-- {{ programmeStartCoordinate(programme.date) }} -->
           </css-grid-item>
 
           <!-- Programmes -->
-          <css-grid-item :area="'r'+ programme.roomId"
-                         class="programme-item"
-                         v-for="programme in currentDaySessions"
-                         :style="programmeStartCoordinate(programme)">
-            <router-link :to="{ name: 'session', params: { id: programme.id } }">
-              {{
-							programme.title }}
+          <css-grid-item
+            :area="'r' + programme.roomId"
+            class="programme-item"
+            v-for="programme in currentDaySessions"
+            :style="programmeStartCoordinate(programme)"
+          >
+            <router-link
+              :to="{ name: 'session', params: { id: programme.id } }"
+            >
+              {{ programme.title }}
             </router-link>
             <!-- {{ programmeStartCoordinate(programme.date) }} -->
           </css-grid-item>
@@ -178,7 +202,6 @@ export default {
 };
 </script>
 
-
 <style lang="scss" scoped>
 .schedule-container {
   width: 100%;
@@ -199,18 +222,9 @@ export default {
     .day-item {
       @apply text-2xl flex-1 text-center;
       cursor: pointer;
-      &.active {
-        background: red;
-        color: white;
-      }
     }
   }
-  .time-track {
-    grid-area: time;
-    background: rgb(43, 43, 43);
-    color: white;
-    font-weight: bold;
-  }
+
   .room-track {
     grid-area: room;
     background: rgb(43, 43, 43);
@@ -236,10 +250,6 @@ export default {
   // justify-content: space-between;
 }
 
-.time-track {
-  display: flex;
-  justify-content: space-between;
-}
 .room-track {
   // display: flex;
   // flex-direction: column;

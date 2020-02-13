@@ -1,18 +1,27 @@
-
 <template>
   <div class="w-full">
-    <div class="main-menu container mx-auto font-bold md:flex justify-center md:justify-between items-center py-3 md:py-10">
-      <router-link class="hidden text-left md:inline text-4xl font-hulksmash font-hairline tracking-wide bg-white"
-                   :to="'/'">
-        <h1 class="leading-none">{{title}}</h1>
-        <h2 class="text-sm">Developers Conference 2020</h2>
+    <div
+      class="main-menu container mx-auto md:flex justify-center md:justify-between items-center py-3 md:py-10"
+    >
+      <router-link
+        class="hidden text-left md:inline text-5xl bg-white"
+        :to="'/'"
+      >
+        <h2
+          class="text-sm font-spiderman font-regular uppercase tracking-tighter"
+        >
+          Developers Conference 2020
+        </h2>
+        <h1 class="leading-none font-hulksmash font-hairline tracking-wider">
+          {{ title }}
+        </h1>
       </router-link>
 
       <ul class="flex mr-3">
         <li>
-          <router-link :to="{name: 'pagehome'}">Home</router-link>
-          <router-link :to="{name: 'PageSessions'}">Sessions</router-link>
-          <router-link :to="{name: 'PageSpeakers'}">Speakers</router-link>
+          <router-link :to="{ name: 'pagehome' }">Home</router-link>
+          <router-link :to="{ name: 'PageSessions' }">Sessions</router-link>
+          <router-link :to="{ name: 'PageSpeakers' }">Speakers</router-link>
         </li>
       </ul>
     </div>

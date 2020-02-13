@@ -2,12 +2,13 @@
   <div class="page-speakers">
     <!-- <h1>Speakers</h1> -->
     <div class="page-all-speakers">
-      <div class="speakers-wrapper"
-           v-if="speakers">
-        <router-link class="speaker-wrapper bg-black m-1"
-                     v-for="speaker in speakers"
-                     :key="speaker.id"
-                     :to="{ name: 'speaker', params: { id: speaker.id } }">
+      <div class="speakers-wrapper" v-if="speakers">
+        <router-link
+          class="speaker-wrapper bg-black m-1"
+          v-for="speaker in speakers"
+          :key="speaker.id"
+          :to="{ name: 'speaker', params: { id: speaker.id } }"
+        >
           <SpeakerBox :speaker="speaker" />
         </router-link>
       </div>
