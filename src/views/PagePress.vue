@@ -4,7 +4,7 @@
 			<div>
 				<div>
 					<div class="tagline">Free to use! Create Awareness.</div>
-					<h1>Press Material</h1>
+					<!-- <h1>Press Material</h1> -->
 					<p>
 						In order to create more awareness for the Developers Conference we
 						prepared a variety of media files at your disposal. Please feel

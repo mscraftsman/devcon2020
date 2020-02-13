@@ -1,12 +1,12 @@
 <template>
-	<div class="page-extras">
-		<h1 class="page-title">Extra Activities</h1>
+  <div class="page-extras">
+    <!-- <h1 class="page-title">Extra Activities</h1> -->
 
-		<extra-community></extra-community>
-		<extra-gdg></extra-gdg>
-		<extra-lugm></extra-lugm>
-		<extra-maker></extra-maker>
-	</div>
+    <extra-community></extra-community>
+    <extra-gdg></extra-gdg>
+    <extra-lugm></extra-lugm>
+    <extra-maker></extra-maker>
+  </div>
 </template>
 
 <script>
@@ -16,20 +16,20 @@ import extraMaker from "@/components/extras/extra-maker.vue";
 import extraCommunity from "@/components/extras/extra-community.vue";
 
 export default {
-	layout: "contained",
-	name: "pageextras",
-	components: {
-		extraGdg,
-		extraLugm,
-		extraMaker,
-		extraCommunity
-	}
+  layout: "contained",
+  name: "pageextras",
+  components: {
+    extraGdg,
+    extraLugm,
+    extraMaker,
+    extraCommunity
+  }
 };
 </script>
 
 
 <style lang="scss">
 small {
-	@apply text-2xl;
+  @apply text-2xl;
 }
 </style>
