@@ -2,64 +2,70 @@
   <div class="page-single-session h-screen flex items-center">
     <div class=" box box1 container mx-auto">
       <div class="page-content" v-if="session">
-        <div class="session-title">{{ session.title }}</div>
+        <div class="flex ">
+          <div class="w-2/3">
+            <div class="session-title">{{ session.title }}</div>
+            <div class="descriptions-row">
+              <div class="des-wrap" v-if="session.format">
+                <label>
+                  <img src="/images/icons/language.svg" alt />
+                </label>
+                <p>{{ session.format }}</p>
+              </div>
 
-        <div class="speakers-wrapper" v-if="session.speakers">
-          <router-link
-            class="speaker-wrapper"
-            v-for="speaker in session.speakers"
-            :key="speaker.id"
-            :to="{ name: 'speaker', params: { id: speaker.id } }"
-          >
-            <div class="avatar">
-              <img :src="getSpeakerPhoto(speaker.id)" alt />
+              <div class="des-wrap" v-if="session.language">
+                <label>
+                  <img src="/images/icons/language.svg" alt />
+                </label>
+                <p>{{ session.language }}</p>
+              </div>
+
+              <div class="des-wrap">
+                <label>
+                  <img src="/images/icons/location.svg" alt />
+                </label>
+                <p>{{ session.room }}</p>
+              </div>
+
+              <div class="des-wrap">
+                <label>
+                  <img src="/images/icons/time.svg" alt />
+                </label>
+                <p>
+                  {{ getDay(session.startsAt) }} {{ time(session.startsAt) }} -
+                  {{ time(session.endsAt) }}
+                </p>
+              </div>
+
+              <div class="des-wrap" v-if="session.level">
+                <label>
+                  <img src="/images/icons/level.svg" alt />
+                </label>
+                <p>{{ session.level }}</p>
+              </div>
             </div>
-            <p class="name">{{ speaker.name }}</p>
-          </router-link>
-        </div>
 
-        <div class="descriptions-row">
-          <div class="des-wrap" v-if="session.format">
-            <label>
-              <img src="/images/icons/language.svg" alt />
-            </label>
-            <p>{{ session.format }}</p>
+            <div class="description-text">
+              <p v-html="session.description">{{ session.description }}</p>
+            </div>
           </div>
 
-          <div class="des-wrap" v-if="session.language">
-            <label>
-              <img src="/images/icons/language.svg" alt />
-            </label>
-            <p>{{ session.language }}</p>
+          <div class="flex w-1/3 pr-3 pb-3 pt-3" v-if="session.speakers">
+            <router-link
+              class="h-full pl-3"
+              v-for="speaker in session.speakers"
+              :key="speaker.id"
+              :to="{ name: 'speaker', params: { id: speaker.id } }"
+            >
+              <img
+                class="h-full object-cover"
+                :src="getSpeakerPhoto(speaker.id)"
+                alt
+              />
+              <div class=""></div>
+              <!--              <p class="name">{{ speaker.name }}</p>-->
+            </router-link>
           </div>
-
-          <div class="des-wrap">
-            <label>
-              <img src="/images/icons/location.svg" alt />
-            </label>
-            <p>{{ session.room }}</p>
-          </div>
-
-          <div class="des-wrap">
-            <label>
-              <img src="/images/icons/time.svg" alt />
-            </label>
-            <p>
-              {{ getDay(session.startsAt) }} {{ time(session.startsAt) }} -
-              {{ time(session.endsAt) }}
-            </p>
-          </div>
-
-          <div class="des-wrap" v-if="session.level">
-            <label>
-              <img src="/images/icons/level.svg" alt />
-            </label>
-            <p>{{ session.level }}</p>
-          </div>
-        </div>
-
-        <div class="description-text">
-          <p v-html="session.description">{{ session.description }}</p>
         </div>
       </div>
       <div class="page-content" v-else>
@@ -202,8 +208,8 @@ export default {
   font-size: 40px;
   /*font-weight: 700;*/
   margin: 0 auto;
-  padding: 30px 5vw;
-  text-align: center;
+  padding: 20px 30px;
+  /*text-align: center;*/
   @apply font-hulksmash tracking-wide;
   // background: var(--color-blue);
 }
@@ -260,7 +266,7 @@ export default {
   align-items: center;
   font-size: 18px;
   .des-wrap {
-    width: 33.3%;
+    width: 50%;
     margin-right: 10px;
     font-family: var(--font);
     text-transform: uppercase;
