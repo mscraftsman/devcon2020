@@ -1,36 +1,32 @@
 <template>
-  <section class="sponsor-section-wrapper">
-    <!-- title -->
-    <div class="title__container">
-      <div class="bg__asset">
-        <img src="@/assets/home-sponsors/red-bg.svg" alt="" />
-      </div>
-      <div class="title__wrapper">
-        <h2 class="title">Sponsors</h2>
-        <div class="title__sub font-hulksmash">
-          Backed by some big players of the industry
-        </div>
-      </div>
-    </div>
+	<section class="sponsor-section-wrapper">
+		<!-- title -->
+		<div class="title__container">
+			<div class="bg__asset">
+				<img src="/images/home-sponsors/red-bg.svg" alt />
+			</div>
+			<div class="title__wrapper">
+				<h2 class="title">Sponsors</h2>
+				<div class="title__sub font-hulksmash">Backed by some big players of the industry</div>
+			</div>
+		</div>
 
-    <SponsorList
-      v-for="(group, index) in sponsorsGroups"
-      :key="index"
-      :sponsors="group"
-      :tier="index"
-    />
+		<SponsorList
+			v-for="(group, index) in sponsorsGroups"
+			:key="index"
+			:sponsors="group"
+			:tier="index"
+		/>
 
-    <div class="become__sponsor__container">
-      <a href="#" class="become__sponsor__button">
-        <div class="bg__asset">
-          <img src="@/assets/home-sponsors/become-sponsor-bg.svg" alt="" />
-        </div>
-        <div class="text">
-          Become a sponsor
-        </div>
-      </a>
-    </div>
-  </section>
+		<div class="become__sponsor__container">
+			<a href="#" class="become__sponsor__button">
+				<div class="bg__asset">
+					<img src="/images/home-sponsors/become-sponsor-bg.svg" alt />
+				</div>
+				<div class="text">Become a sponsor</div>
+			</a>
+		</div>
+	</section>
 </template>
 
 <script>
@@ -40,171 +36,171 @@ import { groupBy, sortBy } from "@/helpers";
 
 import SponsorList from "@/components/sponsor-list.vue";
 export default {
-  components: {
-    SponsorList
-  },
+	components: {
+		SponsorList
+	},
 
-  computed: {
-    ...mapState(["sponsors"]),
+	computed: {
+		...mapState(["sponsors"]),
 
-    displayedSponsors() {
-      return this.sponsors.filter(({ support }) => Boolean(support));
-    },
+		displayedSponsors() {
+			return this.sponsors.filter(({ support }) => Boolean(support));
+		},
 
-    sponsorsGroups() {
-      const unOrderedGroups = groupBy(this.displayedSponsors, "level");
+		sponsorsGroups() {
+			const unOrderedGroups = groupBy(this.displayedSponsors, "level");
 
-      const keys = Object.keys(unOrderedGroups);
-      const hasNoKeys = !keys.length;
-      if (hasNoKeys) {
-        return unOrderedGroups;
-      }
+			const keys = Object.keys(unOrderedGroups);
+			const hasNoKeys = !keys.length;
+			if (hasNoKeys) {
+				return unOrderedGroups;
+			}
 
-      const ORDER_RULES = {
-        Diamond: 1,
-        Titanium: 2,
-        Platinium: 3,
-        Gold: 4,
-        Silver: 5,
-        Bronze: 6,
-        "Media Partner": 7,
-        "Happy Hour Partner": 8,
-        Speaker: 8,
-        "Day Care": 9
-      };
-      const orderedGroups = sortBy(unOrderedGroups, ORDER_RULES);
-      return orderedGroups;
-    }
-  }
+			const ORDER_RULES = {
+				Diamond: 1,
+				Titanium: 2,
+				Platinium: 3,
+				Gold: 4,
+				Silver: 5,
+				Bronze: 6,
+				"Media Partner": 7,
+				"Happy Hour Partner": 8,
+				Speaker: 8,
+				"Day Care": 9
+			};
+			const orderedGroups = sortBy(unOrderedGroups, ORDER_RULES);
+			return orderedGroups;
+		}
+	}
 };
 </script>
 
 <style lang="scss" scoped>
 .home-component {
-  // padding: $section-spacer 0;
+	// padding: $section-spacer 0;
 }
 .mega-rainbow {
-  padding-bottom: 30px;
+	padding-bottom: 30px;
 }
 
 .view-more {
-  // padding: $gutter * 2 0;
-  padding: 1rem * 2 0;
+	// padding: $gutter * 2 0;
+	padding: 1rem * 2 0;
 }
 .button-center {
-  // width: 300px;
-  // margin: $gutter auto;
-  margin: 1rem auto;
+	// width: 300px;
+	// margin: $gutter auto;
+	margin: 1rem auto;
 }
 
 .sponsor-section-wrapper {
-  background: url("../assets/home-sponsors/left-retro.svg"),
-    url("../assets/home-sponsors/radial.svg"),
-    url("../assets/home-sponsors/right-retro.svg"),
-    url("../assets/home-sponsors/cloud-left.svg"),
-    url("../assets/home-sponsors/cloud-right.svg");
-  background-position: top left, top center, top right, bottom left,
-    bottom right;
-  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
-  background-size: 300px, cover, 300px, 400px, 400px;
+	background: url("/images/home-sponsors/left-retro.svg"),
+		url("/images/home-sponsors/radial.svg"),
+		url("/images/home-sponsors/right-retro.svg"),
+		url("/images/home-sponsors/cloud-left.svg"),
+		url("/images/home-sponsors/cloud-right.svg");
+	background-position: top left, top center, top right, bottom left,
+		bottom right;
+	background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+	background-size: 300px, cover, 300px, 400px, 400px;
 }
 
 .title__container {
-  position: relative;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
+	position: relative;
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr;
 
-  .bg__asset {
-    grid-row: 1 / 1;
-    grid-column: 1 / 3;
-    text-align: center;
+	.bg__asset {
+		grid-row: 1 / 1;
+		grid-column: 1 / 3;
+		text-align: center;
 
-    img {
-      margin: 0 auto;
-      width: 500px;
-    }
-  }
+		img {
+			margin: 0 auto;
+			width: 500px;
+		}
+	}
 
-  .title__wrapper {
-    text-align: center;
-    grid-row: 1 / 1;
-    grid-column: 1 / 3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-top: -50px;
+	.title__wrapper {
+		text-align: center;
+		grid-row: 1 / 1;
+		grid-column: 1 / 3;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		margin-top: -50px;
 
-    .title {
-      font-size: 60px;
-      line-height: 60px;
-      margin: 0;
-      color: white;
-      text-shadow: 3px 3px 0 rgba(0, 0, 0, 1);
-      margin-bottom: 10px;
-    }
+		.title {
+			font-size: 60px;
+			line-height: 60px;
+			margin: 0;
+			color: white;
+			text-shadow: 3px 3px 0 rgba(0, 0, 0, 1);
+			margin-bottom: 10px;
+		}
 
-    .title__sub {
-      color: #000000;
-      @apply font-robotocondensed;
-      font-style: italic;
-      font-weight: bold;
-      font-size: 25px;
-      line-height: 26px;
-      text-align: center;
-      text-transform: uppercase;
-      text-shadow: 1px 1px 0px #ffffff;
-    }
-  }
+		.title__sub {
+			color: #000000;
+			@apply font-robotocondensed;
+			font-style: italic;
+			font-weight: bold;
+			font-size: 25px;
+			line-height: 26px;
+			text-align: center;
+			text-transform: uppercase;
+			text-shadow: 1px 1px 0px #ffffff;
+		}
+	}
 }
 
 .become__sponsor__container {
-  .become__sponsor__button {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    width: 300px;
-    margin: 0 auto;
-    transition: all 0.2s ease-in-out;
+	.become__sponsor__button {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr;
+		width: 300px;
+		margin: 0 auto;
+		transition: all 0.2s ease-in-out;
 
-    &:hover {
-      transform: scale(1.05);
+		&:hover {
+			transform: scale(1.05);
 
-      .text {
-        transform: scale(1.2) rotate(-10deg);
-      }
-    }
-  }
+			.text {
+				transform: scale(1.2) rotate(-10deg);
+			}
+		}
+	}
 
-  .bg__asset {
-    grid-row: 1 / 1;
-    grid-column: 1 / 3;
-    text-align: center;
+	.bg__asset {
+		grid-row: 1 / 1;
+		grid-column: 1 / 3;
+		text-align: center;
 
-    img {
-      margin: 0 auto;
-      width: 300px;
-    }
-  }
+		img {
+			margin: 0 auto;
+			width: 300px;
+		}
+	}
 
-  .text {
-    @apply font-hulksmash;
-    text-align: center;
-    grid-row: 1 / 1;
-    grid-column: 1 / 3;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s ease-in-out;
+	.text {
+		@apply font-hulksmash;
+		text-align: center;
+		grid-row: 1 / 1;
+		grid-column: 1 / 3;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: all 0.2s ease-in-out;
 
-    font-size: 40px;
-    margin-top: 10px;
-    transform: rotate(-10deg);
-    margin: 0;
-    color: black;
-    text-shadow: 3px 3px 0 rgba(255, 255, 255, 1);
-  }
+		font-size: 40px;
+		margin-top: 10px;
+		transform: rotate(-10deg);
+		margin: 0;
+		color: black;
+		text-shadow: 3px 3px 0 rgba(255, 255, 255, 1);
+	}
 }
 </style>
