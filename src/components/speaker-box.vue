@@ -23,7 +23,14 @@ export default {
 </script>
 
 <style  scoped>
+.speaker-image{
+	filter: grayscale(100%);
+	transition: all .4s ease-in-out;
+}
 
+.speaker-image:hover{
+	filter: none;
+}
 
 .name{
 	background: url('data:image/svg+xml;utf8,<svg width="100" height="100" transform="rotate(25)" opacity="0.3" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g  fill="%23250E17"><circle cx="25" cy="25" r="12.5"/><circle cx="75" cy="75" r="12.5"/><circle cx="75" cy="25" r="12.5"/><circle cx="25" cy="75" r="12.5"/></g></svg>'),
