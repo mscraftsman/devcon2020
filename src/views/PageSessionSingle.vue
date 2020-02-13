@@ -1,5 +1,5 @@
 <template>
-  <div class="page-single-session">
+  <div class="page-single-session box box1">
     <div class="page-content" v-if="session">
       <div class="session-title">{{ session.title }}</div>
 
@@ -160,19 +160,47 @@ export default {
 }
 .page-content {
   grid-area: session;
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 1);
-  border-radius: 15px;
+  /*background: rgba(255, 255, 255, 0.9);*/
+  /*box-shadow: 0 0 20px rgba(0, 0, 0, 1);*/
+  /*border-radius: 15px;*/
 }
+
+.page-single-session {
+  background: no-repeat url("/images/buildings/buildings_right.svg") right
+    bottom / contain;
+  /*background-position: right bottom;*/
+  /*background-repeat: no-repeat;*/
+  /*background-size: contain;*/
+  margin-bottom: 50px;
+}
+
+.box {
+  /*margin: 0px auto 50px;*/
+  width: 60vw;
+  /*padding-right: 10vw;*/
+  /*height: 250px;*/
+  /*background: #fff;*/
+  border: solid black;
+  border-color: black;
+  /*float: left;*/
+}
+
+.box1 {
+  /*<!--box-shadow: 20px 38px 34px -26px hsla(0, 0%, 0%, 0.2);-->*/
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  /*transform: rotate(2deg);*/
+}
+
 .session-title {
   color: #333333;
   text-transform: uppercase;
   font-family: var(--font);
   font-size: 40px;
-  font-weight: 700;
+  /*font-weight: 700;*/
   margin: 0 auto;
   padding: 30px 5vw;
   text-align: center;
+  @apply font-hulksmash tracking-wide;
   // background: var(--color-blue);
 }
 .speakers-wrapper {
@@ -222,7 +250,7 @@ export default {
   }
 }
 .descriptions-row {
-  background: red;
+  /*background: red;*/
   width: 100%;
   display: flex;
   align-items: center;
@@ -252,7 +280,7 @@ export default {
   }
 }
 .description-text {
-  padding: 20px 30px;
+  padding: 20px 10vw 30px 30px;
 
   p {
     font-family: var(--font);

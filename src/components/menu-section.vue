@@ -7,17 +7,15 @@
         class="hidden text-left md:inline text-5xl bg-white"
         :to="'/'"
       >
-        <h2
-          class="text-sm font-spiderman font-regular uppercase tracking-tighter"
-        >
-          Developers Conference 2020
-        </h2>
         <h1 class="leading-none font-hulksmash font-hairline tracking-wider">
           {{ title }}
         </h1>
+        <h2 class="text-sm font-spiderman font-bold uppercase tracking-tighter">
+          Developers Conference 2020
+        </h2>
       </router-link>
 
-      <ul class="flex mr-3">
+      <ul class="flex mr-3 font-bold">
         <li>
           <router-link :to="{ name: 'pagehome' }">Home</router-link>
           <router-link :to="{ name: 'PageSessions' }">Sessions</router-link>
