@@ -1,74 +1,76 @@
 <template>
-  <div class="page-single-session box box1">
-    <div class="page-content" v-if="session">
-      <div class="session-title">{{ session.title }}</div>
+  <div class="page-single-session h-screen flex items-center">
+    <div class=" box box1 container mx-auto">
+      <div class="page-content" v-if="session">
+        <div class="session-title">{{ session.title }}</div>
 
-      <div class="speakers-wrapper" v-if="session.speakers">
-        <router-link
-          class="speaker-wrapper"
-          v-for="speaker in session.speakers"
-          :key="speaker.id"
-          :to="{ name: 'speaker', params: { id: speaker.id } }"
-        >
-          <div class="avatar">
-            <img :src="getSpeakerPhoto(speaker.id)" alt />
+        <div class="speakers-wrapper" v-if="session.speakers">
+          <router-link
+            class="speaker-wrapper"
+            v-for="speaker in session.speakers"
+            :key="speaker.id"
+            :to="{ name: 'speaker', params: { id: speaker.id } }"
+          >
+            <div class="avatar">
+              <img :src="getSpeakerPhoto(speaker.id)" alt />
+            </div>
+            <p class="name">{{ speaker.name }}</p>
+          </router-link>
+        </div>
+
+        <div class="descriptions-row">
+          <div class="des-wrap" v-if="session.format">
+            <label>
+              <img src="/images/icons/language.svg" alt />
+            </label>
+            <p>{{ session.format }}</p>
           </div>
-          <p class="name">{{ speaker.name }}</p>
-        </router-link>
-      </div>
 
-      <div class="descriptions-row">
-        <div class="des-wrap" v-if="session.format">
-          <label>
-            <img src="/images/icons/language.svg" alt />
-          </label>
-          <p>{{ session.format }}</p>
+          <div class="des-wrap" v-if="session.language">
+            <label>
+              <img src="/images/icons/language.svg" alt />
+            </label>
+            <p>{{ session.language }}</p>
+          </div>
+
+          <div class="des-wrap">
+            <label>
+              <img src="/images/icons/location.svg" alt />
+            </label>
+            <p>{{ session.room }}</p>
+          </div>
+
+          <div class="des-wrap">
+            <label>
+              <img src="/images/icons/time.svg" alt />
+            </label>
+            <p>
+              {{ getDay(session.startsAt) }} {{ time(session.startsAt) }} -
+              {{ time(session.endsAt) }}
+            </p>
+          </div>
+
+          <div class="des-wrap" v-if="session.level">
+            <label>
+              <img src="/images/icons/level.svg" alt />
+            </label>
+            <p>{{ session.level }}</p>
+          </div>
         </div>
 
-        <div class="des-wrap" v-if="session.language">
-          <label>
-            <img src="/images/icons/language.svg" alt />
-          </label>
-          <p>{{ session.language }}</p>
-        </div>
-
-        <div class="des-wrap">
-          <label>
-            <img src="/images/icons/location.svg" alt />
-          </label>
-          <p>{{ session.room }}</p>
-        </div>
-
-        <div class="des-wrap">
-          <label>
-            <img src="/images/icons/time.svg" alt />
-          </label>
-          <p>
-            {{ getDay(session.startsAt) }} {{ time(session.startsAt) }} -
-            {{ time(session.endsAt) }}
-          </p>
-        </div>
-
-        <div class="des-wrap" v-if="session.level">
-          <label>
-            <img src="/images/icons/level.svg" alt />
-          </label>
-          <p>{{ session.level }}</p>
+        <div class="description-text">
+          <p v-html="session.description">{{ session.description }}</p>
         </div>
       </div>
-
-      <div class="description-text">
-        <p v-html="session.description">{{ session.description }}</p>
+      <div class="page-content" v-else>
+        <p>loading session...</p>
+        <a
+          href="javascript:location.reload()"
+          title="i'm not proud of this code. please send PR"
+        >
+          is this taking too long? click here
+        </a>
       </div>
-    </div>
-    <div class="page-content" v-else>
-      <p>loading session...</p>
-      <a
-        href="javascript:location.reload()"
-        title="i'm not proud of this code. please send PR"
-      >
-        is this taking too long? click here
-      </a>
     </div>
   </div>
 </template>
@@ -166,12 +168,14 @@ export default {
 }
 
 .page-single-session {
-  background: no-repeat url("/images/buildings/buildings_right.svg") right
-    bottom / contain;
+  background: no-repeat url("/images/buildings/buildings_right.svg") right top /
+      auto 120%,
+    no-repeat url("/images/buildings/buildings_left.svg") left top / auto 120%;
   /*background-position: right bottom;*/
   /*background-repeat: no-repeat;*/
   /*background-size: contain;*/
-  margin-bottom: 50px;
+  /*margin-bottom: 50px;*/
+  height: 80vh;
 }
 
 .box {
@@ -280,7 +284,7 @@ export default {
   }
 }
 .description-text {
-  padding: 20px 10vw 30px 30px;
+  padding: 20px 30px;
 
   p {
     font-family: var(--font);

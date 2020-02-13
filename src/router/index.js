@@ -68,7 +68,8 @@ const routes = [
     name: "session",
     component: PageSessionSingle,
     meta: {
-      title: "Session"
+      title: "Session",
+      layout: "full"
     }
   },
   {
