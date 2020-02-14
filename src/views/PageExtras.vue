@@ -6,6 +6,7 @@
     <extra-gdg></extra-gdg>
     <extra-lugm></extra-lugm>
     <extra-maker></extra-maker>
+    <extra-pymug></extra-pymug>
   </div>
 </template>
 
@@ -13,6 +14,7 @@
 import extraGdg from "@/components/extras/extra-gdg.vue";
 import extraLugm from "@/components/extras/extra-lugm.vue";
 import extraMaker from "@/components/extras/extra-maker.vue";
+import extraPymug from "@/components/extras/extra-pymug.vue";
 import extraCommunity from "@/components/extras/extra-community.vue";
 
 export default {
@@ -22,6 +24,7 @@ export default {
     extraGdg,
     extraLugm,
     extraMaker,
+    extraPymug,
     extraCommunity
   }
 };
@@ -32,4 +35,12 @@ export default {
 small {
   @apply text-2xl;
 }
+</style>
+
+<style>
+  a img{
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  }
 </style>
