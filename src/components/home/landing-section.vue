@@ -6,13 +6,13 @@
 				<div class="text-3xl font-black">2 - 4 April 2020</div>
 			</div>
 			<h1 class="font-hulksmash font-hairline text-5xl leading-none">Developers Conference 2020</h1>
-			<div class="button-wrapper flex justify-around pt-5">
-				<router-link
-					:to="'https://meetup.com'"
-					class="button text-2xl font-black font-spiderman bg-black text-white py-3 px-5"
-				>Register</router-link>
+				<a
+					href="https://meetup.com"
+					target="__blank__"
+					class="h-20"
+				><img class="h-40 mx-auto" src="/images/registerButton.svg"/></a>
 				<!-- <router-link :to="{name:'PageSessions'}" class="button">Schedule</router-link> -->
-			</div>
+			
 		</div>
 	</div>
 </template>
