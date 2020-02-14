@@ -1,22 +1,14 @@
 <template>
   <div class="sponsor-level-wrapper" :class="tierClass">
-<<<<<<< HEAD
     <div class="title__section">
       <div class="poof">
-        <img src="@/assets/home-sponsors/poof.svg" alt="" />
+        <img src="/images/home-sponsors/poof.svg" alt />
       </div>
       <h4 :class="['tier-title', sanitizeClass(tier)]">{{ tier }}</h4>
     </div>
-=======
-    <h4 class="tier-title">{{ tier }}</h4>
->>>>>>> develop
 
     <section class="sponsors-wrapper" :class="getWrapperSize">
-      <SponsorItem
-        v-for="(sponsor, index) of sponsors"
-        :key="index"
-        :sponsor="sponsor"
-      />
+      <SponsorItem v-for="(sponsor, index) of sponsors" :key="index" :sponsor="sponsor" />
     </section>
   </div>
 </template>
@@ -133,7 +125,7 @@ export default {
     @apply font-hulksmash;
     font-style: normal;
     font-weight: normal;
-    font-size: 50px;
+    font-size: 55px;
     line-height: 48px;
     text-align: center;
     text-shadow: 0px 4px 0px #000000;
@@ -160,7 +152,7 @@ export default {
     &.happyhourpartner,
     &.speaker,
     &.daycare {
-      color: #cccccc;
+      color: #333;
     }
   }
 
@@ -184,48 +176,18 @@ export default {
   padding: 10px 0 30px;
   justify-content: center;
   align-items: center;
-  &:last-child {
-    // border-bottom: 1px solid rgba(#fff, 0.3);
-  }
 }
-<<<<<<< HEAD
 
-.medium-wrapper {
-  .sponsor-logo {
-    img {
-      width: 190px;
+@media (max-width: 768px) {
+  .title__section {
+    .tier-title {
+      font-size: 35px;
     }
-  }
-  // @media screen and (max-width: $tablet) {
-  @media screen and (max-width: 768px) {
-    .sponsor-logo {
-      &:nth-child(even) {
-        padding: 5px;
-      }
+    .poof {
       img {
-        width: 150px;
+        margin-left: 70px;
       }
     }
   }
 }
-.small-wrapper {
-  .sponsor-logo {
-    img {
-      width: 150px;
-    }
-  }
-  // @media screen and (max-width: $tablet) {
-  @media screen and (max-width: 768px) {
-    .sponsor-logo {
-      &:nth-child(even) {
-        padding: 5px;
-      }
-      img {
-        width: 100px;
-      }
-    }
-  }
-}
-=======
->>>>>>> develop
 </style>
