@@ -33,8 +33,7 @@
 			</p>
 
 			<p>
-				Come join us at Developers Conference 2018 in the Conference hall of
-				the Flying Dodo.
+				Come join us at Developers Conference 2020 __ROOM__ of Caudan Arts.
 			</p>
 		</div>
 	</div>

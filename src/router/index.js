@@ -19,48 +19,75 @@ const routes = [
     name: "pagehome",
     component: PageHome,
     meta: {
+      layout: "home"
+    }
+  },
+  {
+    path: "/code-of-conduct",
+    name: "PageCoc",
+    component: PageCoc,
+    meta: {
+      title: "Code Of Conduct"
+    }
+  },
+  {
+    path: "/extras",
+    name: "PageExtras",
+    component: PageExtras,
+    meta: {
+      title: "Extras"
+    }
+  },
+  {
+    path: "/past-events",
+    name: "PagePastEvents",
+    component: PagePastEvents,
+    meta: {
+      title: "Past Events"
+    }
+  },
+  {
+    path: "/press",
+    name: "PagePress",
+    component: PagePress,
+    meta: {
+      title: "Press"
+    }
+  },
+  {
+    path: "/sessions",
+    name: "PageSessions",
+    component: PageSessions,
+    meta: {
+      layout: "full",
+      title: "Sessions"
+    }
+  },
+  {
+    path: "/session/:id",
+    name: "session",
+    component: PageSessionSingle,
+    meta: {
+      title: "Session",
       layout: "full"
     }
   },
   {
-    path: "/PageCoc",
-    name: "PageCoc",
-    component: PageCoc
-  },
-  {
-    path: "/PageExtras",
-    name: "PageExtras",
-    component: PageExtras
-  },
-  {
-    path: "/PagePastEvents",
-    name: "PagePastEvents",
-    component: PagePastEvents
-  },
-  {
-    path: "/PagePress",
-    name: "PagePress",
-    component: PagePress
-  },
-  {
-    path: "/PageSessions",
-    name: "PageSessions",
-    component: PageSessions
-  },
-  {
-    path: "/PageSessionSingle",
-    name: "PageSessionSingle",
-    component: PageSessionSingle
-  },
-  {
-    path: "/PageSpeakers",
+    path: "/speakers",
     name: "PageSpeakers",
-    component: PageSpeakers
+    component: PageSpeakers,
+    meta: {
+      layout: "full",
+      title: "Speakers"
+    }
   },
   {
-    path: "/PageSpeakerSingle",
-    name: "PageSpeakerSingle",
-    component: PageSpeakerSingle
+    path: "/speaker/:id",
+    name: "speaker",
+    component: PageSpeakerSingle,
+    meta: {
+      title: "Speaker"
+    }
   }
 ];
 
@@ -71,7 +98,6 @@ const router = new VueRouter({
   scrollBehavior(to, from, savedPosition) {
     if (to.hash) {
       return {
-        selector: to.hash,
         offset: { x: 0, y: 10 }
       };
     }

@@ -1,11 +1,15 @@
 <template>
   <div class="sponsor-level-wrapper" :class="tierClass">
+<<<<<<< HEAD
     <div class="title__section">
       <div class="poof">
         <img src="@/assets/home-sponsors/poof.svg" alt="" />
       </div>
       <h4 :class="['tier-title', sanitizeClass(tier)]">{{ tier }}</h4>
     </div>
+=======
+    <h4 class="tier-title">{{ tier }}</h4>
+>>>>>>> develop
 
     <section class="sponsors-wrapper" :class="getWrapperSize">
       <SponsorItem
@@ -184,6 +188,7 @@ export default {
     // border-bottom: 1px solid rgba(#fff, 0.3);
   }
 }
+<<<<<<< HEAD
 
 .medium-wrapper {
   .sponsor-logo {
@@ -221,4 +226,6 @@ export default {
     }
   }
 }
+=======
+>>>>>>> develop
 </style>
