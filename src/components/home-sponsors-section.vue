@@ -3,8 +3,8 @@
     <!-- title -->
     <div class="title__container pt-20 mb-20">
       <div class="bg__asset">
-        <img src="/images/home-sponsors/red-bg.svg"
-             alt />
+        <!-- <img src="/images/home-sponsors/red-bg.svg"
+             alt /> -->
       </div>
       <div class="title__wrapper">
         <h2 class="title">Sponsors</h2>
