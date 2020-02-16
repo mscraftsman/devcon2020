@@ -214,7 +214,7 @@ export default {
 
 @media (max-width: 768px) {
   .sponsor-section-wrapper {
-    background-size: 200px, cover, 200px, 200px, 200px;
+    background-size: /*200px,*/ cover, /*200px,*/ 200px, 200px;
   }
 }
 
