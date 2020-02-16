@@ -1,17 +1,13 @@
 <template functional>
-  <a
-    class="atomic-logo"
-    target="_blank"
-    :href="props.sponsor.url"
-    :title="props.sponsor.partner + props.sponsor.slogan"
-  >
+  <a class="atomic-logo"
+     target="_blank"
+     :href="props.sponsor.url"
+     :title="props.sponsor.partner + props.sponsor.slogan">
     <div class="logo">
-      <img
-        class="logo-col temp-bg"
-        :src="$options.methods.imageResolve(props.sponsor.image)"
-        :title="props.sponsor.partner + props.sponsor.slogan"
-        :alt="props.sponsor.partner"
-      />
+      <img class="logo-col temp-bg"
+           :src="$options.methods.imageResolve(props.sponsor.image)"
+           :title="props.sponsor.partner + props.sponsor.slogan"
+           :alt="props.sponsor.partner" />
     </div>
   </a>
 </template>
@@ -52,17 +48,16 @@ export default {
         return "/images/sponsors/placeholder.png";
       }
 
-      return `/images/sponsors/${filename}.png`;
+      const containsExtension = filename.includes(".");
+      const name = containsExtension ? filename : `${filename}.png`;
+
+      return `/images/sponsors/${name}`;
     }
   }
 };
 </script>
 
 <style lang="scss" scoped>
-// .temp-bg {
-//   background-color: #888;
-// }
-
 .atomic-logo {
   width: 20%;
 
@@ -83,6 +78,8 @@ export default {
       filter: grayscale(100%);
       opacity: 0.6;
       transition: all 0.3s ease-in-out;
+      font-size: 1.5rem;
+      font-weight: 700;
     }
   }
 
