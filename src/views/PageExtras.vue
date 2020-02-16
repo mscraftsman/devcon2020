@@ -30,17 +30,15 @@ export default {
 };
 </script>
 
-
 <style lang="scss">
 small {
   @apply text-2xl;
 }
-</style>
-
-<style>
-  a img{
-  width: 50px;
-  height: 50px;
-  display: inline-block;
+.page-extras {
+  a img {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
   }
+}
 </style>
