@@ -69,6 +69,8 @@ export default {
     opacity: 1;
     left: 0;
     top: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
   }
   &:hover {
     .logo-white {
