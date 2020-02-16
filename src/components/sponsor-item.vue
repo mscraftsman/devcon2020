@@ -80,6 +80,7 @@ export default {
       transition: all 0.3s ease-in-out;
       font-size: 1.5rem;
       font-weight: 700;
+      text-align: center;
     }
   }
 
