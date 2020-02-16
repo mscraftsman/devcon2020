@@ -150,10 +150,12 @@ export default {
 
     .title__sub {
       color: rgb(255, 236, 126);
-      @apply font-robotocondensed;
+      // @apply font-robotocondensed;
+      @apply font-hairline;
       font-style: italic;
       font-weight: bold;
       font-size: 25px;
+      letter-spacing: 2px;
       line-height: 26px;
       text-align: center;
       text-transform: uppercase;
