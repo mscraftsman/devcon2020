@@ -6,7 +6,7 @@
         <!-- <img src="/images/home-sponsors/red-bg.svg"
              alt /> -->
       </div>
-      <div class="title__wrapper">
+      <div class="title__wrapper section-title">
         <h2 class="title">Sponsors</h2>
         <div class="title__sub font-hulksmash">Backed by some big players of the industry</div>
       </div>
