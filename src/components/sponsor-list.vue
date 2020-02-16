@@ -1,14 +1,19 @@
 <template>
-  <div class="sponsor-level-wrapper" :class="tierClass">
-    <div class="title__section">
+  <div class="sponsor-level-wrapper"
+       :class="tierClass">
+    <div class="title__section mb-6 mt-16">
       <div class="poof">
-        <img src="/images/home-sponsors/poof.svg" alt />
+        <img src="/images/home-sponsors/poof.svg"
+             alt />
       </div>
       <h4 :class="['tier-title', sanitizeClass(tier)]">{{ tier }}</h4>
     </div>
 
-    <section class="sponsors-wrapper" :class="getWrapperSize">
-      <SponsorItem v-for="(sponsor, index) of sponsors" :key="index" :sponsor="sponsor" />
+    <section class="sponsors-wrapper"
+             :class="getWrapperSize">
+      <SponsorItem v-for="(sponsor, index) of sponsors"
+                   :key="index"
+                   :sponsor="sponsor" />
     </section>
   </div>
 </template>

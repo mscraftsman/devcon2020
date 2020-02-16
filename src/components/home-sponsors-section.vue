@@ -1,7 +1,7 @@
 <template>
   <section class="sponsor-section-wrapper">
     <!-- title -->
-    <div class="title__container">
+    <div class="title__container pt-20 mb-20">
       <div class="bg__asset">
         <img src="/images/home-sponsors/red-bg.svg"
              alt />
