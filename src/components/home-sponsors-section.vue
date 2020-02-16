@@ -3,7 +3,8 @@
     <!-- title -->
     <div class="title__container">
       <div class="bg__asset">
-        <img src="/images/home-sponsors/red-bg.svg" alt />
+        <img src="/images/home-sponsors/red-bg.svg"
+             alt />
       </div>
       <div class="title__wrapper">
         <h2 class="title">Sponsors</h2>
@@ -12,18 +13,18 @@
     </div>
 
     <div class="container mx-auto">
-      <SponsorList
-        v-for="(group, index) in sponsorsGroups"
-        :key="index"
-        :sponsors="group"
-        :tier="index"
-      />
+      <SponsorList v-for="(group, index) in sponsorsGroups"
+                   :key="index"
+                   :sponsors="group"
+                   :tier="index" />
     </div>
 
     <div class="become__sponsor__container">
-      <a href="#" class="become__sponsor__button">
+      <a href="#"
+         class="become__sponsor__button">
         <div class="bg__asset">
-          <img src="/images/home-sponsors/become-sponsor-bg.svg" alt />
+          <img src="/images/home-sponsors/become-sponsor-bg.svg"
+               alt />
         </div>
         <div class="text">Become a sponsor</div>
       </a>
@@ -46,7 +47,7 @@ export default {
     ...mapState(["sponsors"]),
 
     displayedSponsors() {
-      return this.sponsors.filter(({ support }) => Boolean(support));
+      return this.sponsors.filter(({ support }) => !!Number(support) || false);
     },
 
     sponsorsGroups() {
