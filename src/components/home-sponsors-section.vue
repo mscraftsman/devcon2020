@@ -146,6 +146,7 @@ export default {
       // text-shadow: 3px 3px 0 rgba(0, 0, 0, 1);
       margin-bottom: 5px;
       letter-spacing: -0.2px;
+      @apply text-5xl;
     }
 
     .title__sub {
