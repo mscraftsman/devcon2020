@@ -112,53 +112,93 @@ export default {
   justify-content: center;
 
   .tier-title {
-    --diamond: #bf8bbc;
-    --titanium: #4daee2;
-    --platinium: #c74b47;
-    --gold: #e88430;
-    --silver: #4bb484;
-    --bronze: #f6c376;
-    --mediapartner: #cccccc;
-    --happyhourpartner: #cccccc;
-    --speaker: #cccccc;
-    --daycare: #cccccc;
+    --base-color: #777;
+    --side-element-proximity: 2.9rem;
+    --side-element-width: 20vw;
+    --side-element-height: 0.25rem;
+    --side-element-opacity: 0.05;
+    --side-element-rotation: 2deg;
 
     grid-row: 1 / 1;
     grid-column: 1 / 3;
+
+    display: flex;
+    justify-content: center;
+
     text-align: center;
 
     @apply font-hulksmash;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 55px;
-    line-height: 48px;
-    text-align: center;
-    text-shadow: 0px 4px 0px #000000;
 
-    &.diamond {
-      color: var(--diamond);
-    }
-    &.titanium {
-      color: var(--titanium);
-    }
-    &.platinium {
-      color: var(--platinium);
-    }
-    &.gold {
-      color: var(--gold);
-    }
-    &.silver {
-      color: var(--silver);
-    }
-    &.bronze {
-      color: var(--bronze);
-    }
-    &.mediapartner,
-    &.happyhourpartner,
-    &.speaker,
-    &.daycare {
-      color: #333;
-    }
+    font-style: normal;
+    font-weight: 100;
+    text-align: center;
+    letter-spacing: 1.5px;
+
+    // --diamond: #bf8bbc;
+    // --titanium: #4daee2;
+    // --platinium: #c74b47;
+    // --gold: #e88430;
+    // --silver: #4bb484;
+    // --bronze: #f6c376;
+    // --mediapartner: #cccccc;
+    // --happyhourpartner: #cccccc;
+    // --speaker: #cccccc;
+    // --daycare: #cccccc;
+
+    // font-weight: normal;
+    // font-size: 55px;
+    // line-height: 48px;
+    // text-shadow: 0px 4px 0px #000000;
+
+    // &.diamond {
+    //   color: var(--diamond, var(--base-color));
+    // }
+    // &.titanium {
+    //   color: var(--titanium, var(--base-color));
+    // }
+    // &.platinium {
+    //   color: var(--platinium, var(--base-color));
+    // }
+    // &.gold {
+    //   color: var(--gold, var(--base-color));
+    // }
+    // &.silver {
+    //   color: var(--silver, var(--base-color));
+    // }
+    // &.bronze {
+    //   color: var(--bronze, var(--base-color));
+    // }
+    // &.mediapartner,
+    // &.happyhourpartner,
+    // &.speaker,
+    // &.daycare {
+    //   color: #333;
+    // }
+  }
+
+  .tier-title::before,
+  .tier-title::after {
+    content: "";
+    display: block;
+    position: relative;
+    top: 50%;
+    transform: translateY(calc(-50% + 5px));
+
+    opacity: var(--side-element-opacity);
+    width: 0;
+    height: 0;
+    border-top: var(--side-element-height) solid transparent;
+    border-bottom: var(--side-element-height) solid transparent;
+  }
+  .tier-title::before {
+    transform: rotate(calc(-1 * var(--side-element-rotation)));
+    margin-right: var(--side-element-proximity);
+    border-right: var(--side-element-width) solid var(--base-color);
+  }
+  .tier-title::after {
+    transform: rotate(var(--side-element-rotation));
+    margin-left: var(--side-element-proximity);
+    border-left: var(--side-element-width) solid var(--base-color);
   }
 
   .poof {
