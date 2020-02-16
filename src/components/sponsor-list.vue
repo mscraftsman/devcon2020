@@ -1,7 +1,7 @@
 <template>
   <div class="sponsor-level-wrapper"
        :class="tierClass">
-    <div class="title__section mb-6 mt-16">
+    <div class="title__section text-3xl mb-12 mt-16">
       <!-- <div class="poof">
         <img src="/images/home-sponsors/poof.svg"
              alt />
