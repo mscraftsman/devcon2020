@@ -75,8 +75,8 @@ export default {
       // max-width: 250px;
       width: 100%;
       height: auto;
-      filter: grayscale(100%);
-      opacity: 0.6;
+      // filter: grayscale(100%);
+      // opacity: 0.6;
       transition: all 0.3s ease-in-out;
       font-size: 1.5rem;
       font-weight: 700;
