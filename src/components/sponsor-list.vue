@@ -2,10 +2,10 @@
   <div class="sponsor-level-wrapper"
        :class="tierClass">
     <div class="title__section mb-6 mt-16">
-      <div class="poof">
+      <!-- <div class="poof">
         <img src="/images/home-sponsors/poof.svg"
              alt />
-      </div>
+      </div> -->
       <h4 :class="['tier-title', sanitizeClass(tier)]">{{ tier }}</h4>
     </div>
 
