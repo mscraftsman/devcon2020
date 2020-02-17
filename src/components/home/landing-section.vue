@@ -7,6 +7,7 @@
       </div>
       <h1 class="font-hulksmash font-hairline text-5xl leading-none">Developers Conference 2020</h1>
       <div class="button-wrapper flex justify-around pt-5">
+        <h3 class="text-2xl font-black font-spiderman text-gray-800">Registration Opening Soon</h3>
         <!-- <router-link
 					:to="'https://meetup.com'"
 					class="button text-2xl font-black font-spiderman bg-black text-white py-3 px-5"
