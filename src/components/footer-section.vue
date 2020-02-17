@@ -56,7 +56,9 @@
     </div>
 
     <div class="footer-image w-full hidden md:block">
-      <div class="building-crop">
+      <BuildingsBottom width="100%"
+                       height="100%" />
+      <!-- <div class="building-crop">
         <div class="building-menu">
           <div class="w-32 mx-auto">
             <router-link :to="{ name: 'pagehome' }">
@@ -64,7 +66,7 @@
                    alt />
             </router-link>
           </div>
-          <!-- <ul class="earth-menu">
+          <ul class="earth-menu">
             <li>
               <router-link :to="{ name: 'PageSessions' }">Sessions</router-link>
             </li>
@@ -85,19 +87,18 @@
             <li>
               <router-link :to="{ name: 'PageExtras' }">Extras</router-link>
             </li>
-          </ul> -->
+          </ul>
         </div>
-        <div class="building-rotation">
-          <BuildingsBottom width="100%"
-                           height="100%" />
+        <div>
+
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
 
 <script>
-import BuildingsBottom from "../svg/earth-city.svg";
+import BuildingsBottom from "../svg/buildings_bottom.svg";
 
 export default {
   components: {
@@ -126,7 +127,7 @@ export default {
 
 .building-rotation {
   /*stroke-dasharray: 500;*/
-  animation: spin 80s linear infinite;
+  animation: spin 180s linear infinite;
   transform-origin: center center;
 }
 
