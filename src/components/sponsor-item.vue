@@ -1,15 +1,14 @@
 <template functional>
-  <a class="sponsor-logo"
+  <a class="atomic-logo"
      target="_blank"
      :href="props.sponsor.url"
      :title="props.sponsor.partner + props.sponsor.slogan">
-    <span class="sponsor-logo-cont">
-
-      <img class="logo-col"
+    <div class="logo">
+      <img class="logo-col temp-bg"
            :src="$options.methods.imageResolve(props.sponsor.image)"
            :title="props.sponsor.partner + props.sponsor.slogan"
            :alt="props.sponsor.partner" />
-    </span>
+    </div>
   </a>
 </template>
 
@@ -51,7 +50,7 @@ export default {
 
       const containsExtension = filename.includes(".");
       const name = containsExtension ? filename : `${filename}.png`;
-      debugger;
+
       return `/images/sponsors/${name}`;
     }
   }
@@ -59,39 +58,50 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.sponsor-logo {
-  padding: 10px;
-  &-cont {
-    display: inline-block;
-    position: relative;
-  }
-  .logo-col {
-    opacity: 1;
-    left: 0;
-    top: 0;
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  &:hover {
-    .logo-white {
-      opacity: 0;
-      transition: all 0.35s ease-out;
-    }
-    .logo-col {
-      opacity: 1;
-      transition: all 0.35s ease-out;
-    }
-  }
+.atomic-logo {
+  width: 20%;
+
   &:last-child {
-    padding: 5px;
+    .logo {
+      margin-right: 0;
+    }
   }
-  display: block;
-  img {
-    display: block;
-    width: 250px;
-    height: auto;
-    padding: 10px;
-    // margin: 0 auto;
+
+  .logo {
+    margin-right: 20px;
+
+    img {
+      display: block;
+      // max-width: 250px;
+      width: 100%;
+      height: auto;
+      // filter: grayscale(100%);
+      // opacity: 0.6;
+      transition: all 0.3s ease-in-out;
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-align: center;
+    }
+  }
+
+  &:hover {
+    .logo {
+      img {
+        opacity: 1;
+        filter: grayscale(0);
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .atomic-logo {
+    width: 33.3%;
+  }
+}
+@media (max-width: 480px) {
+  .atomic-logo {
+    width: 50%;
   }
 }
 </style>

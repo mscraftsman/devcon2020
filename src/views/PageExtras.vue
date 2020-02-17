@@ -30,15 +30,17 @@ export default {
 };
 </script>
 
-<style lang="scss">
+
+<style lang="scss" scoped>
 small {
   @apply text-2xl;
 }
-.page-extras {
-  a img {
-    width: 50px;
-    height: 50px;
-    display: inline-block;
-  }
+</style>
+
+<style scoped>
+a img {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
 }
 </style>
