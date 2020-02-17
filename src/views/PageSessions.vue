@@ -53,6 +53,7 @@
           :columns="currentGrid.columns"
           :rows="currentGrid.rows"
           :areas="currentGrid.areas"
+          :gap="'10px'"
           class="programme-track-container"
         >
           <!-- <div class="time-item" >{{ time }}</div> -->
@@ -70,14 +71,28 @@
           <!-- Programmes -->
           <css-grid-item
             :area="'r' + programme.roomId"
-            class="programme-item"
+            class="programme-item box"
             v-for="programme in currentDaySessions"
             :style="programmeStartCoordinate(programme)"
           >
             <router-link
               :to="{ name: 'session', params: { id: programme.id } }"
+              class="block"
             >
-              {{ programme.title }}
+              <div class="text">
+                {{ programme.title }}
+              </div>
+              <div
+                v-if="programme.speakers.length > 0"
+                class="text-xs font-bold uppercase tracking-wider"
+              >
+                <!--
+                                {{ programme.speakers }}-->
+                by
+                <span v-for="speaker in programme.speakers">
+                  {{ speaker.name }}
+                </span>
+              </div>
             </router-link>
             <!-- {{ programmeStartCoordinate(programme.date) }} -->
           </css-grid-item>
@@ -234,9 +249,10 @@ export default {
     grid-area: programme;
     // background: green;
     min-height: 50vh;
-    overflow: scroll;
+    overflow-y: scroll;
+
     .programme-track-container {
-      scroll-snap-type: y mandatory;
+      /*scroll-snap-type: y proximity;*/
     }
   }
 }
@@ -265,13 +281,7 @@ export default {
 
 .programme-item {
   // width: 250px;
-  border: 1px solid black;
-  position: relative;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  text-align: center;
-
-  scroll-snap-align: start;
+  /*border: 1px solid black;*/
 }
 
 .time-item {
@@ -287,11 +297,51 @@ export default {
 .room-item:first-child {
   height: 30px;
 }
-.room-item,
-.programme-item {
+.room-item {
+  position: relative;
+  display: flex;
   align-items: center;
   justify-content: center;
+
+  /*scroll-snap-align: start;*/
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.room-item,
+.programme-item {
+  height: 140px;
+}
+
+.programme-item {
+  position: relative;
   display: flex;
-  height: 120px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5px;
+
+  /*scroll-snap-align: start;*/
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.programme-item:hover {
+  background: #333333;
+  color: white;
+}
+
+.box {
+  border: solid black;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+
+  &:nth-child(2n + 1) {
+    border-radius: 255px 45px 25px 35px/15px 255px 15px 255px;
+  }
+
+  &:nth-child(3n + 1) {
+    border-radius: 45px 55px 5px 5px/15px 15px 15px 155px;
+  }
 }
 </style>
