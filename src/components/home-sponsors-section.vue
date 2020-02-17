@@ -1,5 +1,5 @@
 <template>
-  <section class="sponsor-section-wrapper mb-24">
+  <section class="sponsor-section-wrapper mb-24 pb-32">
     <!-- title -->
     <div class="title__container pt-32 mb-20">
       <div class="bg__asset">
@@ -19,7 +19,7 @@
                    :tier="index" />
     </div>
 
-    <div class="become__sponsor__container mt-16 pb-16">
+    <!-- <div class="become__sponsor__container mt-16 pb-16">
       <a href="#"
          class="become__sponsor__button">
         <div class="bg__asset">
@@ -28,7 +28,7 @@
         </div>
         <div class="text">Become a sponsor</div>
       </a>
-    </div>
+    </div> -->
   </section>
 </template>
 
