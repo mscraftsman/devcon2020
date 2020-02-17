@@ -14,13 +14,40 @@
 				>Register</router-link> -->
         <!-- <router-link :to="{name:'PageSessions'}" class="button">Schedule</router-link> -->
       </div>
+
+    </div>
+    <div class="building-rotation building-landing">
+      <BuildingsBottom width="100%"
+                       height="100%" />
     </div>
   </div>
 </template>
 
+<script>
+import BuildingsBottom from "../../svg/earth-city.svg";
+
+export default {
+  components: {
+    BuildingsBottom
+  }
+};
+</script>
+
 <style lang="scss" scoped>
+.building-landing {
+  // position: fixed;
+  position: absolute;
+  z-index: -1;
+  width: calc(100vw + 5%);
+  height: calc(100vh + 5%);
+}
+
 .landing-section {
-  background-image: url("/images/zoom-bg.svg");
+  overflow: hidden;
+
+  position: relative;
+  z-index: 1;
+  // background-image: url("/images/zoom-bg.svg");
   // background-image: url("/images/zoom-bg-optimized.svg");
   background-size: 160% auto;
   background-position: center center;
