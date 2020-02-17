@@ -181,7 +181,7 @@ export default {
     content: "";
     display: block;
     position: relative;
-    top: 50%;
+    top: 60%;
     transform: translateY(calc(-50% + 5px));
 
     opacity: var(--side-element-opacity);
