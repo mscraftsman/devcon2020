@@ -1,15 +1,14 @@
 <template>
   <div>
     <div class="block md:hidden">
-      <div
-        class="container mx-auto text-sm uppercase tracking-wide footer-wrapper"
-      >
+      <div class="container mx-auto text-sm uppercase tracking-wide footer-wrapper">
         <div class="logo">
           <router-link :to="{ name: 'pagehome' }">
-            <img src="/images/MSCC-logo-inverted.svg" alt />
+            <img src="/images/MSCC-logo-inverted.svg"
+                 alt />
           </router-link>
         </div>
-        <ul class="menu">
+        <!-- <ul class="menu">
           <li>
             <router-link :to="{ name: 'PageCoc' }">Code of Conduct</router-link>
           </li>
@@ -52,7 +51,7 @@
               >Sample Speaker</router-link
             >
           </li>
-        </ul>
+        </ul> -->
       </div>
     </div>
 
@@ -61,10 +60,11 @@
         <div class="building-menu">
           <div class="w-32 mx-auto">
             <router-link :to="{ name: 'pagehome' }">
-              <img src="/images/MSCC-logo-inverted.svg" alt />
+              <img src="/images/MSCC-logo-inverted.svg"
+                   alt />
             </router-link>
           </div>
-          <ul class="earth-menu">
+          <!-- <ul class="earth-menu">
             <li>
               <router-link :to="{ name: 'PageSessions' }">Sessions</router-link>
             </li>
@@ -76,23 +76,20 @@
             </li>
 
             <li>
-              <router-link :to="{ name: 'PageCoc' }"
-                >Code of Conduct</router-link
-              >
+              <router-link :to="{ name: 'PageCoc' }">Code of Conduct</router-link>
             </li>
 
             <li>
-              <router-link :to="{ name: 'PagePastEvents' }"
-                >Past Events</router-link
-              >
+              <router-link :to="{ name: 'PagePastEvents' }">Past Events</router-link>
             </li>
             <li>
               <router-link :to="{ name: 'PageExtras' }">Extras</router-link>
             </li>
-          </ul>
+          </ul> -->
         </div>
         <div class="building-rotation">
-          <BuildingsBottom width="100%" height="100%" />
+          <BuildingsBottom width="100%"
+                           height="100%" />
         </div>
       </div>
     </div>
@@ -114,7 +111,7 @@ export default {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, 20%);
+  transform: translate(-50%, 65%);
   width: 700px;
   height: 300px;
   text-align: center;
