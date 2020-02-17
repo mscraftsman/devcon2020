@@ -112,11 +112,11 @@ export default {
   justify-content: center;
 
   .tier-title {
-    --base-color: #777;
+    --base-color: #333;
     --side-element-proximity: 2.9rem;
     --side-element-width: 20vw;
     --side-element-height: 0.25rem;
-    --side-element-opacity: 0.05;
+    --side-element-opacity: 0;
     --side-element-rotation: 2deg;
 
     grid-row: 1 / 1;
@@ -133,6 +133,8 @@ export default {
     font-weight: 100;
     text-align: center;
     letter-spacing: 1.5px;
+
+    color: var(--base-color);
 
     // --diamond: #bf8bbc;
     // --titanium: #4daee2;
