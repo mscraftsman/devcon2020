@@ -1,12 +1,12 @@
 html {
-  @apply font-spiderman;
+    @apply font-spiderman;
 }
 
 h1,
 h2 {
-  @apply font-hulksmash;
-  @apply leading-loose;
-  @apply tracking-wider;
+    @apply font-hulksmash;
+    @apply leading-loose;
+    @apply tracking-wider;
 }
 
 /* h3,
@@ -16,25 +16,26 @@ small {
 } */
 
 /* Target the H1 of all pages that have a class that starts with page */
-[class^="page-"] h1 {
-  font-size: 80px;
-  background: -webkit-linear-gradient(rgb(208, 80, 80), rgb(191, 0, 0));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke-color: #000;
-  -webkit-text-stroke-width: 4px;
-  text-align: center;
+[class^='page-'] h1 {
+    font-size: 80px;
+    /* background: -webkit-linear-gradient(rgb(208, 80, 80), rgb(191, 0, 0)); */
+    background: #111;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-color: #000;
+    -webkit-text-stroke-width: 4px;
+    text-align: center;
 }
 
 .group-title {
-  font-size: 50px;
-  background: -webkit-linear-gradient(rgb(255, 225, 0), rgb(182, 109, 0));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke-color: #000;
-  -webkit-text-stroke-width: 2px;
+    font-size: 50px;
+    background: -webkit-linear-gradient(rgb(255, 225, 0), rgb(182, 109, 0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-color: #000;
+    -webkit-text-stroke-width: 2px;
 }
 
 .section-title {
-  @apply text-4xl text-center;
+    @apply text-4xl text-center;
 }
