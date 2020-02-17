@@ -1,13 +1,13 @@
 <template>
   <section class="sponsor-section-wrapper mb-24 pb-32">
     <!-- title -->
-    <div class="title__container pt-32 mb-20">
+    <div class="title__container pt-32 mb-24">
       <div class="bg__asset">
         <!-- <img src="/images/home-sponsors/red-bg.svg"
              alt /> -->
       </div>
-      <div class="title__wrapper">
-        <h2 class="title section-title">Sponsors</h2>
+      <div class="title__wrapper pt-12">
+        <h2 class="title section-title leading-none text-5xl">Sponsors</h2>
         <!-- <div class="title__sub font-hulksmash">Backed by some big players of the industry</div> -->
       </div>
     </div>
