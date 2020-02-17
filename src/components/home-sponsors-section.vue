@@ -107,6 +107,23 @@ export default {
   // background-size: /*400px,*/ cover, /*400px,*/ 600px, 600px;
 }
 
+.section-title {
+  position: relative;
+}
+
+.section-title:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 125%;
+  height: 125%;
+  transform: translate(-9.5%, -9.5%) skew(-7deg);
+  border: 0.25rem solid black;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  padding: 0.5rem 2rem;
 }
 
 .title__container {
