@@ -1,6 +1,5 @@
 <template>
-  <div class="sponsor-level-wrapper"
-       :class="tierClass">
+  <div class="sponsor-level-wrapper" :class="tierClass">
     <div class="title__section text-3xl mb-0 mt-16">
       <!-- <div class="poof">
         <img src="/images/home-sponsors/poof.svg"
@@ -9,11 +8,12 @@
       <h4 :class="['tier-title', sanitizeClass(tier)]">{{ tier }}</h4>
     </div>
 
-    <section class="sponsors-wrapper"
-             :class="getWrapperSize">
-      <SponsorItem v-for="(sponsor, index) of sponsors"
-                   :key="index"
-                   :sponsor="sponsor" />
+    <section class="sponsors-wrapper" :class="getWrapperSize">
+      <SponsorItem
+        v-for="(sponsor, index) of sponsors"
+        :key="index"
+        :sponsor="sponsor"
+      />
     </section>
   </div>
 </template>
@@ -220,7 +220,7 @@ export default {
 .sponsors-wrapper {
   display: flex;
   flex-wrap: wrap;
-  padding: 10px 0 30px;
+  padding: 0px;
   justify-content: center;
   align-items: center;
 }

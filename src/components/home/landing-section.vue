@@ -49,16 +49,22 @@ export default {
 .landing-section {
   overflow: hidden;
 
+  --startColor: white;
+
   position: relative;
   z-index: 1;
-  // background-image: url("/images/zoom-bg.svg");
-  // background-image: url("/images/zoom-bg-optimized.svg");
-  background-size: 160% auto;
+  /*background-image: url("/images/zoom-bg.svg"),*/
+  background-image: url("/images/dots.svg"),
+    radial-gradient(circle, var(--startColor), white, white);
+  /*background-image: url("/images/zoom-bg-optimized.svg");*/
+  background-size: 200% auto, contain;
   background-position: center center;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat, no-repeat;
 
   h1 {
+    color: black;
     -webkit-text-stroke-width: 0px;
+    -webkit-text-fill-color: currentColor;
     font-weight: bolder;
   }
 }
