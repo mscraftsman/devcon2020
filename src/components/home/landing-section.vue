@@ -54,8 +54,8 @@ export default {
   position: relative;
   z-index: 1;
   /*background-image: url("/images/zoom-bg.svg"),*/
-  background-image: url("/images/dots.svg"),
-    radial-gradient(circle, var(--startColor), white, white);
+  /*background-image: url("/images/dots.svg"),*/
+  /*  radial-gradient(circle, var(--startColor), white, white);*/
   /*background-image: url("/images/zoom-bg-optimized.svg");*/
   background-size: 200% auto, contain;
   background-position: center center;
