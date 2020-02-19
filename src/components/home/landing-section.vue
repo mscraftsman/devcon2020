@@ -62,9 +62,6 @@ export default {
   }
 }
 
-:root {
-}
-
 .title {
   --landing-title-fs: calc(8vw);
   font-size: var(--landing-title-fs);
@@ -260,6 +257,21 @@ export default {
   }
   .meta-title__sub {
     --landing-title-sub-fs: 1.7vw;
+  }
+}
+
+@media (min-width: 1700px) {
+  .title {
+    --landing-title-fs: 70px;
+  }
+  .meta-title__location {
+    --landing-title-location-fs: 18px;
+  }
+  .meta-title__period {
+    --landing-title-period-fs: 28px;
+  }
+  .meta-title__sub {
+    --landing-title-sub-fs: 24px;
   }
 }
 .text-block {
