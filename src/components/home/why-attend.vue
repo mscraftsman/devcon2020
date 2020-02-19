@@ -1,8 +1,6 @@
 <template>
   <div class="why-attend-section">
-    <div
-      class="container mx-auto w-1/2 h-screen flex flex-col align-center justify-center text-center"
-    >
+    <div class="container mx-auto w-1/2 h-screen flex flex-col align-center justify-center text-center">
       <h2 class="section-title">Here's why you should attend</h2>
       <p class="text-xl">
         Pritvi will be here Lorem ipsum dolor sit amet, consectetur adipisicing
@@ -22,12 +20,12 @@
   //no-repeat url("/images/zoom-bg.svg") center center / 200% auto;
 
   background: /*url("/images/home-sponsors/left-retro.svg"),*/ url("/images/home-sponsors/radial.svg"),
-    /*url("/images/home-sponsors/right-retro.svg"),*/
+    /*url("/images/home-sponsors/right-retro.svg"),
       url("/images/home-sponsors/cloud-left.svg"),
-    url("/images/home-sponsors/cloud-right.svg");
+    url("/images/home-sponsors/cloud-right.svg")*/;
   background-position: /*top left,*/ center center, /*top right,*/ bottom left,
     bottom right;
   background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
-  background-size: /*400px,*/ cover, /*400px,*/ 600px, 600px;
+  background-size: /*400px,*/ cover, /*400px, 600px, 600px*/;
 }
 </style>
