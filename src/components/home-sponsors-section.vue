@@ -66,10 +66,10 @@ export default {
         Gold: 4,
         Silver: 5,
         Bronze: 6,
-        "Media Partner": 7,
-        "Happy Hour Partner": 8,
+        "Happy Hour Partner": 7,
         Speaker: 8,
-        "Day Care": 9
+        "Media Partner": 9,
+        "Day Care": 10
       };
       const orderedGroups = sortBy(unOrderedGroups, ORDER_RULES);
       return orderedGroups;
