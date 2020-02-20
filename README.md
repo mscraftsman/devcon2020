@@ -14,7 +14,7 @@ Use your best judgment, and feel free to propose changes to this document in a p
 
 # 2 Read the file below for how to contribute to this website.
 
-[CONTRIBUTING.md](https://github.com/mscraftsman/devcon2020/blob/develop/CONTRIBUTING.md)
+[CONTRIBUTING.md](CONTRIBUTING.md)
 
 # 3 Questions?
 
