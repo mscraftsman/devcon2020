@@ -2,7 +2,8 @@
 
 👍🎉 First off, thanks for taking the time to contribute! 🎉👍
 
-The following is a set of guidelines for contributing to DevCon2020. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
+The following is a set of guidelines for contributing to DevCon2020. These are mostly guidelines, not rules. 
+Use your best judgment, and feel free to propose changes to this document in a pull request.
 
 # Goals
 
@@ -11,7 +12,7 @@ The following is a set of guidelines for contributing to DevCon2020. These are m
 
 # 1 Theme : Comics
 
-# 2 Read this file for a contribution How-to
+# 2 Read the file below for how to contribute to this website.
 
 [CONTRIBUTING.md](https://github.com/mscraftsman/devcon2020/blob/develop/CONTRIBUTING.md)
 
