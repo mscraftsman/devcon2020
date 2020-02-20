@@ -4,7 +4,7 @@
      :href="props.sponsor.url"
      :title="props.sponsor.partner + props.sponsor.slogan">
     <div class="logo">
-      <img class="logo-col temp-bg p-4 m-2"
+      <img class="logo-col temp-bg p-4 m-4"
            :src="$options.methods.imageResolve(props.sponsor.image)"
            :title="props.sponsor.partner + props.sponsor.slogan"
            :alt="props.sponsor.partner" />
