@@ -104,8 +104,8 @@ export default {
     --aerow-w: 15rem;
     --spoon-w: 15rem;
     --ceridian-w: 15rem;
-    --ictio-w: 12rem;
-    --lsldigital-w: 13rem;
+    --ictio-w: 10rem;
+    --lsldigital-w: 11rem;
     --expatcom-w: 17rem;
     --geniushive-w: 18rem;
 
