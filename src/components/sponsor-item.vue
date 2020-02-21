@@ -67,11 +67,11 @@ export default {
   }
 
   .logo {
-
     img {
       display: block;
-      max-height: 10rem;
-      max-width: 20rem;
+      // max-height: 10rem;
+      // max-width: 20rem;
+
       // height: auto;
       // filter: grayscale(100%);
       // opacity: 0.6;
