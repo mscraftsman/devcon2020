@@ -94,7 +94,7 @@ export default {
   img {
     --mcb-w: 20rem;
     --liquid-w: 15rem;
-    --providus-w: 27rem;
+    --providus-w: 22rem;
     --swan-w: 14rem;
     --ninthbit-w: 18rem;
     --iqera-w: 14rem;
