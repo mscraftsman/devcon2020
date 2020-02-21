@@ -104,10 +104,10 @@ export default {
     --aerow-w: 15rem;
     --spoon-w: 15rem;
     --ceridian-w: 15rem;
-    --ictio-w: 15rem;
-    --lsldigital-w: 15rem;
-    --expatcom-w: 15rem;
-    --geniushive-w: 15rem;
+    --ictio-w: 12rem;
+    --lsldigital-w: 13rem;
+    --expatcom-w: 17rem;
+    --geniushive-w: 18rem;
 
     width: 20rem;
   }
