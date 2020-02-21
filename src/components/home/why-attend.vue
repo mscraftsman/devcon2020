@@ -14,18 +14,33 @@
 
 <style lang="scss" scoped>
 .why-attend-section {
-  // background: no-repeat url("/images/heroes/wonderWomanside.svg") left bottom /
-  //     auto 80%,
-  //   no-repeat url("/images/heroes/spidermantwoz.svg") right top / auto 40%;
-  //no-repeat url("/images/zoom-bg.svg") center center / 200% auto;
+  --buildings-size: 200px;
 
-  background: /*url("/images/home-sponsors/left-retro.svg"),*/ url("/images/home-sponsors/radial.svg"),
-    /*url("/images/home-sponsors/right-retro.svg"),
-      url("/images/home-sponsors/cloud-left.svg"),
-    url("/images/home-sponsors/cloud-right.svg")*/;
-  background-position: /*top left,*/ center center, /*top right,*/ bottom left,
-    bottom right;
+  background: url("/images/why-attend/buildingleft.png"),
+    url("/images/home-sponsors/radial.svg"),
+    url("/images/why-attend/buildingright.png");
+
   background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
-  background-size: /*400px,*/ cover, /*400px, 600px, 600px*/;
+
+  background-size: var(--buildings-size), cover, var(--buildings-size);
+
+  @media screen and (min-width: 425px) {
+    background-position: center left, center center, center right;
+  }
+
+  @media screen and (min-width: 768px) {
+    --buildings-size: 350px;
+    background-position: center left, center center, center right;
+  }
+
+  @media screen and (min-width: 1024px) {
+    --buildings-size: 400px;
+    background-position: center left, center center, center right;
+  }
+
+  @media screen and (min-width: 1400px) {
+    --buildings-size: 500px;
+    background-position: center left, center center, center right;
+  }
 }
 </style>
