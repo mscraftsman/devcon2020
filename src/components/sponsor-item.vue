@@ -7,7 +7,7 @@
       <img class="logo-col temp-bg p-4 m-4"
            :src="$options.methods.imageResolve(props.sponsor.image)"
            :title="props.sponsor.partner + props.sponsor.slogan"
-           :data-partner="props.sponsor.partner"
+           :data-name="$options.methods.getImageName(props.sponsor.image)"
            :alt="props.sponsor.partner" />
     </div>
   </a>
@@ -53,6 +53,12 @@ export default {
       const name = containsExtension ? filename : `${filename}.png`;
 
       return `/images/sponsors/${name}`;
+    },
+
+    getImageName(filename) {
+      const [words, _] = filename.split(".");
+      const noDashes = words.split("-").join("");
+      return noDashes;
     }
   }
 };
@@ -96,8 +102,11 @@ export default {
     --liquid-w: 15rem;
     --providus-w: 22rem;
     --swan-w: 14rem;
+    --sdworx-w: 14rem;
+    --teamonite-w: 14rem;
     --ninthbit-w: 18rem;
-    --iqera-w: 14rem;
+    --eventstore-w: 18rem;
+    --iqera-w: 12rem;
     --linkbynet-w: 15rem;
     --supinfo-w: 15rem;
     --astek-w: 11rem;
@@ -112,67 +121,78 @@ export default {
     width: 20rem;
   }
 
-  [data-partner="MCB"] {
+  [data-name="mcb"] {
     width: var(--mcb-w);
   }
 
-  [data-partner="Liquid Telecom"] {
+  [data-name="liquidtelecom"] {
     width: var(--liquid-w);
   }
 
-  [data-partner="Providus"] {
+  [data-name="providus"] {
     width: var(--providus-w);
   }
 
-  [data-partner="Swan Insurance"] {
+  [data-name="sdworx"] {
+    width: var(--sdworx-w);
+  }
+  [data-name="teamonite"] {
+    width: var(--teamonite-w);
+  }
+
+  [data-name="swan"] {
     width: var(--swan-w);
   }
 
-  [data-partner="9th Bit Consulting"] {
+  [data-name="eventstore"] {
+    width: var(--eventstore-w);
+  }
+
+  [data-name="9thbit"] {
     width: var(--ninthbit-w);
   }
 
-  [data-partner="iQera"] {
+  [data-name="iqera"] {
     width: var(--iqera-w);
   }
 
-  [data-partner="Linkbynet"] {
+  [data-name="linkbynet"] {
     width: var(--linkbynet-w);
   }
 
-  [data-partner="Supinfo International Campus"] {
+  [data-name="supinfo"] {
     width: var(--supinfo-w);
   }
 
-  [data-partner="Astek"] {
+  [data-name="astek"] {
     width: var(--astek-w);
   }
 
-  [data-partner="Aerow"] {
+  [data-name="aerow"] {
     width: var(--aerow-w);
   }
 
-  [data-partner="Spoon Consulting"] {
+  [data-name="spoon"] {
     width: var(--spoon-w);
   }
 
-  [data-partner="Ceridian"] {
+  [data-name="ceridian"] {
     width: var(--ceridian-w);
   }
 
-  [data-partner="ITC.io"] {
+  [data-name="ictio"] {
     width: var(--ictio-w);
   }
 
-  [data-partner="LSL Digital"] {
+  [data-name="lsldigital"] {
     width: var(--lsldigital-w);
   }
 
-  [data-partner="Expat"] {
+  [data-name="expat"] {
     width: var(--expatcom-w);
   }
 
-  [data-partner="Genius Hive"] {
+  [data-name="geniushive"] {
     width: var(--geniushive-w);
   }
 }
