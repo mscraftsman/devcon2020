@@ -102,6 +102,14 @@ export default {
   // *styling to be defined
 }
 
+.diamond .sponsors-wrapper{
+  zoom: 1.2;
+}
+
+.titanium .sponsors-wrapper{
+  zoom: 1.3;
+}
+
 .title__section {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -235,6 +243,14 @@ export default {
         margin-left: 70px;
       }
     }
+  }
+
+  .diamond .sponsors-wrapper{
+    zoom: 1.1;
+  }
+
+  .titanium .sponsors-wrapper{
+    zoom: 1;
   }
 }
 </style>
