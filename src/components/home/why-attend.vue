@@ -39,7 +39,7 @@
   }
 
   @media screen and (min-width: 1400px) {
-    --buildings-size: 500px;
+    --buildings-size: 600px;
     background-position: center left, center center, center right;
   }
 }
