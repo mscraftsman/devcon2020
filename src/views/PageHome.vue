@@ -1,7 +1,7 @@
 <template>
   <div class="page-home snap-parent">
     <landing-section class="snap-child" />
-    <WhyAttend class="snap-child" />
+    <!-- <WhyAttend class="snap-child" /> -->
     <!-- <FeaturedSpeakers class="snap-child" /> -->
     <HomeSponsorsSection class="snap-child" />
   </div>
