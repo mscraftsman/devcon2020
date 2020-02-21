@@ -3,4 +3,4 @@ module.exports = {
     tailwindcss: {},
     'vue-cli-plugin-tailwind/purgecss': {}
   }
-}
+};

@@ -25,48 +25,69 @@ const routes = [
   {
     path: "/code-of-conduct",
     name: "PageCoc",
-    component: PageCoc
+    component: PageCoc,
+    meta: {
+      title: "Code Of Conduct"
+    }
   },
   {
     path: "/extras",
     name: "PageExtras",
-    component: PageExtras
+    component: PageExtras,
+    meta: {
+      title: "Extras"
+    }
   },
   {
     path: "/past-events",
     name: "PagePastEvents",
-    component: PagePastEvents
+    component: PagePastEvents,
+    meta: {
+      title: "Past Events"
+    }
   },
   {
     path: "/press",
     name: "PagePress",
-    component: PagePress
+    component: PagePress,
+    meta: {
+      title: "Press"
+    }
   },
   {
     path: "/sessions",
     name: "PageSessions",
     component: PageSessions,
     meta: {
-      layout: "full"
+      layout: "full",
+      title: "Sessions"
     }
   },
   {
     path: "/session/:id",
     name: "session",
-    component: PageSessionSingle
+    component: PageSessionSingle,
+    meta: {
+      title: "Session",
+      layout: "full"
+    }
   },
   {
     path: "/speakers",
     name: "PageSpeakers",
     component: PageSpeakers,
     meta: {
-      layout: "full"
+      layout: "full",
+      title: "Speakers"
     }
   },
   {
     path: "/speaker/:id",
     name: "speaker",
-    component: PageSpeakerSingle
+    component: PageSpeakerSingle,
+    meta: {
+      title: "Speaker"
+    }
   }
 ];
 

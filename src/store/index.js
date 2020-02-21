@@ -156,7 +156,7 @@ export default new Vuex.Store({
 
       commit(SET_SESSIONS, payload);
 
-      const flatSessionList = (payload || []).flatMap(({ sessions }) => sessions)
+      const flatSessionList = (payload || []).flatMap(({ sessions }) => sessions);
       let groupedById = (flatSessionList || []).reduce(groupById, Object.create(null));
       commit(SET_SESSIONS_BY_ID, groupedById);
 
@@ -168,13 +168,13 @@ export default new Vuex.Store({
 
       let entry;
       try {
-        const { feed } = await fetchJson(URL)
+        const { feed } = await fetchJson(URL);
         entry = feed.entry;
       } catch (error) {
         throw new Error("Error should be caught by Vue global error handler." + error);
       }
 
-      const sponsors = extractData(entry)
+      const sponsors = extractData(entry);
       commit(SET_SPONSORS, sponsors);
       return sponsors;
     },
@@ -184,14 +184,14 @@ export default new Vuex.Store({
 
       let entry;
       try {
-        const { feed } = await fetchJson(URL)
+        const { feed } = await fetchJson(URL);
         entry = feed.entry;
       } catch (error) {
         throw new Error("Error should be caught by Vue global error handler." + error);
       }
 
-      const stats = extractData(entry)
-      commit(SET_STATS, stats)
+      const stats = extractData(entry);
+      commit(SET_STATS, stats);
       return stats;
     },
   }

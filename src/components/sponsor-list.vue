@@ -1,7 +1,13 @@
 <template>
   <div class="sponsor-level-wrapper"
        :class="tierClass">
-    <h4 class="tier-title">{{tier}}</h4>
+    <div class="title__section text-3xl mb-12 mt-16">
+      <!-- <div class="poof">
+        <img src="/images/home-sponsors/poof.svg"
+             alt />
+      </div> -->
+      <h4 :class="['tier-title', sanitizeClass(tier)]">{{ tier }}</h4>
+    </div>
 
     <section class="sponsors-wrapper"
              :class="getWrapperSize">
@@ -79,6 +85,14 @@ export default {
 
       return className;
     }
+  },
+  methods: {
+    sanitizeClass(value) {
+      return value
+        .split(" ")
+        .join("")
+        .toLowerCase();
+    }
   }
 };
 </script>
@@ -88,8 +102,117 @@ export default {
   // *styling to be defined
 }
 
-.tier-title {
-  // *styling to be defined
+.title__section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+
+  .tier-title {
+    --base-color: #777;
+    --side-element-proximity: 2.9rem;
+    --side-element-width: 20vw;
+    --side-element-height: 0.25rem;
+    --side-element-opacity: 0.05;
+    --side-element-rotation: 2deg;
+
+    grid-row: 1 / 1;
+    grid-column: 1 / 3;
+
+    display: flex;
+    justify-content: center;
+
+    text-align: center;
+
+    @apply font-hulksmash;
+
+    font-style: normal;
+    font-weight: 100;
+    text-align: center;
+    letter-spacing: 1.5px;
+
+    // --diamond: #bf8bbc;
+    // --titanium: #4daee2;
+    // --platinium: #c74b47;
+    // --gold: #e88430;
+    // --silver: #4bb484;
+    // --bronze: #f6c376;
+    // --mediapartner: #cccccc;
+    // --happyhourpartner: #cccccc;
+    // --speaker: #cccccc;
+    // --daycare: #cccccc;
+
+    // font-weight: normal;
+    // font-size: 55px;
+    // line-height: 48px;
+    // text-shadow: 0px 4px 0px #000000;
+
+    // &.diamond {
+    //   color: var(--diamond, var(--base-color));
+    // }
+    // &.titanium {
+    //   color: var(--titanium, var(--base-color));
+    // }
+    // &.platinium {
+    //   color: var(--platinium, var(--base-color));
+    // }
+    // &.gold {
+    //   color: var(--gold, var(--base-color));
+    // }
+    // &.silver {
+    //   color: var(--silver, var(--base-color));
+    // }
+    // &.bronze {
+    //   color: var(--bronze, var(--base-color));
+    // }
+    // &.mediapartner,
+    // &.happyhourpartner,
+    // &.speaker,
+    // &.daycare {
+    //   color: #333;
+    // }
+  }
+
+  .tier-title::before,
+  .tier-title::after {
+    content: "";
+    display: block;
+    position: relative;
+    top: 60%;
+    transform: translateY(calc(-50% + 5px));
+
+    opacity: var(--side-element-opacity);
+    width: 0;
+    height: 0;
+    border-top: var(--side-element-height) solid transparent;
+    border-bottom: var(--side-element-height) solid transparent;
+  }
+  .tier-title::before {
+    transform: rotate(calc(-1 * var(--side-element-rotation)));
+    margin-right: var(--side-element-proximity);
+    border-right: var(--side-element-width) solid var(--base-color);
+  }
+  .tier-title::after {
+    transform: rotate(var(--side-element-rotation));
+    margin-left: var(--side-element-proximity);
+    border-left: var(--side-element-width) solid var(--base-color);
+  }
+
+  .poof {
+    grid-row: 1 / 1;
+    grid-column: 1 / 3;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+    img {
+      height: 80px;
+      margin-left: 130px;
+    }
+  }
 }
 
 .sponsors-wrapper {
@@ -98,43 +221,16 @@ export default {
   padding: 10px 0 30px;
   justify-content: center;
   align-items: center;
-  &:last-child {
-    // border-bottom: 1px solid rgba(#fff, 0.3);
-  }
 }
 
-.medium-wrapper {
-  .sponsor-logo {
-    img {
-      width: 190px;
+@media (max-width: 768px) {
+  .title__section {
+    .tier-title {
+      font-size: 35px;
     }
-  }
-  // @media screen and (max-width: $tablet) {
-  @media screen and (max-width: 768px) {
-    .sponsor-logo {
-      &:nth-child(even) {
-        padding: 5px;
-      }
+    .poof {
       img {
-        width: 150px;
-      }
-    }
-  }
-}
-.small-wrapper {
-  .sponsor-logo {
-    img {
-      width: 150px;
-    }
-  }
-  // @media screen and (max-width: $tablet) {
-  @media screen and (max-width: 768px) {
-    .sponsor-logo {
-      &:nth-child(even) {
-        padding: 5px;
-      }
-      img {
-        width: 100px;
+        margin-left: 70px;
       }
     }
   }

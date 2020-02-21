@@ -15,14 +15,15 @@
     "vuex": "^3.1.2"
   },
   "devDependencies": {
-    "jslint": "^0.12.1",
     "@vue/cli-plugin-babel": "^4.2.2",
     "@vue/cli-plugin-router": "^4.2.2",
     "@vue/cli-plugin-vuex": "^4.2.2",
     "@vue/cli-service": "^4.2.2",
+    "jslint": "^0.12.1",
     "prettier": "^1.19.1",
     "sass": "^1.25.0",
     "sass-loader": "^8.0.2",
+    "svg-to-vue-component": "^0.3.8",
     "vue-cli-plugin-tailwind": "^1.2.0",
     "vue-template-compiler": "^2.6.10"
   }

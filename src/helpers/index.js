@@ -57,12 +57,12 @@ export const getDay = function (str) {
 
 export async function fetchJson(url) {
   try {
-    const response = await fetch(url)
+    const response = await fetch(url);
     return await response.json()
   } catch (error) {
     const isJsonError =
       error.message.includes("Unexpected token") &&
-      error.message.includes("in JSON at position")
+      error.message.includes("in JSON at position");
 
     if (isJsonError) {
       return null
@@ -90,18 +90,18 @@ export function groupBy(objectArray, property) {
 }
 
 export function sortBy(list, rules) {
-  const isArray = Array.isArray(list)
+  const isArray = Array.isArray(list);
   if (isArray) {
     return list.sort(list, rules)
   }
 
-  const entries = Object.entries(list)
+  const entries = Object.entries(list);
 
   const rulesMap = entries.map(entry => {
-    const [label, group] = entry
-    const order = rules[label]
+    const [label, group] = entry;
+    const order = rules[label];
     return { label, group, order }
-  })
+  });
 
   const sortedList = rulesMap.sort(function (a, b) {
     var orderA = a.order;
@@ -114,11 +114,11 @@ export function sortBy(list, rules) {
     }
 
     return 0;
-  })
+  });
 
   const sortedObject = sortedList.reduce((acc, { label, group, order }) => {
     return acc = { ...acc, [label]: group }
-  }, {})
+  }, {});
 
   return sortedObject
 }
