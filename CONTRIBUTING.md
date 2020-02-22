@@ -44,10 +44,9 @@ We're using Netlify as a our 'staging' server during development.
 
 You should be able to see the sites here :
 
-Netlify Staging : https://compassionate-swirles-4863e9.netlify.com/
+Netlify Staging : https://devcon2020.netlify.com/
 
 Once a maintainer merges new changes in the branch `develop`, netlify will
 automatically trigger a new build pipeline and after a few minutes the changes will be shown on the staging website.
 
-[Click here to view the staging website &raquo; ](https://youthful-panini-25fb9a.netlify.com/)
-[Click here to view the staging website &raquo; ](https://compassionate-swirles-4863e9.netlify.com/)
+[Click here to view the staging website &raquo; ](https://devcon2020.netlify.com/)
