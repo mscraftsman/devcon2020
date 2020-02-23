@@ -36,7 +36,7 @@ export default {
 <style lang="scss" scoped>
 .building-rotation {
   /*stroke-dasharray: 500;*/
-  animation: spin 111s ease-in-out infinite;
+  animation: spin 111s linear infinite;
   transform-origin: center center;
 }
 
