@@ -34,6 +34,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.building-rotation {
+  /*stroke-dasharray: 500;*/
+  animation: spin 111s ease-in-out infinite;
+  transform-origin: center center;
+}
+
 .building-landing {
   position: absolute;
 

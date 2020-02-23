@@ -136,7 +136,7 @@ export default {
 
 .building-rotation {
   /*stroke-dasharray: 500;*/
-  animation: spin 280s ease-in-out infinite;
+  animation: spin 111s ease-in-out infinite;
   transform-origin: center center;
 }
 
