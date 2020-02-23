@@ -97,10 +97,9 @@ export default {
 }
 
 .sponsor-section-wrapper {
-  --size: 200px;
+  --size: 50px;
   --side-padding: 9%;
   --right-padding: calc(100% - var(--side-padding));
-  --rotation-left: 20deg;
 
   --power-y: 7%;
   --space-y: 18%;
@@ -109,64 +108,67 @@ export default {
   --time-y: 55%;
   --mind-y: 66%;
 
-  background: url("/images/home-sponsors/powerstone.png"),
-    url("/images/home-sponsors/spacestone.png"),
-    url("/images/home-sponsors/realitystone.png"),
-    url("/images/home-sponsors/soulstone.png"),
-    url("/images/home-sponsors/timestone.png"),
-    url("/images/home-sponsors/mindstone.png");
-
-  background-blend-mode: lighten;
-
-  background-position: var(--side-padding) var(--power-y),
-    var(--right-padding) var(--space-y), var(--side-padding) var(--reality-y),
-    var(--right-padding) var(--soul-y), var(--side-padding) var(--time-y),
-    var(--right-padding) var(--mind-y);
-
-  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat,
-    no-repeat;
-  background-size: var(--size), var(--size), var(--size), var(--size),
-    var(--size), var(--size);
-
-  @media screen and (max-width: 425px) {
-    --size: 50px;
-    --side-padding: 1%;
-
-    --power-y: 3%;
-    --space-y: 3%;
-    --reality-y: 27%;
-    --soul-y: 44%;
-    --time-y: 55%;
-    --mind-y: 66%;
+  @media screen and (max-width: 767px) {
+    background: none;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (min-width: 769px) {
     --size: 50px;
     --side-padding: 1%;
 
-    --power-y: 3%;
-    --space-y: 3%;
+    --power-y: 11%;
+    --space-y: 18%;
     --reality-y: 27%;
     --soul-y: 44%;
     --time-y: 55%;
     --mind-y: 66%;
+
+    background: url("/images/home-sponsors/powerstone.png"),
+      url("/images/home-sponsors/spacestone.png"),
+      url("/images/home-sponsors/realitystone.png"),
+      url("/images/home-sponsors/soulstone.png"),
+      url("/images/home-sponsors/timestone.png"),
+      url("/images/home-sponsors/mindstone.png");
+
+    background-position: var(--side-padding) var(--power-y),
+      var(--right-padding) var(--space-y), var(--side-padding) var(--reality-y),
+      var(--right-padding) var(--soul-y), var(--side-padding) var(--time-y),
+      var(--right-padding) var(--mind-y);
+
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat,
+      no-repeat;
+    background-size: var(--size), var(--size), var(--size), var(--size),
+      var(--size), var(--size);
   }
 
   @media screen and (max-width: 1024px) {
-    --size: 120px;
+    --size: 300px;
     --side-padding: 1%;
 
-    --power-y: 3%;
-    --space-y: 3%;
-    --reality-y: 27%;
-    --soul-y: 44%;
-    --time-y: 55%;
-    --mind-y: 66%;
+    --power-y: 5%;
+    --space-y: 23%;
+    --reality-y: 43%;
+    --soul-y: 57%;
+    --time-y: 71%;
+    --mind-y: 87%;
   }
 
   @media screen and (min-width: 1025px) {
+    --size: 350px;
+    --side-padding: 3%;
+
+    --power-y: 3%;
+    --space-y: 23%;
+    --reality-y: 43%;
+    --soul-y: 57%;
+    --time-y: 71%;
+    --mind-y: 91%;
+  }
+
+  @media screen and (min-width: 1400px) {
     --size: 500px;
     --side-padding: 3%;
+
     --power-y: 3%;
     --space-y: 23%;
     --reality-y: 43%;
