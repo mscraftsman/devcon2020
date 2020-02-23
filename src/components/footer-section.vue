@@ -55,9 +55,18 @@
       </div>
     </div>
 
-    <div class="footer-image w-full hidden md:block">
-      <BuildingsBottom width="100%"
+    <div class="footer-image footer-image-md w-full hidden md:block">
+      <div class="logo-md">
+        <router-link :to="{ name: 'pagehome' }">
+          <img src="/images/MSCC-logo-inverted.svg"
+               alt />
+        </router-link>
+      </div>
+
+      <BuildingsBottom class="buildings-md"
+                       width="100%"
                        height="100%" />
+
       <!-- <div class="building-crop">
         <div class="building-menu">
           <div class="w-32 mx-auto">
@@ -172,5 +181,20 @@ export default {
       text-decoration: underline;
     }
   }
+}
+.footer-image-md {
+  position: relative;
+}
+.buildings-md {
+}
+.logo-md {
+  position: absolute;
+  z-index: 10;
+  width: 7rem;
+
+  top: 85%;
+  left: 50%;
+  transform-origin: center;
+  transform: translate(-50%, -50%);
 }
 </style>
