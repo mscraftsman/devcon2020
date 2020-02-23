@@ -2,7 +2,7 @@
   <div>
     <div class="block md:hidden">
       <div class="container mx-auto text-sm uppercase tracking-wide footer-wrapper">
-        <div class="logo">
+        <div class="logo logo-sm">
           <router-link :to="{ name: 'pagehome' }">
             <img src="/images/MSCC-logo-inverted.svg"
                  alt />
@@ -181,6 +181,9 @@ export default {
       text-decoration: underline;
     }
   }
+}
+.logo-sm {
+  margin-left: 1rem;
 }
 .footer-image-md {
   position: relative;
