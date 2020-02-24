@@ -31,14 +31,14 @@
 			<p>
 				<a href="https://twitter.com/pymugdotcom">
 					<img 
-					class="h-12 w-12 bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded" src="images/icons/twitter.svg"></a>&nbsp;
+					class="social h-12 w-12 bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded" src="images/icons/twitter.svg"></a>&nbsp;
 				<a href="https://www.linkedin.com/company/pymug/">
 					<img 
-					class="h-12 w-12 bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded" 
+					class="social h-12 w-12 bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded" 
 					src="images/icons/linkedin.svg"></a>&nbsp;
 				<a href="https://www.facebook.com/groups/318161658897893/">
 					<img 
-					class="h-12 w-12 bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded" 
+					class="social h-12 w-12 bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded" 
 					src="images/icons/facebook.svg"></a>&nbsp;
 			</p>
 		</div>

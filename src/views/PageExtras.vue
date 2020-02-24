@@ -31,11 +31,11 @@ export default {
 </script>
 
 
-<style lang="scss" scoped>
+<style lang="scss">
 small {
   @apply text-2xl;
 }
-a img{
+.social{
   display: inline-block;
 }
 </style>
