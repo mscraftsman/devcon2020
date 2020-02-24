@@ -35,12 +35,7 @@ export default {
 small {
   @apply text-2xl;
 }
-</style>
-
-<style scoped>
-a img {
-  width: 50px;
-  height: 50px;
+a img{
   display: inline-block;
 }
 </style>
