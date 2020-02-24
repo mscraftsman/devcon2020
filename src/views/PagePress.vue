@@ -6,11 +6,10 @@
 					<div class="tagline">Free to use! Create Awareness.</div>
 					<!-- <h1>Press Material</h1> -->
 					<p>
-						In order to create more awareness for the Developers Conference we
-						prepared a variety of media files at your disposal. Please feel
-						free
-						to use the material to your liking and help us to make this an
-						outstanding and remarkable developers conference.
+						In order to create more awareness for the Developers Conference
+						2020, we prepared a variety of media files at your disposal.
+						Please feel free to use the material to your liking and help us
+						to make this an	outstanding and remarkable developers conference.
 					</p>
 				</div>
 			</div>
