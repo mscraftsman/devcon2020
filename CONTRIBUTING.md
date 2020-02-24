@@ -34,7 +34,7 @@ We don't have a design ! Just a theme. The discussions for this is taking place 
 
 1. [Pick an Issue](https://github.com/mscraftsman/devcon2020/issues) or Create an issue to help with
 2. Comment on the issue and let everyone know you'll be helping on this. (to avoid duplicates)
-3. Clone the `develop` branch and resolve the issue locally.
+3. Clone the `develop` branch and resolve the issue locally
 4. Make a merge request to the `develop` branch
 5. One of the maintainers will review the PR and merge, else there will be comments if adjustments are required.
 
