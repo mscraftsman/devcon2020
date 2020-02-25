@@ -7,8 +7,12 @@
 			</div>
 			<h1 class="font-hulksmash font-hairline text-5xl leading-none">Developers Conference 2020</h1>
 			<div class="button-wrapper flex justify-around pt-5">
-				<router-link
+				<!--<router-link
 					:to="'https://meetup.com'"
+					class="button text-2xl font-black font-spiderman bg-black text-white py-3 px-5"
+				>Register</router-link>-->
+				<router-link
+					href="https://www.meetup.com/MauritiusSoftwareCraftsmanshipCommunity/events/268265742/"
 					class="button text-2xl font-black font-spiderman bg-black text-white py-3 px-5"
 				>Register</router-link>
 				<!-- <router-link :to="{name:'PageSessions'}" class="button">Schedule</router-link> -->
