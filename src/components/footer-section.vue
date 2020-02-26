@@ -8,109 +8,47 @@
                  alt />
           </router-link>
         </div>
-        <!-- <ul class="menu">
-          <li>
-            <router-link :to="{ name: 'PageCoc' }">Code of Conduct</router-link>
-          </li>
-          <li>
-            <router-link :to="{ name: 'PageExtras' }">Extras</router-link>
-          </li>
 
-          <li>
-            <router-link :to="{ name: 'PagePastEvents' }"
-              >Past Events</router-link
-            >
-          </li>
-          <li>
-            <router-link :to="{ name: 'PagePress' }">Press</router-link>
-          </li>
-          <li>
-            <router-link :to="{ name: 'PageSessions' }">Sessions</router-link>
-          </li>
-          <li>
-            <router-link :to="{ name: 'PageSpeakers' }">Speakers</router-link>
-          </li>
-          <li>
-            <a
-              target="_blank"
-              href="https://github.com/mscraftsman/devcon2020/issues"
-              >Contribute</a
-            >
-          </li>
-          <li>
-            <router-link :to="{ name: 'session', params: { id: '118176' } }"
-              >Sample Session</router-link
-            >
-          </li>
-          <li>
-            <router-link
-              :to="{
-                name: 'speaker',
-                params: { id: '146ba683-b905-46a9-bc61-108c46964ce8' }
-              }"
-              >Sample Speaker</router-link
-            >
-          </li>
-        </ul> -->
+        <FooterMenu class="menu" />
       </div>
     </div>
 
     <div class="footer-image footer-image-md w-full hidden md:block">
-      <div class="logo-md">
+      <!-- <div class="logo-md">
         <router-link :to="{ name: 'pagehome' }">
           <img src="/images/MSCC-logo-inverted.svg"
                alt />
         </router-link>
-      </div>
+      </div> -->
 
       <BuildingsBottom class="buildings-md"
                        width="100%"
                        height="100%" />
 
-      <!-- <div class="building-crop">
-        <div class="building-menu">
-          <div class="w-32 mx-auto">
-            <router-link :to="{ name: 'pagehome' }">
-              <img src="/images/MSCC-logo-inverted.svg"
-                   alt />
-            </router-link>
-          </div>
-          <ul class="earth-menu">
-            <li>
-              <router-link :to="{ name: 'PageSessions' }">Sessions</router-link>
-            </li>
-            <li>
-              <router-link :to="{ name: 'PageSpeakers' }">Speakers</router-link>
-            </li>
-            <li>
-              <router-link :to="{ name: 'PagePress' }">Press</router-link>
-            </li>
-
-            <li>
-              <router-link :to="{ name: 'PageCoc' }">Code of Conduct</router-link>
-            </li>
-
-            <li>
-              <router-link :to="{ name: 'PagePastEvents' }">Past Events</router-link>
-            </li>
-            <li>
-              <router-link :to="{ name: 'PageExtras' }">Extras</router-link>
-            </li>
-          </ul>
+      <div class="building-menu">
+        <div class="w-32 mx-auto">
+          <router-link :to="{ name: 'pagehome' }">
+            <img src="/images/MSCC-logo-inverted.svg"
+                 alt />
+          </router-link>
         </div>
-        <div>
 
-        </div>
-      </div> -->
+        <FooterMenu class="earth-menu" />
+      </div>
     </div>
+  </div>
+  </div>
   </div>
 </template>
 
 <script>
+import FooterMenu from "@/components/footer-menu.vue";
+
 import BuildingsBottom from "../svg/buildings_bottom.svg";
 
 export default {
   components: {
+    FooterMenu,
     BuildingsBottom
   }
 };
@@ -161,27 +99,6 @@ export default {
   padding: 20px 0;
 }
 
-.menu {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  grid-gap: 20px;
-  /*padding: 20px 0;*/
-}
-
-.earth-menu {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  grid-gap: 20px;
-  padding: 30px 0 0 0;
-
-  a {
-    text-transform: uppercase;
-    font-weight: bold;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-}
 .logo-sm {
   margin-left: 1rem;
 }
@@ -189,6 +106,11 @@ export default {
   position: relative;
 }
 .buildings-md {
+}
+.building-crop {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
 }
 .logo-md {
   position: absolute;
