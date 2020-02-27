@@ -29,8 +29,9 @@ steps:
 - task: CopyFilesOverSSH@0
   inputs:
     sshEndpoint: 'conference_mscc_mu'
-    sourceFolder: '$(Agent.BuildDirectory)/docs'
+    sourceFolder: 'docs'
     contents: '**'
     targetFolder: '/home/public/sites/mscc/devops'
     cleanTargetFolder: true
     readyTimeout: '20000'
+  displayName: 'Transfer files via SSH'
