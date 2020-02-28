@@ -237,6 +237,11 @@ export default {
     .day-item {
       @apply text-2xl flex-1 text-center;
       cursor: pointer;
+
+      &.active {
+        background: red;
+        /*background: theme(colors.blue.500);*/
+      }
     }
   }
 

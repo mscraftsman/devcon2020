@@ -1,13 +1,15 @@
 <template>
   <div>
     <div class="block md:hidden">
-      <div class="container text-sm uppercase tracking-wide">
-        <div class="logo w-1/3 mx-auto pb-10">
+      <div
+        class="container mx-auto text-sm uppercase tracking-wide footer-wrapper"
+      >
+        <div class="logo">
           <router-link :to="{ name: 'pagehome' }">
             <img src="/images/MSCC-logo-inverted.svg" alt />
           </router-link>
         </div>
-        <!-- <ul class="menu">
+        <ul class="menu">
           <li>
             <router-link :to="{ name: 'PageCoc' }">Code of Conduct</router-link>
           </li>
@@ -50,25 +52,16 @@
               >Sample Speaker</router-link
             >
           </li>
-        </ul> -->
+        </ul>
       </div>
     </div>
 
-    <div class="footer-image footer-image-md w-full hidden md:block">
-      <!--      <div class="logo-md">-->
-      <!--        <router-link :to="{ name: 'pagehome' }">-->
-      <!--          <img src="/images/MSCC-logo-inverted.svg" alt />-->
-      <!--        </router-link>-->
-      <!--      </div>-->
-
-      <BuildingsBottom class="buildings-md" width="100%" height="100%" />
-
-      <!-- <div class="building-crop">
+    <div class="footer-image w-full hidden md:block">
+      <div class="building-crop">
         <div class="building-menu">
           <div class="w-32 mx-auto">
             <router-link :to="{ name: 'pagehome' }">
-              <img src="/images/MSCC-logo-inverted.svg"
-                   alt />
+              <img src="/images/MSCC-logo-inverted.svg" alt />
             </router-link>
           </div>
           <ul class="earth-menu">
@@ -83,27 +76,31 @@
             </li>
 
             <li>
-              <router-link :to="{ name: 'PageCoc' }">Code of Conduct</router-link>
+              <router-link :to="{ name: 'PageCoc' }"
+                >Code of Conduct</router-link
+              >
             </li>
 
             <li>
-              <router-link :to="{ name: 'PagePastEvents' }">Past Events</router-link>
+              <router-link :to="{ name: 'PagePastEvents' }"
+                >Past Events</router-link
+              >
             </li>
             <li>
               <router-link :to="{ name: 'PageExtras' }">Extras</router-link>
             </li>
           </ul>
         </div>
-        <div>
-
+        <div class="building-rotation">
+          <BuildingsBottom width="100%" height="100%" />
         </div>
-      </div> -->
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import BuildingsBottom from "../svg/buildings_bottom.svg";
+import BuildingsBottom from "../svg/earth-city.svg";
 
 export default {
   components: {
@@ -117,7 +114,7 @@ export default {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, 65%);
+  transform: translate(-50%, 20%);
   width: 700px;
   height: 300px;
   text-align: center;
@@ -132,7 +129,7 @@ export default {
 
 .building-rotation {
   /*stroke-dasharray: 500;*/
-  animation: spin 111s linear infinite;
+  animation: spin 80s linear infinite;
   transform-origin: center center;
 }
 
@@ -177,21 +174,5 @@ export default {
       text-decoration: underline;
     }
   }
-}
-
-.footer-image-md {
-  position: relative;
-}
-.buildings-md {
-}
-.logo-md {
-  position: absolute;
-  z-index: 10;
-  width: 7rem;
-
-  top: 85%;
-  left: 50%;
-  transform-origin: center;
-  transform: translate(-50%, -50%);
 }
 </style>
