@@ -28,7 +28,7 @@ steps:
 
 - task: CopyFilesOverSSH@0
   inputs:
-    sshEndpoint: 'conference_mscc_mu'
+    sshEndpoint: 'dummy'
     sourceFolder: 'docs'
     contents: '**'
     targetFolder: '/home/public/sites/mscc/devops'
