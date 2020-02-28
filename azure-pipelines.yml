@@ -28,10 +28,10 @@ steps:
 
 - task: CopyFilesOverSSH@0
   inputs:
-    sshEndpoint: 'dummy'
+    sshEndpoint: 'conference_mscc_mu'
     sourceFolder: 'docs'
     contents: '**'
-    targetFolder: '/home/public/sites/mscc/devops'
+    targetFolder: '/home/public/sites/mscc/devops/'
     cleanTargetFolder: true
     readyTimeout: '20000'
   displayName: 'Transfer files via SSH'
