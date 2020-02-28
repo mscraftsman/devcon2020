@@ -1,14 +1,18 @@
 <template functional>
-  <a class="atomic-logo"
-     target="_blank"
-     :href="props.sponsor.url"
-     :title="props.sponsor.partner + props.sponsor.slogan">
+  <a
+    class="atomic-logo"
+    target="_blank"
+    :href="props.sponsor.url"
+    :title="props.sponsor.partner + props.sponsor.slogan"
+  >
     <div class="logo">
-      <img class="logo-col temp-bg p-4 m-4"
-           :src="$options.methods.imageResolve(props.sponsor.image)"
-           :title="props.sponsor.partner + props.sponsor.slogan"
-           :data-name="$options.methods.getImageName(props.sponsor.image)"
-           :alt="props.sponsor.partner" />
+      <img
+        class="logo-col temp-bg p-4 m-4"
+        :src="$options.methods.imageResolve(props.sponsor.image)"
+        :title="props.sponsor.partner + props.sponsor.slogan"
+        :data-name="$options.methods.getImageName(props.sponsor.image)"
+        :alt="props.sponsor.partner"
+      />
     </div>
   </a>
 </template>
@@ -66,12 +70,6 @@ export default {
 
 <style lang="scss" scoped>
 .atomic-logo {
-  &:last-child {
-    .logo {
-      margin-right: 0;
-    }
-  }
-
   .logo {
     img {
       display: block;

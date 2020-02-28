@@ -1,11 +1,10 @@
 <template>
   <div>
     <div class="block md:hidden">
-      <div class="container mx-auto text-sm uppercase tracking-wide footer-wrapper">
-        <div class="logo logo-sm">
+      <div class="container text-sm uppercase tracking-wide">
+        <div class="logo w-1/3 mx-auto pb-10">
           <router-link :to="{ name: 'pagehome' }">
-            <img src="/images/MSCC-logo-inverted.svg"
-                 alt />
+            <img src="/images/MSCC-logo-inverted.svg" alt />
           </router-link>
         </div>
         <!-- <ul class="menu">
@@ -56,16 +55,13 @@
     </div>
 
     <div class="footer-image footer-image-md w-full hidden md:block">
-      <div class="logo-md">
-        <router-link :to="{ name: 'pagehome' }">
-          <img src="/images/MSCC-logo-inverted.svg"
-               alt />
-        </router-link>
-      </div>
+      <!--      <div class="logo-md">-->
+      <!--        <router-link :to="{ name: 'pagehome' }">-->
+      <!--          <img src="/images/MSCC-logo-inverted.svg" alt />-->
+      <!--        </router-link>-->
+      <!--      </div>-->
 
-      <BuildingsBottom class="buildings-md"
-                       width="100%"
-                       height="100%" />
+      <BuildingsBottom class="buildings-md" width="100%" height="100%" />
 
       <!-- <div class="building-crop">
         <div class="building-menu">
@@ -182,9 +178,7 @@ export default {
     }
   }
 }
-.logo-sm {
-  margin-left: 1rem;
-}
+
 .footer-image-md {
   position: relative;
 }

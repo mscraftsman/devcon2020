@@ -1,7 +1,9 @@
 <template>
   <div class="flex items-center justify-center h-screen landing-section">
     <div class="text-box">
-      <div class="meta-title flex flex-col items-center justify-between font-bold uppercase">
+      <div
+        class="meta-title flex flex-col items-center justify-between font-bold uppercase"
+      >
         <div class="meta-title__location">Caudan Arts Centre</div>
         <div class="meta-title__period font-black">2 - 4 April 2020</div>
       </div>
@@ -13,12 +15,10 @@
           Registration Opening Soon
         </h3>
       </div>
-
     </div>
 
     <div class="building-rotation building-landing">
-      <BuildingsBottom width="100%"
-                       height="100%" />
+      <BuildingsBottom width="100%" height="100%" />
     </div>
   </div>
 </template>
