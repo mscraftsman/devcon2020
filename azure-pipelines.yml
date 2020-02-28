@@ -25,3 +25,13 @@ steps:
     npx vue-cli-service build --dest docs
     # npm run build
   displayName: 'npm install and build'
+
+- task: CopyFilesOverSSH@0
+  inputs:
+    sshEndpoint: 'conference_mscc_mu'
+    sourceFolder: 'docs'
+    contents: '**'
+    targetFolder: '/home/public/sites/mscc/devcon2020/docs'
+    cleanTargetFolder: true
+    readyTimeout: '20000'
+  displayName: 'Transfer files via SSH'
