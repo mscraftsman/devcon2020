@@ -42,4 +42,41 @@ export default {
   border: 0;
   margin: 0;
 }
+
+/* Generic Page Style */
+
+.generic-page-container {
+  max-width: 740px;
+  margin: 0 auto 50px;
+  padding: 0 20px;
+}
+
+.tagline {
+  @apply uppercase font-bold;
+}
+
+.generic-page {
+  h1 {
+    @apply text-black;
+  }
+  h2 {
+    @apply text-black text-2xl pb-2;
+  }
+  h3 {
+    @apply text-black font-black text-xl  pb-2;
+  }
+  p {
+    @apply text-lg text-black  pb-4;
+  }
+  a {
+    @apply text-blue-500;
+
+    &:hover {
+      @apply text-blue-400 underline;
+    }
+  }
+  small {
+    @apply text-black text-sm;
+  }
+}
 </style>
