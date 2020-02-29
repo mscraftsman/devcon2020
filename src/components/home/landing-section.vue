@@ -58,7 +58,7 @@ export default {
   --startColor: white;
 
   position: relative;
-  z-index: 1;
+  z-index: 2;
 
   background-size: 200% auto, contain;
   background-position: center center;
