@@ -11,9 +11,13 @@
         Developers <span class="text-block">Conference 2020</span>
       </h1>
       <div class="button-wrapper flex justify-around pt-5">
-        <h3 class="meta-title__sub font-black font-spiderman text-gray-800">
-          Registration Opening Soon
-        </h3>
+        <a
+          href="https://www.meetup.com/MauritiusSoftwareCraftsmanshipCommunity/events/268265742/"
+          target="_blank"
+          class="meta-title__sub bg-red-400 hover:bg-red-500 font-black uppercase font-spiderman text-white px-3"
+        >
+          Register now
+        </a>
       </div>
     </div>
 
@@ -66,6 +70,11 @@ export default {
     -webkit-text-fill-color: currentColor;
     font-weight: bolder;
   }
+}
+
+.button-wrapper a {
+  transform: skewX(-10deg);
+  box-shadow: 4px 4px 0 0px #000;
 }
 
 .title {
