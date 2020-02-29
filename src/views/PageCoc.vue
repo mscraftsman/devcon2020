@@ -1,6 +1,6 @@
 <template>
-  <div class="page-coc generic-page">
-    <div>
+  <div>
+    <div class="page-coc generic-page generic-page-container">
       <!--          <div class="tagline">Conference Code of Conduct</div>-->
       <!-- <h1>Code of Conduct</h1> -->
       <p>
@@ -120,35 +120,7 @@
   </div>
 </template>
 
-<style lang="scss">
-.generic-page {
-  max-width: 740px;
-  margin: 0 auto 50px;
-  padding: 0 20px;
-  h1 {
-    @apply text-black;
-  }
-  h2 {
-    @apply text-black text-2xl pb-2;
-  }
-  h3 {
-    @apply text-black text-xl  pb-2;
-  }
-  p {
-    @apply text-lg text-black  pb-4;
-  }
-  a {
-    @apply text-blue-500;
-
-    &:hover {
-      @apply text-blue-400 underline;
-    }
-  }
-  small {
-    @apply text-black text-sm;
-  }
-}
-</style>
+<style lang="scss"></style>
 
 <script>
 export default {

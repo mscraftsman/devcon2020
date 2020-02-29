@@ -51,7 +51,7 @@ const routes = [
     name: "PagePress",
     component: PagePress,
     meta: {
-      title: "Press"
+      title: "Press Materials"
     }
   },
   {
