@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 
 import PageHome from "../views/PageHome.vue";
 import PageCoc from "../views/PageCoc.vue";
+import PageCredits from "../views/PageCredits.vue";
 import PageExtras from "../views/PageExtras.vue";
 import PagePastEvents from "../views/PagePastEvents.vue";
 import PagePress from "../views/PagePress.vue";
@@ -28,6 +29,13 @@ const routes = [
     component: PageCoc,
     meta: {
       title: "Code Of Conduct"
+    }
+  },  {
+    path: "/credits",
+    name: "PageCredits",
+    component: PageCredits,
+    meta: {
+      title: "Credits"
     }
   },
   {

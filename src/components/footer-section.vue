@@ -95,6 +95,9 @@
           <!--          <li>-->
           <!--            <router-link :to="{ name: 'PageSessions' }">Sessions</router-link>-->
           <!--          </li>-->
+          <li>
+            <router-link :to="{ name: 'PageCredits' }">Credits</router-link>
+          </li>
           <!--          <li>-->
           <!--            <router-link :to="{ name: 'PageSpeakers' }">Speakers</router-link>-->
           <!--          </li>-->
@@ -219,6 +222,9 @@
             <!--          <li>-->
             <!--            <router-link :to="{ name: 'PageSessions' }">Sessions</router-link>-->
             <!--          </li>-->
+            <li>
+              <router-link :to="{ name: 'PageCredits' }">Credits</router-link>
+            </li>
             <!--          <li>-->
             <!--            <router-link :to="{ name: 'PageSpeakers' }">Speakers</router-link>-->
             <!--          </li>-->
