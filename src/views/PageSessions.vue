@@ -7,25 +7,19 @@
     <div class="schedule-container">
       <div class="date-track">
         <!-- <div class="date-item" v-for="date in dates">{{ date }}</div> -->
-        <div
-          class="day-item"
-          :class="{ active: currentDay == 0 }"
-          @click="currentDay = 0"
-        >
+        <div class="day-item"
+             :class="{ active: currentDay == 0 }"
+             @click="currentDay = 0">
           Day 1
         </div>
-        <div
-          class="day-item"
-          :class="{ active: currentDay == 1 }"
-          @click="currentDay = 1"
-        >
+        <div class="day-item"
+             :class="{ active: currentDay == 1 }"
+             @click="currentDay = 1">
           Day 2
         </div>
-        <div
-          class="day-item"
-          :class="{ active: currentDay == 2 }"
-          @click="currentDay = 2"
-        >
+        <div class="day-item"
+             :class="{ active: currentDay == 2 }"
+             @click="currentDay = 2">
           Day 3
         </div>
       </div>
@@ -35,57 +29,42 @@
       <div class="room-track">
         <!-- <div class="room-item" v-for="room in rooms">{{ room }}</div> -->
 
-        <css-grid
-          :columns="currentGrid.columns"
-          :rows="currentGrid.rows"
-          :areas="currentGrid.areas"
-        >
-          <css-grid-item
-            :area="room"
-            class="room-item uppercase text-sm"
-            v-for="room in rooms"
-            >{{ room }}</css-grid-item
-          >
+        <css-grid :columns="currentGrid.columns"
+                  :rows="currentGrid.rows"
+                  :areas="currentGrid.areas">
+          <css-grid-item :area="room"
+                         class="room-item uppercase text-sm"
+                         v-for="room in rooms">{{ room }}</css-grid-item>
         </css-grid>
       </div>
       <div class="programme-track">
-        <css-grid
-          :columns="currentGrid.columns"
-          :rows="currentGrid.rows"
-          :areas="currentGrid.areas"
-          :gap="'10px'"
-          class="programme-track-container"
-        >
+        <css-grid :columns="currentGrid.columns"
+                  :rows="currentGrid.rows"
+                  :areas="currentGrid.areas"
+                  :gap="'10px'"
+                  class="programme-track-container">
           <!-- <div class="time-item" >{{ time }}</div> -->
           <!-- Time -->
-          <css-grid-item
-            area="Time"
-            class="time-item"
-            v-for="time in times.slice(timeStart, timeEnd)"
-            :style="timeStartCoordinate(time)"
-          >
+          <css-grid-item area="Time"
+                         class="time-item"
+                         v-for="time in times.slice(timeStart, timeEnd)"
+                         :style="timeStartCoordinate(time)">
             {{ time }}
             <!-- {{ programmeStartCoordinate(programme.date) }} -->
           </css-grid-item>
 
           <!-- Programmes -->
-          <css-grid-item
-            :area="'r' + programme.roomId"
-            class="programme-item box"
-            v-for="programme in currentDaySessions"
-            :style="programmeStartCoordinate(programme)"
-          >
-            <router-link
-              :to="{ name: 'session', params: { id: programme.id } }"
-              class="block"
-            >
+          <css-grid-item :area="'r' + programme.roomId"
+                         class="programme-item box"
+                         v-for="programme in currentDaySessions"
+                         :style="programmeStartCoordinate(programme)">
+            <router-link :to="{ name: 'session', params: { id: programme.id } }"
+                         class="block">
               <div class="text">
                 {{ programme.title }}
               </div>
-              <div
-                v-if="programme.speakers.length > 0"
-                class="text-xs font-bold uppercase tracking-wider"
-              >
+              <div v-if="programme.speakers.length > 0"
+                   class="text-xs font-bold uppercase tracking-wider">
                 <!--
                                 {{ programme.speakers }}-->
                 by
@@ -150,12 +129,12 @@ export default {
       timeStart: 0,
       timeSpan: 48,
       timeScale: 8,
-      rooms: ["Time", "r4090", "r4091", "r4092", "r4093"],
+      rooms: ["Time", "r12900", "r12901", "r12902", "r12903"],
       currentDay: 0,
       currentGrid: {
         columns: ["1fr"],
         rows: ["30px", "1fr", "1fr", "1fr", "1fr"],
-        areas: [["Time"], ["r4090"], ["r4091"], ["r4092"], ["r4093"]]
+        areas: [["Time"], ["r12900"], ["r4091"], ["r12902"], ["r12903"]]
       }
     };
   },
