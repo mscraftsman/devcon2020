@@ -7,7 +7,6 @@ import PageExtras from "../views/PageExtras.vue";
 import PagePastEvents from "../views/PagePastEvents.vue";
 import PagePress from "../views/PagePress.vue";
 import PageSessions from "../views/PageSessions.vue";
-import PageSessionsVertical from "../views/PageSessionsVertical.vue";
 import PageSessionSingle from "../views/PageSessionSingle.vue";
 import PageSpeakers from "../views/PageSpeakers.vue";
 import PageSpeakerSingle from "../views/PageSpeakerSingle.vue";
@@ -62,14 +61,6 @@ const routes = [
     meta: {
       layout: "full",
       title: "Sessions"
-    }
-  },  {
-    path: "/sessionsv",
-    name: "PageSessionsVertical",
-    component: PageSessionsVertical,
-    meta: {
-      layout: "full",
-      title: "Sessions V"
     }
   },
   {

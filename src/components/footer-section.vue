@@ -225,11 +225,7 @@
             <li>
               <router-link :to="{ name: 'PageSessions' }">Sessions</router-link>
             </li>
-            <li>
-              <router-link :to="{ name: 'PageSessionsVertical' }"
-                >Sessions V</router-link
-              >
-            </li>
+
             <li>
               <router-link :to="{ name: 'PageSpeakers' }">Speakers</router-link>
             </li>
