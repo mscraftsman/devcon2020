@@ -2,11 +2,11 @@
   <div class="page-extras">
     <!-- <h1 class="page-title">Extra Activities</h1> -->
 
-    <extra-community></extra-community>
-    <extra-gdg></extra-gdg>
-    <extra-lugm></extra-lugm>
-    <extra-maker></extra-maker>
-    <extra-pymug></extra-pymug>
+    <extra-community class="pb-20"></extra-community>
+    <extra-gdg class="pb-20"></extra-gdg>
+    <extra-lugm class="pb-20"></extra-lugm>
+    <extra-maker class="pb-20"></extra-maker>
+    <extra-pymug class="pb-20"></extra-pymug>
   </div>
 </template>
 
@@ -35,7 +35,7 @@ export default {
 small {
   @apply text-2xl;
 }
-.social{
+.social {
   display: inline-block;
 }
 </style>
