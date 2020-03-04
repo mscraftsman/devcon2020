@@ -1,106 +1,86 @@
 <template>
   <div class="page-sessions">
-    <!-- <h1 class="text-2xl">sessions</h1> -->
-    <!-- <pre>
-			{{ currentDaySessions }} 
-		</pre>-->
     <div class="schedule-container">
       <div class="date-track">
-        <!-- <div class="date-item" v-for="date in dates">{{ date }}</div> -->
-        <div
-          class="day-item"
-          :class="{ active: currentDay == 0 }"
-          @click="currentDay = 0"
-        >
+        <div class="day-item"
+             :class="{ active: currentDay == 0 }"
+             @click="currentDay = 0">
           Day 1
         </div>
-        <div
-          class="day-item"
-          :class="{ active: currentDay == 1 }"
-          @click="currentDay = 1"
-        >
+        <div class="day-item"
+             :class="{ active: currentDay == 1 }"
+             @click="currentDay = 1">
           Day 2
         </div>
-        <div
-          class="day-item"
-          :class="{ active: currentDay == 2 }"
-          @click="currentDay = 2"
-        >
+        <div class="day-item"
+             :class="{ active: currentDay == 2 }"
+             @click="currentDay = 2">
           Day 3
         </div>
       </div>
-      <!-- <div class="time-track">
-				<div class="time-item" v-for="time in times.slice(timeStart, timeEnd)">{{ time }}</div>
-			</div>-->
-      <div class="room-track">
-        <!-- <div class="room-item" v-for="room in rooms">{{ room }}</div> -->
 
-        <css-grid
-          :columns="currentGrid.columns"
-          :rows="currentGrid.rows"
-          :areas="currentGrid.areas"
-        >
-          <css-grid-item
-            :area="room"
-            class="room-item uppercase text-sm"
-            v-for="room in rooms"
-            >{{ room }}</css-grid-item
-          >
+      <div class="room-track">
+        <!-- @Sun: styling needed -->
+        <button title="prev"
+                v-if="isMobile"
+                @click="prev">&lt;</button>
+
+        <css-grid :columns="currentGrid.columns"
+                  :rows="currentGrid.rows"
+                  :areas="currentGrid.areas">
+          <css-grid-item :area="room"
+                         class="room-item uppercase text-sm"
+                         v-for="(room, index) in displayedRooms"
+                         :key="index">
+            {{ roomRepo[room] }}
+          </css-grid-item>
         </css-grid>
+
+        <!-- @Sun: styling needed -->
+        <button title="next"
+                v-if="isMobile"
+                @click="next">&gt;</button>
       </div>
+
       <div class="programme-track">
-        <css-grid
-          :columns="currentGrid.columns"
-          :rows="currentGrid.rows"
-          :areas="currentGrid.areas"
-          :gap="'10px'"
-          class="programme-track-container"
-        >
-          <!-- <div class="time-item" >{{ time }}</div> -->
+        <css-grid :columns="currentGrid.columns"
+                  :rows="currentGrid.rows"
+                  :areas="currentGrid.areas"
+                  class="programme-track-container"
+                  :gap="isMobile ? '4px' : '40px'">
+          <!-- @Sun: styling needed -->
+
           <!-- Time -->
-          <css-grid-item
-            area="Time"
-            class="time-item"
-            v-for="time in times.slice(timeStart, timeEnd)"
-            :style="timeStartCoordinate(time)"
-          >
+          <css-grid-item area="Time"
+                         class="time-item"
+                         v-for="time in times.slice(timeStart, timeEnd)"
+                         :style="timeStartCoordinate(time)">
             {{ time }}
-            <!-- {{ programmeStartCoordinate(programme.date) }} -->
           </css-grid-item>
 
           <!-- Programmes -->
-          <css-grid-item
-            :area="'r' + programme.roomId"
-            class="programme-item box"
-            v-for="programme in currentDaySessions"
-            :style="programmeStartCoordinate(programme)"
-          >
-            <router-link
-              :to="{ name: 'session', params: { id: programme.id } }"
-              class="block"
-            >
+          <css-grid-item :area="'r' + programme.roomId"
+                         class="programme-item box"
+                         v-for="(programme, index) in displayedSessions"
+                         :style="programmeStartCoordinate(programme)">
+            <router-link :to="{ name: 'session', params: { id: programme.id } }"
+                         class="flex flex-col justify-center items-center w-full h-full">
               <div class="text">
                 {{ programme.title }}
               </div>
-              <div
-                v-if="programme.speakers.length > 0"
-                class="text-xs font-bold uppercase tracking-wider"
-              >
-                <!--
-                                {{ programme.speakers }}-->
+              <div v-if="programme.speakers.length > 0"
+                   class="text-xs font-bold uppercase tracking-wider">
                 by
                 <span v-for="speaker in programme.speakers">
                   {{ speaker.name }}
                 </span>
               </div>
             </router-link>
-            <!-- {{ programmeStartCoordinate(programme.date) }} -->
           </css-grid-item>
         </css-grid>
       </div>
     </div>
-
-    <!-- <div class="container mx-auto">{{ schedule }}</div> -->
+    <ViewportListener v-model="viewport" />
   </div>
 </template>
 
@@ -112,8 +92,8 @@ export default {
   name: "pagesessions",
   data() {
     return {
+      viewport: { width: 320, height: 568 },
       programmes: null,
-      dates: "11 April 2020",
       times: [
         "08:00",
         "08:30",
@@ -149,14 +129,22 @@ export default {
       MINUTES_TO_EIGHT_OCLOCK: 8 * 60,
       timeStart: 0,
       timeSpan: 48,
-      timeScale: 8,
-      rooms: ["Time", "r4090", "r4091", "r4092", "r4093"],
+      timeScale: 5,
+      rooms: ["r12900", "r12901", "r12902", "r12903"],
+      roomRepo: {
+        r12900: "Batcave",
+        r12901: "Avengers Tower",
+        r12902: "New Asgard",
+        r12903: "Kryptone"
+      },
+      availableRooms: [
+        { id: "r12900", index: 0 },
+        { id: "r12901", index: 1 },
+        { id: "r12902", index: 2 },
+        { id: "r12903", index: 3 }
+      ],
       currentDay: 0,
-      currentGrid: {
-        columns: ["1fr"],
-        rows: ["30px", "1fr", "1fr", "1fr", "1fr"],
-        areas: [["Time"], ["r4090"], ["r4091"], ["r4092"], ["r4093"]]
-      }
+      currentRoom: { id: "r12900", index: 0 }
     };
   },
   methods: {
@@ -169,8 +157,8 @@ export default {
       const offsetResult = result - this.MINUTES_TO_EIGHT_OCLOCK;
 
       return {
-        left: offsetResult * this.timeScale + "px",
-        width: duration * this.timeScale + "px"
+        top: offsetResult * this.timeScale + "px",
+        height: duration * this.timeScale + "px"
       };
     },
     // Takes a programme object
@@ -187,9 +175,51 @@ export default {
       let duration = endCoordinate - startCoordinate;
 
       return {
-        left: startCoordinate * this.timeScale + "px",
-        width: duration * this.timeScale + "px"
+        top: startCoordinate * this.timeScale + "px",
+        height: duration * this.timeScale + "px"
       };
+    },
+
+    next() {
+      this.changeRoom(true);
+    },
+
+    prev() {
+      this.changeRoom(false);
+    },
+
+    changeRoom(next) {
+      const currentIndex = this.availableRooms.findIndex(room => {
+        return room.id === this.currentRoom.id;
+      });
+
+      const prev = !next;
+      const lastIndex = this.availableRooms.length - 1;
+
+      const isFirst = currentIndex === 0;
+      const isLast = currentIndex === lastIndex;
+
+      if (next && isLast) {
+        this.currentRoom = this.availableRooms[0];
+        return;
+      }
+
+      if (next && !isLast) {
+        const nextIndex = currentIndex + 1;
+        this.currentRoom = this.availableRooms[nextIndex];
+        return;
+      }
+
+      if (prev && isFirst) {
+        this.currentRoom = this.availableRooms[lastIndex];
+        return;
+      }
+
+      if (prev && !isFirst) {
+        const prevIndex = currentIndex - 1;
+        this.currentRoom = this.availableRooms[prevIndex];
+        return;
+      }
     }
   },
   computed: {
@@ -202,8 +232,56 @@ export default {
     }),
     currentDaySessions() {
       if (this.sessions.length > 0) {
-        return this.sessions[this.currentDay].sessions;
+        let result = this.sessions[this.currentDay].sessions;
+        return result;
       }
+    },
+
+    isMobile() {
+      return !(this.viewport.isDesktop || this.viewport.isLargeDesktop);
+    },
+
+    currentGrid() {
+      if (this.isMobile) {
+        return {
+          columns: ["50px", "1fr"],
+          rows: ["1fr"],
+          areas: [["Time", this.currentRoom.id]]
+        };
+      }
+      return {
+        columns: ["100px", "1fr", "1fr", "1fr", "1fr"],
+        rows: ["1fr"],
+        areas: [["Time", "r12900", "r12901", "r12902", "r12903"]]
+      };
+    },
+
+    displayedRooms() {
+      const currentRoomIndex = this.currentRoom.index;
+
+      if (this.isMobile) {
+        return this.rooms.slice(currentRoomIndex, currentRoomIndex + 1);
+      }
+
+      return this.rooms;
+    },
+
+    displayedSessions() {
+      if (!this.currentDaySessions) {
+        return [];
+      }
+
+      if (this.isMobile) {
+        return this.currentDaySessions.filter(session => {
+          // * Keep coercion (`==` instead of `===`) here. Please.
+
+          // * Processing `this.currentRoom` directly here to trigger reactivity.
+          // * The update is not triggered when declared in a variable.
+          return session.roomId == this.currentRoom.id.replace("r", "");
+        });
+      }
+
+      return this.currentDaySessions;
     }
   },
   mounted() {
@@ -219,15 +297,16 @@ export default {
 
 <style lang="scss" scoped>
 .schedule-container {
+  --sess-height: 100px;
   width: 100%;
   height: 100%;
   display: grid;
   grid-template-areas:
-    ". date"
-    ". time"
-    "room programme";
+    "date"
+    "room"
+    "programme";
 
-  grid-template-columns: 150px 1fr;
+  grid-template-columns: 1fr;
 
   .date-track {
     grid-area: date;
@@ -237,19 +316,32 @@ export default {
     .day-item {
       @apply text-2xl flex-1 text-center;
       cursor: pointer;
+
+      &.active {
+        background: red;
+        /*background: theme(colors.blue.500);*/
+      }
     }
+  }
+
+  .time-track {
+    grid-area: time;
   }
 
   .room-track {
     grid-area: room;
     background: rgb(43, 43, 43);
     color: white;
+    @media screen and (max-width: 1024px) {
+      display: flex;
+      justify-content: space-around;
+    }
   }
   .programme-track {
     grid-area: programme;
     // background: green;
     min-height: 50vh;
-    overflow-y: scroll;
+    /*overflow-y: scroll;*/
 
     .programme-track-container {
       /*scroll-snap-type: y proximity;*/
@@ -266,19 +358,6 @@ export default {
   // justify-content: space-between;
 }
 
-.room-track {
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: space-around;
-
-  // display: grid;
-  // grid-template-areas: "main" "titan";
-
-  .room-item {
-    text-align: center;
-  }
-}
-
 .programme-item {
   // width: 250px;
   /*border: 1px solid black;*/
@@ -289,12 +368,13 @@ export default {
   background: rgb(43, 43, 43);
   color: white;
   font-weight: bold;
-  align-items: center;
-  justify-content: start;
+  align-items: start;
+  justify-content: center;
   display: flex;
+  height: var(--sess-height);
 }
 
-.room-item:first-child {
+.room-item {
   height: 30px;
 }
 .room-item {
@@ -309,9 +389,8 @@ export default {
   text-overflow: ellipsis;
 }
 
-.room-item,
 .programme-item {
-  height: 140px;
+  height: var(--sess-height);
 }
 
 .programme-item {

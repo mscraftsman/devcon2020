@@ -1,13 +1,13 @@
 <template>
   <section class="sponsor-section-wrapper mb-24 pb-32">
     <!-- title -->
-    <div class="title__container pt-32 mb-20">
+    <div class="title__container pt-32 mb-24">
       <div class="bg__asset">
         <!-- <img src="/images/home-sponsors/red-bg.svg"
              alt /> -->
       </div>
-      <div class="title__wrapper">
-        <h2 class="title section-title">Sponsors</h2>
+      <div class="title__wrapper pt-12">
+        <h2 class="title section-title leading-none text-5xl">Sponsors</h2>
         <!-- <div class="title__sub font-hulksmash">Backed by some big players of the industry</div> -->
       </div>
     </div>
@@ -66,10 +66,10 @@ export default {
         Gold: 4,
         Silver: 5,
         Bronze: 6,
-        "Media Partner": 7,
-        "Happy Hour Partner": 8,
+        "Happy Hour Partner": 7,
         Speaker: 8,
-        "Day Care": 9
+        "Media Partner": 9,
+        "Day Care": 10
       };
       const orderedGroups = sortBy(unOrderedGroups, ORDER_RULES);
       return orderedGroups;
@@ -97,14 +97,104 @@ export default {
 }
 
 .sponsor-section-wrapper {
-  background: /*url("/images/home-sponsors/left-retro.svg"),*/ url("/images/home-sponsors/radial.svg"),
-    /*url("/images/home-sponsors/right-retro.svg"),*/
-      url("/images/home-sponsors/cloud-left.svg"),
-    url("/images/home-sponsors/cloud-right.svg");
-  background-position: /*top left,*/ top center, /*top right,*/ bottom left,
-    bottom right;
-  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
-  background-size: /*400px,*/ cover, /*400px,*/ 600px, 600px;
+  --size: 50px;
+  --side-padding: 9%;
+  --right-padding: calc(100% - var(--side-padding));
+
+  --power-y: 7%;
+  --space-y: 18%;
+  --reality-y: 27%;
+  --soul-y: 44%;
+  --time-y: 55%;
+  --mind-y: 66%;
+
+  @media screen and (max-width: 767px) {
+    background: none;
+  }
+
+  @media screen and (min-width: 769px) {
+    --size: 50px;
+    --side-padding: 1%;
+
+    --power-y: 11%;
+    --space-y: 18%;
+    --reality-y: 27%;
+    --soul-y: 44%;
+    --time-y: 55%;
+    --mind-y: 66%;
+
+    background: url("/images/home-sponsors/powerstone.png"),
+      url("/images/home-sponsors/spacestone.png"),
+      url("/images/home-sponsors/realitystone.png"),
+      url("/images/home-sponsors/soulstone.png"),
+      url("/images/home-sponsors/timestone.png"),
+      url("/images/home-sponsors/mindstone.png");
+
+    background-position: var(--side-padding) var(--power-y),
+      var(--right-padding) var(--space-y), var(--side-padding) var(--reality-y),
+      var(--right-padding) var(--soul-y), var(--side-padding) var(--time-y),
+      var(--right-padding) var(--mind-y);
+
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat,
+      no-repeat;
+    background-size: var(--size), var(--size), var(--size), var(--size),
+      var(--size), var(--size);
+  }
+
+  @media screen and (max-width: 1024px) {
+    --size: 300px;
+    --side-padding: 1%;
+
+    --power-y: 5%;
+    --space-y: 23%;
+    --reality-y: 43%;
+    --soul-y: 57%;
+    --time-y: 71%;
+    --mind-y: 87%;
+  }
+
+  @media screen and (min-width: 1025px) {
+    --size: 350px;
+    --side-padding: 3%;
+
+    --power-y: 3%;
+    --space-y: 23%;
+    --reality-y: 43%;
+    --soul-y: 57%;
+    --time-y: 71%;
+    --mind-y: 91%;
+  }
+
+  @media screen and (min-width: 1400px) {
+    --size: 500px;
+    --side-padding: 3%;
+
+    --power-y: 3%;
+    --space-y: 23%;
+    --reality-y: 43%;
+    --soul-y: 57%;
+    --time-y: 71%;
+    --mind-y: 91%;
+  }
+}
+
+.section-title {
+  position: relative;
+}
+
+.section-title:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 125%;
+  height: 125%;
+  transform: translate(-9.5%, -9.5%) skew(-7deg);
+  border: 0.25rem solid black;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  padding: 0.5rem 2rem;
 }
 
 .title__container {
@@ -146,7 +236,7 @@ export default {
       // text-shadow: 3px 3px 0 rgba(0, 0, 0, 1);
       margin-bottom: 5px;
       letter-spacing: -0.2px;
-      @apply text-5xl;
+      @apply text-6xl;
     }
 
     .title__sub {
