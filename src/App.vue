@@ -60,13 +60,13 @@ export default {
     @apply text-black;
   }
   h2 {
-    @apply text-black text-2xl pb-2;
+    @apply text-black text-2xl;
   }
   h3 {
-    @apply text-black font-black text-xl  pb-2;
+    @apply text-black font-black text-xl;
   }
   p {
-    @apply text-lg text-black  pb-4;
+    @apply text-lg text-black;
   }
   a {
     @apply text-blue-500;
@@ -83,5 +83,13 @@ export default {
     list-style: circle inside;
     padding-bottom: 0.6em;
   }
+}
+
+.text-flow {
+  --flow: 1rem;
+}
+
+.text-flow > * + * {
+  padding-bottom: var(--flow);
 }
 </style>

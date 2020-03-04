@@ -1,10 +1,8 @@
 <template>
   <div>
-    <div>
+    <div class="text-flow">
       <div class="tagline">Zafer la kreyon!</div>
       <h2 class="group-title">Caricatures</h2>
-    </div>
-    <div>
       <p>
         One more element of fun to make the conference even better. We will have
         some cool artists around ready to capture you on paper. Whether you

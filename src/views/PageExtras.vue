@@ -1,5 +1,5 @@
 <template>
-  <div class="page-extras generic-page">
+  <div class="page-extras generic-page generic-page-container">
     <!-- <h1 class="page-title">Extra Activities</h1> -->
 
     <extra-caricatures></extra-caricatures>

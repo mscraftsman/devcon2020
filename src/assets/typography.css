@@ -28,9 +28,10 @@ small {
 }
 
 h2.group-title {
-    font-size: 50px;
+    font-size: 40px;
     -webkit-text-stroke-color: hsl(0, 0%, 13%);
     line-height: 1;
+    --flow: 0.5em;
 }
 
 .section-title {
