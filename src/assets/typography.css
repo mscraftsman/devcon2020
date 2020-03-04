@@ -29,11 +29,7 @@ small {
 
 .group-title {
     font-size: 50px;
-    background: -webkit-linear-gradient(rgb(255, 225, 0), rgb(182, 109, 0));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke-color: #000;
-    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: hsl(0, 0%, 13%);
 }
 
 .section-title {
