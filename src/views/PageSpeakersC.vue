@@ -115,9 +115,12 @@ export default {
   position: absolute;
   top: -10px;
   transform: skew(-15deg);
-  overflow-x: hidden;
+  white-space: nowrap;
+  overflow: hidden;
   text-overflow: ellipsis;
   height: 40px;
+  max-width: 90%;
+  padding-right: 10px;
 }
 
 .bottom-right {
@@ -167,31 +170,17 @@ export default {
 }
 
 .panel:nth-child(1) {
-  flex-basis: 400px;
+  flex-basis: 180px;
 }
-.panel:nth-child(2) {
+.panel:nth-child(2n + 1) {
   flex-basis: 200px;
 }
-.panel:nth-child(3) {
-  flex-basis: 200px;
+.panel:nth-child(4n + 1) {
+  flex-basis: 300px;
 }
-.panel:nth-child(4) {
-  flex-basis: 200px;
-}
-.panel:nth-child(5) {
-  flex-basis: 200px;
-}
-.panel:nth-child(6) {
-  flex-basis: 200px;
-}
-.panel:nth-child(7n + 1) {
-  flex-basis: 400px;
-}
-.panel:nth-child(8) {
-  flex-basis: 200px;
-}
-.panel:nth-child(9) {
-  flex-basis: 200px;
+
+.panel:nth-child(3n + 1) {
+  flex-basis: 220px;
 }
 
 /* background colours */
