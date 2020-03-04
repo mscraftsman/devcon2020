@@ -1,9 +1,5 @@
 <template>
   <div class="page-sessions">
-    <!-- <h1 class="text-2xl">sessions</h1> -->
-    <!-- <pre>
-			{{ currentDaySessions }} 
-		</pre>-->
     <div class="schedule-container">
       <div class="date-track">
         <!-- <div class="date-item" v-for="date in dates">{{ date }}</div> -->
@@ -29,12 +25,8 @@
           Day 3
         </div>
       </div>
-      <!-- <div class="time-track">
-				<div class="time-item" v-for="time in times.slice(timeStart, timeEnd)">{{ time }}</div>
-			</div>-->
-      <div class="room-track">
-        <!-- <div class="room-item" v-for="room in rooms">{{ room }}</div> -->
 
+      <div class="room-track">
         <css-grid
           :columns="currentGrid.columns"
           :rows="currentGrid.rows"
@@ -44,8 +36,21 @@
             :area="room"
             class="room-item uppercase text-sm"
             v-for="room in rooms"
-            >{{ room }}</css-grid-item
+            :key="room"
           >
+            <!--            {{ room }}-->
+            {{ roomRepo[room] }}
+          </css-grid-item>
+
+          <!--          <css-grid-item-->
+          <!--            area="Time"-->
+          <!--            class="time-item"-->
+          <!--            v-for="time in times.slice(timeStart, timeEnd)"-->
+          <!--            :style="timeStartCoordinate(time)"-->
+          <!--          >-->
+          <!--            {{ time }}-->
+          <!-- {{ programmeStartCoordinate(programme.date) }} -->
+          <!--          </css-grid-item>-->
         </css-grid>
       </div>
       <div class="programme-track">
@@ -53,8 +58,8 @@
           :columns="currentGrid.columns"
           :rows="currentGrid.rows"
           :areas="currentGrid.areas"
-          :gap="'10px'"
           class="programme-track-container"
+          :gap="'40px'"
         >
           <!-- <div class="time-item" >{{ time }}</div> -->
           <!-- Time -->
@@ -65,19 +70,18 @@
             :style="timeStartCoordinate(time)"
           >
             {{ time }}
-            <!-- {{ programmeStartCoordinate(programme.date) }} -->
           </css-grid-item>
 
           <!-- Programmes -->
           <css-grid-item
             :area="'r' + programme.roomId"
             class="programme-item box"
-            v-for="programme in currentDaySessions"
+            v-for="(programme, index) in currentDaySessions"
             :style="programmeStartCoordinate(programme)"
           >
             <router-link
               :to="{ name: 'session', params: { id: programme.id } }"
-              class="block"
+              class="flex flex-col justify-center items-center w-full h-full"
             >
               <div class="text">
                 {{ programme.title }}
@@ -87,14 +91,13 @@
                 class="text-xs font-bold uppercase tracking-wider"
               >
                 <!--
-                                {{ programme.speakers }}-->
+                            																{{ programme.speakers }}-->
                 by
                 <span v-for="speaker in programme.speakers">
                   {{ speaker.name }}
                 </span>
               </div>
             </router-link>
-            <!-- {{ programmeStartCoordinate(programme.date) }} -->
           </css-grid-item>
         </css-grid>
       </div>
@@ -149,13 +152,19 @@ export default {
       MINUTES_TO_EIGHT_OCLOCK: 8 * 60,
       timeStart: 0,
       timeSpan: 48,
-      timeScale: 8,
-      rooms: ["Time", "r12900", "r12901", "r12902", "r12903"],
+      timeScale: 5,
+      rooms: ["r12900", "r12901", "r12903", "r12902"],
+      roomRepo: {
+        r12900: "Batcave",
+        r12901: "New Asgard",
+        r12903: "Kryptone",
+        r12902: "Avengers Tower"
+      },
       currentDay: 0,
       currentGrid: {
-        columns: ["1fr"],
-        rows: ["30px", "1fr", "1fr", "1fr", "1fr"],
-        areas: [["Time"], ["r12900"], ["r4091"], ["r12902"], ["r12903"]]
+        columns: ["100px", "1fr", "1fr", "1fr", "1fr"],
+        rows: ["1fr"],
+        areas: [["Time", "r12900", "r12901", "r12903", "r12902"]]
       }
     };
   },
@@ -169,8 +178,8 @@ export default {
       const offsetResult = result - this.MINUTES_TO_EIGHT_OCLOCK;
 
       return {
-        left: offsetResult * this.timeScale + "px",
-        width: duration * this.timeScale + "px"
+        top: offsetResult * this.timeScale + "px",
+        height: duration * this.timeScale + "px"
       };
     },
     // Takes a programme object
@@ -187,8 +196,8 @@ export default {
       let duration = endCoordinate - startCoordinate;
 
       return {
-        left: startCoordinate * this.timeScale + "px",
-        width: duration * this.timeScale + "px"
+        top: startCoordinate * this.timeScale + "px",
+        height: duration * this.timeScale + "px"
       };
     }
   },
@@ -202,7 +211,8 @@ export default {
     }),
     currentDaySessions() {
       if (this.sessions.length > 0) {
-        return this.sessions[this.currentDay].sessions;
+        let result = this.sessions[this.currentDay].sessions;
+        return result;
       }
     }
   },
@@ -219,15 +229,16 @@ export default {
 
 <style lang="scss" scoped>
 .schedule-container {
+  --sess-height: 100px;
   width: 100%;
   height: 100%;
   display: grid;
   grid-template-areas:
-    ". date"
-    ". time"
-    "room programme";
+    "date"
+    "room"
+    "programme";
 
-  grid-template-columns: 150px 1fr;
+  grid-template-columns: 1fr;
 
   .date-track {
     grid-area: date;
@@ -245,16 +256,22 @@ export default {
     }
   }
 
+  .time-track {
+    grid-area: time;
+  }
+
   .room-track {
     grid-area: room;
     background: rgb(43, 43, 43);
     color: white;
+    /*display: flex;*/
+    /*justify-content: space-around;*/
   }
   .programme-track {
     grid-area: programme;
     // background: green;
     min-height: 50vh;
-    overflow-y: scroll;
+    /*overflow-y: scroll;*/
 
     .programme-track-container {
       /*scroll-snap-type: y proximity;*/
@@ -271,19 +288,6 @@ export default {
   // justify-content: space-between;
 }
 
-.room-track {
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: space-around;
-
-  // display: grid;
-  // grid-template-areas: "main" "titan";
-
-  .room-item {
-    text-align: center;
-  }
-}
-
 .programme-item {
   // width: 250px;
   /*border: 1px solid black;*/
@@ -294,12 +298,13 @@ export default {
   background: rgb(43, 43, 43);
   color: white;
   font-weight: bold;
-  align-items: center;
-  justify-content: start;
+  align-items: start;
+  justify-content: center;
   display: flex;
+  height: var(--sess-height);
 }
 
-.room-item:first-child {
+.room-item {
   height: 30px;
 }
 .room-item {
@@ -314,9 +319,8 @@ export default {
   text-overflow: ellipsis;
 }
 
-.room-item,
 .programme-item {
-  height: 140px;
+  height: var(--sess-height);
 }
 
 .programme-item {
