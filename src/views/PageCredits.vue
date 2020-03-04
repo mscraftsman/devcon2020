@@ -1,13 +1,7 @@
 <template>
   <div>
-    <div class="page-credits generic-page">
-      <h1>Core Team</h1>
-      <!--      <img src="/images/carricatures/organizers.jpg" alt="" />-->
-      <!--      <div class="nametag">-->
-      <!--        Jochen & Mary Jane-->
-      <!--      </div>-->
-      <!--      <h2>Graphic Designers</h2>-->
-
+    <div class="page-credits generic-page ">
+      <h2 class="group-title">Core Team</h2>
       <article class="comic">
         <div class="panel">
           <p class="text top-left">Organizers...</p>
@@ -46,17 +40,20 @@
         </div>
       </article>
 
-      <div class="pb-10">
-        <h1>Contributors</h1>
+      <div class="pt-20 pb-20">
+        <h2 class="group-title pb-5">Contributors</h2>
         <ul>
-          <li>Gael Latouche</li>
-          <li>Aditya Bholae</li>
-          <li>Aditya Bholae</li>
-          <li>Aditya Bholae</li>
-          <li>Aditya Bholae</li>
-          <li>Aditya Bholae</li>
-          <li>Aditya Bholae</li>
-          <li>Aditya Bhola</li>
+          <li v-for="(value, index) in contributors" :key="index">
+            {{ value.name }} - {{ value.role }}
+          </li>
+        </ul>
+      </div>
+
+      <div class="generic-page pb-20">
+        <h2 class="group-title pb-5">Resources</h2>
+        <ul>
+          <li>Gael Latouche - <a href="#">Link</a></li>
+          <li>Aditya Bholae - <a href="#">Link</a></li>
         </ul>
       </div>
     </div>
@@ -214,6 +211,40 @@ ul {
 <script>
 export default {
   name: "pagecredits",
+  data() {
+    return {
+      contributors: [
+        {
+          name: "Aditya Bhola",
+          role: "Role"
+        },
+        {
+          name: "Aditya Bhola",
+          role: "Role"
+        },
+        {
+          name: "Aditya Bhola",
+          role: "Role"
+        },
+        {
+          name: "Aditya Bhola",
+          role: "Role"
+        },
+        {
+          name: "Aditya Bhola",
+          role: "Role"
+        },
+        {
+          name: "Aditya Bhola",
+          role: "Role"
+        },
+        {
+          name: "Aditya Bhola",
+          role: "Role"
+        }
+      ]
+    };
+  },
   components: {}
 };
 </script>
