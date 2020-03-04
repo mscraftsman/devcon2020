@@ -3,8 +3,8 @@
     <!-- <h1 class="page-title">Extra Activities</h1> -->
 
     <extra-caricatures></extra-caricatures>
-    <extra-childcare></extra-childcare>
-    <extra-cosplay></extra-cosplay>
+    <!--    <extra-childcare></extra-childcare>-->
+    <!--    <extra-cosplay></extra-cosplay>-->
     <extra-community></extra-community>
   </div>
 </template>
