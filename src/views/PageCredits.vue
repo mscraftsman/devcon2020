@@ -66,7 +66,7 @@
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .page-credits {
   @apply text-center;
 
@@ -102,7 +102,7 @@ ul {
 .comic {
   display: flex;
   flex-wrap: wrap;
-  font-family: "Comic Sans", cursive;
+  /*font-family: "Comic Sans", cursive;*/
   padding: 1vmin;
 
   img {
