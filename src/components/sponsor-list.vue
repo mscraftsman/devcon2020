@@ -236,8 +236,11 @@ export default {
 @media (max-width: 768px) {
   .title__section {
     .tier-title {
-      font-size: 35px;
+      --side-element-width: 1vw;
+
+      font-size: 22px;
     }
+    
     .poof {
       img {
         margin-left: 70px;
