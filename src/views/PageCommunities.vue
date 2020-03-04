@@ -29,10 +29,10 @@
 </template>
 
 <script>
-import extraGdg from "../communities/extra-gdg.vue";
-import extraLugm from "../communities/extra-lugm.vue";
-import extraMaker from "../communities/extra-maker.vue";
-import extraPymug from "../communities/extra-pymug.vue";
+import extraGdg from "../components/communities/extra-gdg.vue";
+import extraLugm from "../components/communities/extra-lugm.vue";
+import extraMaker from "../components/communities/extra-maker.vue";
+import extraPymug from "../components/communities/extra-pymug.vue";
 
 export default {
   layout: "contained",
