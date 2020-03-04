@@ -124,7 +124,7 @@ export default {
     --side-element-proximity: 2.9rem;
     --side-element-width: 20vw;
     --side-element-height: 0.25rem;
-    --side-element-opacity: 0;
+    --side-element-opacity: 0.05;
     --side-element-rotation: 2deg;
 
     grid-row: 1 / 1;
