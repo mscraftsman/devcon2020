@@ -16,28 +16,25 @@
         </div>
         <div class="panel"></div>
         <div class="panel">
-          <img src="/images/carricatures/cedric.jpg" alt="" />
-          <!--          <p class="text top-left">Try resizing...</p>-->
-          <!--          <p class="text bottom-right">...it's responsive</p>-->
+          <img src="/images/carricatures/joki-emmy-ish.jpg" alt="" />
         </div>
         <div class="panel"></div>
         <div class="panel"></div>
         <div class="panel">
-          <!--          <img src="/images/carricatures/vidush.jpg" alt="" />-->
+          <img src="/images/carricatures/cedric.jpg" alt="" />
         </div>
         <div class="panel">
           <p class="text top-left">Organizers...</p>
           <p class="text bottom-right">...Mary, Sun, & Shelly</p>
           <img src="/images/carricatures/mary-sun-shelly.jpg" alt="" />
           <p class="speech">A speech bubble</p>
-          <img src="/images/carricatures/neil-marine-vanessa.jpg" alt="" />
         </div>
         <div class="panel">
           <img src="/images/carricatures/pritvi.jpg" alt="" />
           <p class="text bottom-right">METEO MAN</p>
         </div>
         <div class="panel">
-          <img src="/images/carricatures/shelly-ish.jpg" alt="" />
+          <img src="/images/carricatures/neil-marine-vanessa.jpg" alt="" />
         </div>
         <div class="panel">
           <img src="/images/carricatures/vidush.jpg" alt="" />
@@ -123,7 +120,6 @@ ul {
   overflow: hidden;
   position: relative;
 }
-
 .text {
   background-color: #fff;
   border: solid 2px #000;
@@ -132,10 +128,16 @@ ul {
 }
 
 .top-left {
-  left: -6px;
+  left: -7px;
   position: absolute;
-  top: -2px;
+  top: -10px;
   transform: skew(-15deg);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 40px;
+  max-width: 90%;
+  padding-right: 10px;
 }
 
 .bottom-right {
@@ -143,6 +145,7 @@ ul {
   position: absolute;
   right: -6px;
   transform: skew(-15deg);
+  padding-top: 5px;
 }
 
 .speech {
@@ -182,31 +185,10 @@ ul {
   width: 0;
 }
 
-.panel:nth-child(1) {
+.panel:nth-child(odd) {
   flex-basis: 400px;
 }
-.panel:nth-child(2) {
-  flex-basis: 200px;
-}
-.panel:nth-child(3) {
-  flex-basis: 200px;
-}
-.panel:nth-child(4) {
-  flex-basis: 200px;
-}
-.panel:nth-child(5) {
-  flex-basis: 200px;
-}
-.panel:nth-child(6) {
-  flex-basis: 200px;
-}
-.panel:nth-child(7) {
-  flex-basis: 400px;
-}
-.panel:nth-child(8) {
-  flex-basis: 200px;
-}
-.panel:nth-child(9) {
+.panel:nth-child(even) {
   flex-basis: 200px;
 }
 
