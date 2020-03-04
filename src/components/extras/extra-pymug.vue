@@ -40,6 +40,14 @@
 					<img 
 					class="social h-12 w-12 bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded" 
 					src="images/icons/facebook.svg"></a>&nbsp;
+				<a href="https://mail.python.org/mailman3/lists/pymug.python.org/">
+					<img 
+					class="social h-12 w-12 bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded" 
+					src="images/icons/mail.svg"></a>&nbsp;
+				<a href="https://www.pymug.com">
+					<img 
+					class="social h-12 w-12 bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded" 
+					src="images/icons/website.svg"></a>&nbsp;
 			</p>
 		</div>
 	</div>
