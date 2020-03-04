@@ -2,91 +2,74 @@
   <div class="page-sessions">
     <div class="schedule-container">
       <div class="date-track">
-        <!-- <div class="date-item" v-for="date in dates">{{ date }}</div> -->
-        <div
-          class="day-item"
-          :class="{ active: currentDay == 0 }"
-          @click="currentDay = 0"
-        >
+        <div class="day-item"
+             :class="{ active: currentDay == 0 }"
+             @click="currentDay = 0">
           Day 1
         </div>
-        <div
-          class="day-item"
-          :class="{ active: currentDay == 1 }"
-          @click="currentDay = 1"
-        >
+        <div class="day-item"
+             :class="{ active: currentDay == 1 }"
+             @click="currentDay = 1">
           Day 2
         </div>
-        <div
-          class="day-item"
-          :class="{ active: currentDay == 2 }"
-          @click="currentDay = 2"
-        >
+        <div class="day-item"
+             :class="{ active: currentDay == 2 }"
+             @click="currentDay = 2">
           Day 3
         </div>
       </div>
 
       <div class="room-track">
         <!-- @Sun: styling needed -->
-        <button title="prev" v-if="isMobile" @click="prev">&lt;</button>
+        <button title="prev"
+                v-if="isMobile"
+                @click="prev">&lt;</button>
 
-        <css-grid
-          :columns="currentGrid.columns"
-          :rows="currentGrid.rows"
-          :areas="currentGrid.areas"
-        >
-          <css-grid-item
-            :area="room"
-            class="room-item uppercase text-sm"
-            v-for="room in displayedRooms"
-            :key="room"
-          >
+        <css-grid :columns="currentGrid.columns"
+                  :rows="currentGrid.rows"
+                  :areas="currentGrid.areas">
+          <css-grid-item :area="room"
+                         class="room-item uppercase text-sm"
+                         v-for="(room, index) in displayedRooms"
+                         :key="index">
             {{ roomRepo[room] }}
           </css-grid-item>
         </css-grid>
 
         <!-- @Sun: styling needed -->
-        <button title="next" v-if="isMobile" @click="next">&gt;</button>
+        <button title="next"
+                v-if="isMobile"
+                @click="next">&gt;</button>
       </div>
 
       <div class="programme-track">
-        <css-grid
-          :columns="currentGrid.columns"
-          :rows="currentGrid.rows"
-          :areas="currentGrid.areas"
-          class="programme-track-container"
-          :gap="isMobile ? '4px' : '40px'"
-        >
+        <css-grid :columns="currentGrid.columns"
+                  :rows="currentGrid.rows"
+                  :areas="currentGrid.areas"
+                  class="programme-track-container"
+                  :gap="isMobile ? '4px' : '40px'">
           <!-- @Sun: styling needed -->
 
           <!-- Time -->
-          <css-grid-item
-            area="Time"
-            class="time-item"
-            v-for="time in times.slice(timeStart, timeEnd)"
-            :style="timeStartCoordinate(time)"
-          >
+          <css-grid-item area="Time"
+                         class="time-item"
+                         v-for="time in times.slice(timeStart, timeEnd)"
+                         :style="timeStartCoordinate(time)">
             {{ time }}
           </css-grid-item>
 
           <!-- Programmes -->
-          <css-grid-item
-            :area="'r' + programme.roomId"
-            class="programme-item box"
-            v-for="(programme, index) in displayedSessions"
-            :style="programmeStartCoordinate(programme)"
-          >
-            <router-link
-              :to="{ name: 'session', params: { id: programme.id } }"
-              class="flex flex-col justify-center items-center w-full h-full"
-            >
+          <css-grid-item :area="'r' + programme.roomId"
+                         class="programme-item box"
+                         v-for="(programme, index) in displayedSessions"
+                         :style="programmeStartCoordinate(programme)">
+            <router-link :to="{ name: 'session', params: { id: programme.id } }"
+                         class="flex flex-col justify-center items-center w-full h-full">
               <div class="text">
                 {{ programme.title }}
               </div>
-              <div
-                v-if="programme.speakers.length > 0"
-                class="text-xs font-bold uppercase tracking-wider"
-              >
+              <div v-if="programme.speakers.length > 0"
+                   class="text-xs font-bold uppercase tracking-wider">
                 by
                 <span v-for="speaker in programme.speakers">
                   {{ speaker.name }}
@@ -111,7 +94,6 @@ export default {
     return {
       viewport: { width: 320, height: 568 },
       programmes: null,
-      dates: "11 April 2020",
       times: [
         "08:00",
         "08:30",
@@ -148,12 +130,12 @@ export default {
       timeStart: 0,
       timeSpan: 48,
       timeScale: 5,
-      rooms: ["r12900", "r12901", "r12903", "r12902"],
+      rooms: ["r12900", "r12901", "r12902", "r12903"],
       roomRepo: {
         r12900: "Batcave",
-        r12901: "New Asgard",
-        r12903: "Kryptone",
-        r12902: "Avengers Tower"
+        r12901: "Avengers Tower",
+        r12902: "New Asgard",
+        r12903: "Kryptone"
       },
       availableRooms: [
         { id: "r12900", index: 0 },
@@ -162,7 +144,7 @@ export default {
         { id: "r12903", index: 3 }
       ],
       currentDay: 0,
-      currentRoom: { id: "r12900", label: "Batcave", index: 0 }
+      currentRoom: { id: "r12900", index: 0 }
     };
   },
   methods: {
@@ -270,7 +252,7 @@ export default {
       return {
         columns: ["100px", "1fr", "1fr", "1fr", "1fr"],
         rows: ["1fr"],
-        areas: [["Time", "r12900", "r12901", "r12903", "r12902"]]
+        areas: [["Time", "r12900", "r12901", "r12902", "r12903"]]
       };
     },
 

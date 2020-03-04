@@ -5,7 +5,7 @@
 
     <h1 class="text-3xl">Heroes</h1>
 
-    <img class="hero"
+    <!-- <img class="hero"
          src="/images/heroes/batmanAndSuperman.svg" />
     <img class="hero"
          src="/images/heroes/captainAmerica.svg" />
@@ -44,7 +44,7 @@
     <img class="hero"
          src="/images/heroes/wonderwoman.svg" />
     <img class="hero"
-         src="/images/heroes/wonderwomanSide.svg" />
+         src="/images/heroes/wonderwomanSide.svg" /> -->
   </div>
 </template>
 
