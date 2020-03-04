@@ -10,7 +10,6 @@ import PagePress from "../views/PagePress.vue";
 import PageSessions from "../views/PageSessions.vue";
 import PageSessionSingle from "../views/PageSessionSingle.vue";
 import PageSpeakers from "../views/PageSpeakers.vue";
-import PageSpeakersC from "../views/PageSpeakersC.vue";
 import PageSpeakerSingle from "../views/PageSpeakerSingle.vue";
 
 Vue.use(VueRouter);
@@ -85,14 +84,6 @@ const routes = [
     path: "/speakers",
     name: "PageSpeakers",
     component: PageSpeakers,
-    meta: {
-      layout: "full",
-      title: "Speakers"
-    }
-  },{
-    path: "/speakersc",
-    name: "PageSpeakersC",
-    component: PageSpeakersC,
     meta: {
       layout: "full",
       title: "Speakers"
