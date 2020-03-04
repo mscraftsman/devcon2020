@@ -78,5 +78,10 @@ export default {
   small {
     @apply text-black text-sm;
   }
+
+  li {
+    list-style: circle inside;
+    padding-bottom: 0.6em;
+  }
 }
 </style>
