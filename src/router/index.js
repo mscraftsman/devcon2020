@@ -37,7 +37,8 @@ const routes = [
         name: 'PageCredits',
         component: PageCredits,
         meta: {
-            title: 'Credits'
+            title: 'Credits',
+            layout:'full'
         }
     },
     {

@@ -75,7 +75,7 @@ export default {
     @apply text-black;
   }
   h2 {
-    @apply text-black text-2xl;
+    @apply text-2xl;
   }
   h3 {
     @apply text-black font-black text-xl;

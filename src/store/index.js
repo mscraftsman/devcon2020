@@ -30,7 +30,8 @@ export default new Vuex.Store({
         sessionsReady: false,
         sessionsById: [],
         sponsors: [],
-        stats: []
+        stats: [],
+        credits:[]
     },
 
     getters: {
