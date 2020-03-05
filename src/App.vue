@@ -19,6 +19,7 @@ export default {
     const sponsors = await this.$store.dispatch("FETCH_SPONSORS");
     const speakers = await this.$store.dispatch("FETCH_SPEAKERS");
     const sessions = await this.$store.dispatch("FETCH_SESSIONS");
+    const credits = await this.$store.dispatch("FETCH_CREDITS");
 
     // console.table(removeVueSparkles(stats));
     // console.table(removeVueSparkles(sponsors));
