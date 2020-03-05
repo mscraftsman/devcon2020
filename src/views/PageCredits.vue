@@ -1,13 +1,7 @@
 <template>
   <div>
-    <div class="page-credits generic-page">
-      <h1>Core Team</h1>
-      <!--      <img src="/images/carricatures/organizers.jpg" alt="" />-->
-      <!--      <div class="nametag">-->
-      <!--        Jochen & Mary Jane-->
-      <!--      </div>-->
-      <!--      <h2>Graphic Designers</h2>-->
-
+    <div class="page-credits generic-page ">
+      <h2 class="group-title">Core Team</h2>
       <article class="comic">
         <div class="panel">
           <p class="text top-left">Organizers...</p>
@@ -16,28 +10,25 @@
         </div>
         <div class="panel"></div>
         <div class="panel">
+          <img src="/images/carricatures/joki-emmy-ish.jpg" alt="" />
+        </div>
+        <div class="panel"></div>
+        <div class="panel"></div>
+        <div class="panel">
           <img src="/images/carricatures/cedric.jpg" alt="" />
-          <!--          <p class="text top-left">Try resizing...</p>-->
-          <!--          <p class="text bottom-right">...it's responsive</p>-->
-        </div>
-        <div class="panel"></div>
-        <div class="panel"></div>
-        <div class="panel">
-          <!--          <img src="/images/carricatures/vidush.jpg" alt="" />-->
         </div>
         <div class="panel">
-          <p class="text top-left">Organizers...</p>
+          <p class="text top-left">La faya...!</p>
           <p class="text bottom-right">...Mary, Sun, & Shelly</p>
           <img src="/images/carricatures/mary-sun-shelly.jpg" alt="" />
           <p class="speech">A speech bubble</p>
-          <img src="/images/carricatures/neil-marine-vanessa.jpg" alt="" />
         </div>
         <div class="panel">
           <img src="/images/carricatures/pritvi.jpg" alt="" />
           <p class="text bottom-right">METEO MAN</p>
         </div>
         <div class="panel">
-          <img src="/images/carricatures/shelly-ish.jpg" alt="" />
+          <img src="/images/carricatures/neil-marine-vanessa.jpg" alt="" />
         </div>
         <div class="panel">
           <img src="/images/carricatures/vidush.jpg" alt="" />
@@ -49,17 +40,20 @@
         </div>
       </article>
 
-      <div class="pb-10">
-        <h1>Contributors</h1>
+      <div class="pt-20 pb-20">
+        <h2 class="group-title pb-5">Contributors</h2>
         <ul>
-          <li>Gael Latouche</li>
-          <li>Aditya Bholae</li>
-          <li>Aditya Bholae</li>
-          <li>Aditya Bholae</li>
-          <li>Aditya Bholae</li>
-          <li>Aditya Bholae</li>
-          <li>Aditya Bholae</li>
-          <li>Aditya Bhola</li>
+          <li v-for="(value, index) in contributors" :key="index">
+            {{ value.name }} - {{ value.role }}
+          </li>
+        </ul>
+      </div>
+
+      <div class="generic-page pb-20">
+        <h2 class="group-title pb-5">Resources</h2>
+        <ul>
+          <li>Gael Latouche - <a href="#">Link</a></li>
+          <li>Aditya Bholae - <a href="#">Link</a></li>
         </ul>
       </div>
     </div>
@@ -123,19 +117,26 @@ ul {
   overflow: hidden;
   position: relative;
 }
-
 .text {
   background-color: #fff;
   border: solid 2px #000;
   margin: 0;
-  padding: 10px 10px 0px;
+  /*padding: 10px 10px 0px;*/
 }
 
 .top-left {
-  left: -6px;
+  left: -7px;
   position: absolute;
-  top: -2px;
+  top: -10px;
   transform: skew(-15deg);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 40px;
+  max-width: 90%;
+  padding-top: 7px;
+  padding-right: 10px;
+  padding-left: 15px;
 }
 
 .bottom-right {
@@ -143,6 +144,10 @@ ul {
   position: absolute;
   right: -6px;
   transform: skew(-15deg);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .speech {
@@ -182,31 +187,10 @@ ul {
   width: 0;
 }
 
-.panel:nth-child(1) {
+.panel:nth-child(odd) {
   flex-basis: 400px;
 }
-.panel:nth-child(2) {
-  flex-basis: 200px;
-}
-.panel:nth-child(3) {
-  flex-basis: 200px;
-}
-.panel:nth-child(4) {
-  flex-basis: 200px;
-}
-.panel:nth-child(5) {
-  flex-basis: 200px;
-}
-.panel:nth-child(6) {
-  flex-basis: 200px;
-}
-.panel:nth-child(7) {
-  flex-basis: 400px;
-}
-.panel:nth-child(8) {
-  flex-basis: 200px;
-}
-.panel:nth-child(9) {
+.panel:nth-child(even) {
   flex-basis: 200px;
 }
 
@@ -232,6 +216,40 @@ ul {
 <script>
 export default {
   name: "pagecredits",
+  data() {
+    return {
+      contributors: [
+        {
+          name: "Aditya Bhola",
+          role: "Role"
+        },
+        {
+          name: "Aditya Bhola",
+          role: "Role"
+        },
+        {
+          name: "Aditya Bhola",
+          role: "Role"
+        },
+        {
+          name: "Aditya Bhola",
+          role: "Role"
+        },
+        {
+          name: "Aditya Bhola",
+          role: "Role"
+        },
+        {
+          name: "Aditya Bhola",
+          role: "Role"
+        },
+        {
+          name: "Aditya Bhola",
+          role: "Role"
+        }
+      ]
+    };
+  },
   components: {}
 };
 </script>

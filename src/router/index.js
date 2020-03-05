@@ -5,6 +5,7 @@ import PageHome from '../views/PageHome.vue';
 import PageCoc from '../views/PageCoc.vue';
 import PageCredits from '../views/PageCredits.vue';
 import PageExtras from '../views/PageExtras.vue';
+import PageCommunities from '../views/PageCommunities.vue';
 import PagePastEvents from '../views/PagePastEvents.vue';
 import PagePress from '../views/PagePress.vue';
 import PageSessions from '../views/PageSessions.vue';
@@ -45,6 +46,14 @@ const routes = [
         component: PageExtras,
         meta: {
             title: 'Extras'
+        }
+    },
+    {
+        path: '/communities',
+        name: 'PageCommunities',
+        component: PageCommunities,
+        meta: {
+            title: 'Communities'
         }
     },
     {

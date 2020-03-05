@@ -19,6 +19,8 @@
           v-for="speaker in speakers"
           :key="speaker.id"
           :to="{ name: 'speaker', params: { id: speaker.id } }"
+          :alt="speaker.fullName"
+          :title="speaker.fullName + ', ' + speaker.tagLine"
         >
           <p class="text top-left">{{ speaker.tagLine }}</p>
           <!--          <p class="text bottom-left">{{ speaker.sessions.length }}</p>-->
@@ -101,6 +103,7 @@ export default {
   overflow: hidden;
   position: relative;
   flex-basis: 200px;
+  max-width: 300px;
 }
 
 .text {
@@ -121,6 +124,14 @@ export default {
   height: 40px;
   max-width: 90%;
   padding-right: 10px;
+  transition: all 0.4s ease-out;
+
+  &:hover {
+    height: auto;
+    white-space: normal;
+    transform: skew(0deg);
+    transition: all 0.1s ease-in;
+  }
 }
 
 .bottom-right {

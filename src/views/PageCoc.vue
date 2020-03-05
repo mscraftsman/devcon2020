@@ -1,24 +1,26 @@
 <template>
   <div>
-    <div class="page-coc generic-page generic-page-container">
+    <div class="page-coc generic-page generic-page-container text-flow">
       <!--          <div class="tagline">Conference Code of Conduct</div>-->
       <!-- <h1>Code of Conduct</h1> -->
-      <p class="mt-3">
+      <p>
         All attendees, speakers, sponsors and volunteers at our conference are
         required to agree with the following code of conduct. Organisers will
         enforce this code throughout the event. We expect cooperation from all
         participants to help ensure a safe environment for everybody.
       </p>
 
-      <p class="mt-3">Be excellent to each other.</p>
-      <img src="https://www.mscc.mu/content/images/2018/12/be-excellent-to-each-other.jpg"
-           alt="" />
+      <p>Be excellent to each other.</p>
+      <img
+        src="https://www.mscc.mu/content/images/2018/12/be-excellent-to-each-other.jpg"
+        alt=""
+      />
 
-      <p class="mt-3">You have our contact details in the emails we&#39;ve sent.</p>
+      <p>You have our contact details in the emails we&#39;ve sent.</p>
 
-      <h2 class="mt-10">The Quick Version</h2>
+      <h2>The Quick Version</h2>
 
-      <p class="mt-3">
+      <p>
         Our conference is dedicated to providing a harassment-free conference
         experience for everyone, regardless of gender, gender identity and
         expression, age, sexual orientation, disability, physical appearance,
@@ -31,9 +33,9 @@
         organisers.
       </p>
 
-      <h2 class="mt-10">The Less Quick Version</h2>
+      <h2>The Less Quick Version</h2>
 
-      <p class="mt-3">
+      <p>
         Harassment includes offensive verbal comments related to gender, gender
         identity and expression, age, sexual orientation, disability, physical
         appearance, body size, race, ethnicity, religion, technology choices,
@@ -43,12 +45,12 @@
         sexual attention.
       </p>
 
-      <p class="mt-3">
+      <p>
         Participants asked to stop any harassing behavior are expected to comply
         immediately.
       </p>
 
-      <p class="mt-3">
+      <p>
         Sponsors are also subject to the anti-harassment policy. In particular,
         sponsors should not use sexualized images, activities, or other
         material. Booth staff (including volunteers) should not use sexualized
@@ -56,27 +58,27 @@
         environment.
       </p>
 
-      <p class="mt-3">
+      <p>
         If a participant engages in harassing behavior, the conference
         organisers may take any action they deem appropriate, including warning
         the offender or expulsion from the conference with no refund.
       </p>
 
-      <p class="mt-3">
+      <p>
         If you are being harassed, notice that someone else is being harassed,
         or have any other concerns, please contact a member of conference staff
         immediately. Conference staff can be identified as they'll be wearing
         branded t-shirts.
       </p>
 
-      <p class="mt-3">
+      <p>
         Conference staff will be happy to help participants contact hotel/venue
         security or local law enforcement, provide escorts, or otherwise assist
         those experiencing harassment to feel safe for the duration of the
         conference. We value your attendance.
       </p>
 
-      <p class="mt-3">
+      <p>
         We expect participants to follow these rules at conference and workshop
         venues and conference-related social events.
       </p>
@@ -90,7 +92,9 @@
                 http://2012.jsconf.us/#/about
               </a>
               &amp;
-              <a href="http://geekfeminism.wikia.com/wiki/Conference_anti-harassment/Policy">
+              <a
+                href="http://geekfeminism.wikia.com/wiki/Conference_anti-harassment/Policy"
+              >
                 The Ada Initiative
               </a>
               <br />
@@ -102,8 +106,10 @@
               <br />
 
               This work is licensed under a
-              <a rel="license"
-                 href="http://creativecommons.org/licenses/by/3.0/deed.en_US">
+              <a
+                rel="license"
+                href="http://creativecommons.org/licenses/by/3.0/deed.en_US"
+              >
                 Creative Commons Attribution 3.0 Unported License
               </a>
             </em>
