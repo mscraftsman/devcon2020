@@ -18,7 +18,7 @@
           <img src="/images/carricatures/cedric.jpg" alt="" />
         </div>
         <div class="panel">
-          <p class="text top-left">Organizers...</p>
+          <p class="text top-left">La faya...!</p>
           <p class="text bottom-right">...Mary, Sun, & Shelly</p>
           <img src="/images/carricatures/mary-sun-shelly.jpg" alt="" />
           <p class="speech">A speech bubble</p>
@@ -121,7 +121,7 @@ ul {
   background-color: #fff;
   border: solid 2px #000;
   margin: 0;
-  padding: 10px 10px 0px;
+  /*padding: 10px 10px 0px;*/
 }
 
 .top-left {
@@ -134,7 +134,9 @@ ul {
   text-overflow: ellipsis;
   height: 40px;
   max-width: 90%;
+  padding-top: 7px;
   padding-right: 10px;
+  padding-left: 15px;
 }
 
 .bottom-right {
@@ -143,6 +145,9 @@ ul {
   right: -6px;
   transform: skew(-15deg);
   padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .speech {
