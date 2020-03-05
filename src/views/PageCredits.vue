@@ -42,11 +42,22 @@
 
       <div class="pt-20 pb-20">
         <h2 class="group-title pb-5">Contributors</h2>
-        <ul>
-          <li v-for="(value, index) in contributors" :key="index">
-            {{ value.name }} - {{ value.role }}
-          </li>
-        </ul>
+        <div
+          v-for="(value, index) in getCredits"
+          :key="index"
+          class="py-5"
+          v-if="getCredits"
+        >
+          <div class="uppercase" v-if="value && value.group">
+            {{ value.group }}
+          </div>
+          <div class="text-2xl" v-if="value && value.name">
+            {{ value.name }}
+          </div>
+        </div>
+        <div v-else>
+          loading credits...
+        </div>
       </div>
 
       <div class="generic-page pb-20">
@@ -214,6 +225,7 @@ ul {
 </style>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
   name: "pagecredits",
   data() {
@@ -250,6 +262,9 @@ export default {
       ]
     };
   },
-  components: {}
+  components: {},
+  computed: {
+    ...mapGetters(["getCredits"])
+  }
 };
 </script>
