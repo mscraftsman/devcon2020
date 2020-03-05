@@ -18,6 +18,7 @@
       <ul class="flex mr-3 font-bold">
         <li>
           <router-link :to="{ name: 'pagehome' }">Home</router-link>
+          <router-link :to="{ name: 'pagevenue' }">About</router-link>
           <router-link :to="{ name: 'PageSessions' }">Sessions</router-link>
           <router-link :to="{ name: 'PageSpeakers' }">Speakers</router-link>
         </li>

@@ -10,6 +10,8 @@ import PageSessions from "../views/PageSessions.vue";
 import PageSessionSingle from "../views/PageSessionSingle.vue";
 import PageSpeakers from "../views/PageSpeakers.vue";
 import PageSpeakerSingle from "../views/PageSpeakerSingle.vue";
+import PageVenue from "../views/PageVenue.vue";
+
 
 Vue.use(VueRouter);
 
@@ -20,6 +22,15 @@ const routes = [
     component: PageHome,
     meta: {
       layout: "home"
+    }
+  },
+  {
+    path: "/venue",
+    name: "pagevenue",
+    component: PageVenue,
+    meta: {
+      layout: "full",
+      title: "Venue"
     }
   },
   {
