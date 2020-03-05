@@ -11,6 +11,8 @@ import PageSessions from '../views/PageSessions.vue';
 import PageSessionSingle from '../views/PageSessionSingle.vue';
 import PageSpeakers from '../views/PageSpeakers.vue';
 import PageVenue from "../views/PageVenue.vue";
+import PageSpeakerSingle from "../views/PageSpeakerSingle.vue";
+import PageCovid from "../views/PageCovid.vue";
 
 Vue.use(VueRouter);
 
@@ -30,6 +32,15 @@ const routes = [
         meta: {
             layout: "full",
             title: "Venue"
+        }
+    },
+    ,
+    {
+        path: "/covid",
+        name: "pagecovid",
+        component: PageCovid,
+        meta: {
+            title: "Covid"
         }
     },
     {
