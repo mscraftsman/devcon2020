@@ -1,13 +1,18 @@
 <template functional>
-  <a class="atomic-logo"
-     target="_blank"
-     :href="props.sponsor.url"
-     :title="props.sponsor.partner + props.sponsor.slogan">
+  <a
+    class="atomic-logo"
+    target="_blank"
+    :href="props.sponsor.url"
+    :title="props.sponsor.partner + props.sponsor.slogan"
+  >
     <div class="logo">
-      <img class="logo-col temp-bg"
-           :src="$options.methods.imageResolve(props.sponsor.image)"
-           :title="props.sponsor.partner + props.sponsor.slogan"
-           :alt="props.sponsor.partner" />
+      <img
+        class="logo-col temp-bg p-4 m-4"
+        :src="$options.methods.imageResolve(props.sponsor.image)"
+        :title="props.sponsor.partner + props.sponsor.slogan"
+        :data-name="$options.methods.getImageName(props.sponsor.image)"
+        :alt="props.sponsor.partner"
+      />
     </div>
   </a>
 </template>
@@ -52,6 +57,12 @@ export default {
       const name = containsExtension ? filename : `${filename}.png`;
 
       return `/images/sponsors/${name}`;
+    },
+
+    getImageName(filename) {
+      const [words, _] = filename.split(".");
+      const noDashes = words.split("-").join("");
+      return noDashes;
     }
   }
 };
@@ -59,22 +70,13 @@ export default {
 
 <style lang="scss" scoped>
 .atomic-logo {
-  width: 20%;
-
-  &:last-child {
-    .logo {
-      margin-right: 0;
-    }
-  }
-
   .logo {
-    margin-right: 20px;
-
     img {
       display: block;
-      // max-width: 250px;
-      width: 100%;
-      height: auto;
+      // max-height: 10rem;
+      // max-width: 20rem;
+
+      // height: auto;
       // filter: grayscale(100%);
       // opacity: 0.6;
       transition: all 0.3s ease-in-out;
@@ -92,16 +94,15 @@ export default {
       }
     }
   }
-}
 
-@media (max-width: 768px) {
-  .atomic-logo {
-    width: 33.3%;
+  img {
+    // width: 20rem;
   }
-}
-@media (max-width: 480px) {
-  .atomic-logo {
-    width: 50%;
+
+  @media screen and (min-width: 768px) {
+    img {
+      // width: 20rem;
+    }
   }
 }
 </style>

@@ -1,46 +1,29 @@
 <template>
-  <div class="page-extras">
-    <!-- <h1 class="page-title">Extra Activities</h1> -->
-
-    <extra-community></extra-community>
-    <extra-gdg></extra-gdg>
-    <extra-lugm></extra-lugm>
-    <extra-maker></extra-maker>
-    <extra-pymug></extra-pymug>
+  <div class="page-extras generic-page">
+    <extra-caricatures></extra-caricatures>
+    <!--    <extra-childcare></extra-childcare>-->
+    <!--    <extra-cosplay></extra-cosplay>-->
   </div>
 </template>
 
 <script>
-import extraGdg from "@/components/extras/extra-gdg.vue";
-import extraLugm from "@/components/extras/extra-lugm.vue";
-import extraMaker from "@/components/extras/extra-maker.vue";
-import extraPymug from "@/components/extras/extra-pymug.vue";
-import extraCommunity from "@/components/extras/extra-community.vue";
+import extraCosplay from "../components/extras/extra-cosplay.vue";
+import extraChildcare from "../components/extras/extra-childcare.vue";
+import extraCaricatures from "../components/extras/extra-caricatures.vue";
 
 export default {
   layout: "contained",
   name: "pageextras",
   components: {
-    extraGdg,
-    extraLugm,
-    extraMaker,
-    extraPymug,
-    extraCommunity
+    extraCosplay,
+    extraChildcare,
+    extraCaricatures
   }
 };
 </script>
 
-
-<style lang="scss" scoped>
-small {
-  @apply text-2xl;
-}
-</style>
-
-<style scoped>
-a img {
-  width: 50px;
-  height: 50px;
-  display: inline-block;
+<style>
+.page-extras > div {
+  padding-bottom: 2rem;
 }
 </style>

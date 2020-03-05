@@ -42,4 +42,54 @@ export default {
   border: 0;
   margin: 0;
 }
+
+/* Generic Page Style */
+
+.generic-page-container {
+  max-width: 740px;
+  margin: 0 auto 50px;
+  padding: 0 20px;
+}
+
+.tagline {
+  @apply uppercase font-bold;
+}
+
+.generic-page {
+  h1 {
+    @apply text-black;
+  }
+  h2 {
+    @apply text-black text-2xl;
+  }
+  h3 {
+    @apply text-black font-black text-xl;
+  }
+  p {
+    @apply text-lg text-black;
+  }
+  a {
+    @apply text-blue-500;
+
+    &:hover {
+      @apply text-blue-400 underline;
+    }
+  }
+  small {
+    @apply text-black text-sm;
+  }
+
+  li {
+    list-style: circle inside;
+    padding-bottom: 0.6em;
+  }
+}
+
+.text-flow {
+  --flow: 1rem;
+}
+
+.text-flow > * + * {
+  padding-bottom: var(--flow);
+}
 </style>

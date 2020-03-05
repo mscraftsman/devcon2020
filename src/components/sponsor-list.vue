@@ -1,12 +1,12 @@
 <template>
   <div class="sponsor-level-wrapper"
        :class="tierClass">
-    <div class="title__section text-3xl mb-12 mt-16">
+    <div class="title__section text-3xl mb-0 mt-16">
       <!-- <div class="poof">
         <img src="/images/home-sponsors/poof.svg"
              alt />
       </div> -->
-      <h4 :class="['tier-title', sanitizeClass(tier)]">{{ tier }}</h4>
+      <h4 :class="['tier-title', sanitizeClass(tier)]">{{ tier | stone }}</h4>
     </div>
 
     <section class="sponsors-wrapper"
@@ -102,6 +102,14 @@ export default {
   // *styling to be defined
 }
 
+.diamond .sponsors-wrapper {
+  zoom: 1.2;
+}
+
+.titanium .sponsors-wrapper {
+  zoom: 1.3;
+}
+
 .title__section {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -112,7 +120,7 @@ export default {
   justify-content: center;
 
   .tier-title {
-    --base-color: #777;
+    --base-color: #333;
     --side-element-proximity: 2.9rem;
     --side-element-width: 20vw;
     --side-element-height: 0.25rem;
@@ -133,6 +141,8 @@ export default {
     font-weight: 100;
     text-align: center;
     letter-spacing: 1.5px;
+
+    color: var(--base-color);
 
     // --diamond: #bf8bbc;
     // --titanium: #4daee2;
@@ -218,7 +228,7 @@ export default {
 .sponsors-wrapper {
   display: flex;
   flex-wrap: wrap;
-  padding: 10px 0 30px;
+  padding: 0px;
   justify-content: center;
   align-items: center;
 }
@@ -226,13 +236,24 @@ export default {
 @media (max-width: 768px) {
   .title__section {
     .tier-title {
-      font-size: 35px;
+      --side-element-width: 1vw;
+
+      font-size: 22px;
     }
+    
     .poof {
       img {
         margin-left: 70px;
       }
     }
+  }
+
+  .diamond .sponsors-wrapper {
+    zoom: 1.1;
+  }
+
+  .titanium .sponsors-wrapper {
+    zoom: 1;
   }
 }
 </style>
