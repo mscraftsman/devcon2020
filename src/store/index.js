@@ -13,11 +13,13 @@ export const SET_SESSIONS_READY = 'SET_SESSIONS_READY';
 export const SET_SESSIONS_BY_ID = 'SET_SESSIONS_BY_ID';
 export const SET_SPONSORS = 'SET_SPONSORS';
 export const SET_STATS = 'SET_STATS';
+export const SET_CREDITS = 'SET_CREDITS';
 
 export const FETCH_SPEAKERS = 'FETCH_SPEAKERS';
 export const FETCH_SESSIONS = 'FETCH_SESSIONS';
 export const FETCH_SPONSORS = 'FETCH_SPONSORS';
 export const FETCH_STATS = 'FETCH_STATS';
+export const FETCH_CREDITS = 'FETCH_CREDITS';
 
 export default new Vuex.Store({
     state: {
@@ -72,6 +74,10 @@ export default new Vuex.Store({
 
         getStats(state) {
             return state.stats;
+        },
+
+        getCredits(state) {
+            return state.credits;
         }
     },
 
@@ -102,6 +108,10 @@ export default new Vuex.Store({
 
         [SET_STATS](state, stats) {
             state.stats = stats;
+        },
+
+        [SET_CREDITS](state, credits) {
+            state.credits = credits;
         },
 
         [SET_SPONSORS](state, sponsors) {
@@ -216,6 +226,25 @@ export default new Vuex.Store({
             const stats = extractData(entry);
             commit(SET_STATS, stats);
             return stats;
+        },
+
+        async [FETCH_CREDITS]({ commit }) {
+            const URL = require('@/constants/urls.json')['credits'];
+
+            let entry;
+            try {
+                const { feed } = await fetchJson(URL);
+                entry = feed.entry;
+            } catch (error) {
+                throw new Error(
+                    'Error should be caught by Vue global error handler.' +
+                        error
+                );
+            }
+
+            const credits = extractData(entry);
+            commit(SET_CREDITS, credits);
+            return credits;
         }
     }
 });
