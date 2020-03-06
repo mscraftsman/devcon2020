@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-
 import PageHome from '../views/PageHome.vue';
 import PageCoc from '../views/PageCoc.vue';
 import PageCredits from '../views/PageCredits.vue';
@@ -12,6 +11,8 @@ import PageSessions from '../views/PageSessions.vue';
 import PageSessionSingle from '../views/PageSessionSingle.vue';
 import PageSpeakers from '../views/PageSpeakers.vue';
 import PageSpeakerSingle from '../views/PageSpeakerSingle.vue';
+import PageVenue from '../views/PageVenue.vue';
+
 
 Vue.use(VueRouter);
 
@@ -30,6 +31,14 @@ const routes = [
         component: PageCoc,
         meta: {
             title: 'Code Of Conduct'
+        }
+    },
+    {
+        path: "/venue",
+        name: "PageVenue",
+        component: PageVenue,
+        meta: {
+            title: "Venue"
         }
     },
     {
