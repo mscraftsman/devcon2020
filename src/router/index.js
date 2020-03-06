@@ -35,7 +35,7 @@ const routes = [
     },
     {
         path: "/venue",
-        name: "pagevenue",
+        name: "PageVenue",
         component: PageVenue,
         meta: {
             title: "Venue"

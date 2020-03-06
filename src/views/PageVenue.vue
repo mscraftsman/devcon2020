@@ -8,7 +8,7 @@
 import venue from "@/components/venue.vue";
 
 export default {
-  name: "pagevenue",
+  name: "PageVenue",
   components: {
     venue
   }
