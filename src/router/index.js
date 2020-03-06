@@ -10,9 +10,9 @@ import PagePress from '../views/PagePress.vue';
 import PageSessions from '../views/PageSessions.vue';
 import PageSessionSingle from '../views/PageSessionSingle.vue';
 import PageSpeakers from '../views/PageSpeakers.vue';
-import PageVenue from "../views/PageVenue.vue";
-import PageSpeakerSingle from "../views/PageSpeakerSingle.vue";
-import PageCovid from "../views/PageCovid.vue";
+import PageSpeakerSingle from '../views/PageSpeakerSingle.vue';
+import PageVenue from '../views/PageVenue.vue';
+
 
 Vue.use(VueRouter);
 
@@ -26,29 +26,19 @@ const routes = [
         }
     },
     {
-        path: "/venue",
-        name: "pagevenue",
-        component: PageVenue,
-        meta: {
-            layout: "full",
-            title: "Venue"
-        }
-    },
-    ,
-    {
-        path: "/covid",
-        name: "pagecovid",
-        component: PageCovid,
-        meta: {
-            title: "Covid"
-        }
-    },
-    {
         path: '/code-of-conduct',
         name: 'PageCoc',
         component: PageCoc,
         meta: {
             title: 'Code Of Conduct'
+        }
+    },
+    {
+        path: "/venue",
+        name: "pagevenue",
+        component: PageVenue,
+        meta: {
+            title: "Venue"
         }
     },
     {

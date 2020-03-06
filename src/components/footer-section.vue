@@ -81,6 +81,9 @@
             <router-link :to="{ name: 'PageCoc' }">Code of Conduct</router-link>
           </li>
           <li>
+            <router-link :to="{ name: 'pagevenue' }">Venue</router-link>
+          </li>
+          <li>
             <router-link :to="{ name: 'PageExtras' }">Extras</router-link>
           </li>
 
@@ -202,6 +205,11 @@
             <li>
               <router-link :to="{ name: 'PageCoc' }"
                 >Code of Conduct</router-link
+              >
+            </li>
+              <li>
+              <router-link :to="{ name: 'pagevenue' }"
+                >Venue</router-link
               >
             </li>
             <li>
