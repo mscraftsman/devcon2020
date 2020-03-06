@@ -14,11 +14,26 @@ export default {
 
   // ! For Dev purpose only.
   // ! REMOVE before merge.
-  async mounted() {
-    const stats = await this.$store.dispatch("FETCH_STATS");
-    const sponsors = await this.$store.dispatch("FETCH_SPONSORS");
-    const speakers = await this.$store.dispatch("FETCH_SPEAKERS");
-    const sessions = await this.$store.dispatch("FETCH_SESSIONS");
+  async created() {
+    const stats = this.$store.dispatch("FETCH_STATS");
+    const sponsors = this.$store.dispatch("FETCH_SPONSORS");
+    const speakers = this.$store.dispatch("FETCH_SPEAKERS");
+    const sessions = this.$store.dispatch("FETCH_SESSIONS");
+    const credits = this.$store.dispatch("FETCH_CREDITS");
+
+    const promises = [stats, sponsors, speakers, sessions, credits];
+
+    if (!Promise.allSettled) {
+      try {
+        await Promise.all(promises);
+      } catch (error) {
+        // * Something did not load. Let's try again.
+        await Promise.all(promises);
+      }
+      return;
+    }
+
+    await Promise.allSettled(promises);
 
     // console.table(removeVueSparkles(stats));
     // console.table(removeVueSparkles(sponsors));
@@ -60,7 +75,7 @@ export default {
     @apply text-black;
   }
   h2 {
-    @apply text-black text-2xl;
+    @apply text-2xl;
   }
   h3 {
     @apply text-black font-black text-xl;
