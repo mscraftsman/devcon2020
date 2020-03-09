@@ -38,7 +38,8 @@ const routes = [
         name: "PageVenue",
         component: PageVenue,
         meta: {
-            title: "Venue"
+            title: "Venue",
+            layout: 'full'
         }
     },
     {
