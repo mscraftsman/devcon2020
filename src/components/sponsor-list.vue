@@ -144,46 +144,46 @@ export default {
 
     color: var(--base-color);
 
-    // --diamond: #bf8bbc;
-    // --titanium: #4daee2;
-    // --platinium: #c74b47;
-    // --gold: #e88430;
-    // --silver: #4bb484;
-    // --bronze: #f6c376;
-    // --mediapartner: #cccccc;
-    // --happyhourpartner: #cccccc;
-    // --speaker: #cccccc;
-    // --daycare: #cccccc;
+    --diamond: #bf8bbc;
+    --titanium: #4daee2;
+    --platinium: #c74b47;
+    --gold: #e88430;
+    --silver: #4bb484;
+    --bronze: #f6c376;
+    --mediapartner: #cccccc;
+    --happyhourpartner: #cccccc;
+    --speaker: #cccccc;
+    --daycare: #cccccc;
 
     // font-weight: normal;
     // font-size: 55px;
     // line-height: 48px;
     // text-shadow: 0px 4px 0px #000000;
 
-    // &.diamond {
-    //   color: var(--diamond, var(--base-color));
-    // }
-    // &.titanium {
-    //   color: var(--titanium, var(--base-color));
-    // }
-    // &.platinium {
-    //   color: var(--platinium, var(--base-color));
-    // }
-    // &.gold {
-    //   color: var(--gold, var(--base-color));
-    // }
-    // &.silver {
-    //   color: var(--silver, var(--base-color));
-    // }
-    // &.bronze {
-    //   color: var(--bronze, var(--base-color));
-    // }
-    // &.mediapartner,
-    // &.happyhourpartner,
-    // &.speaker,
-    // &.daycare {
-    //   color: #333;
-    // }
+    &.diamond {
+      color: var(--diamond, var(--base-color));
+    }
+    &.titanium {
+      color: var(--titanium, var(--base-color));
+    }
+    &.platinium {
+      color: var(--platinium, var(--base-color));
+    }
+    &.gold {
+      color: var(--gold, var(--base-color));
+    }
+    &.silver {
+      color: var(--silver, var(--base-color));
+    }
+    &.bronze {
+      color: var(--bronze, var(--base-color));
+    }
+    &.mediapartner,
+    &.happyhourpartner,
+    &.speaker,
+    &.daycare {
+      color: #333;
+    }
   }
 
   .tier-title::before,
@@ -240,7 +240,7 @@ export default {
 
       font-size: 22px;
     }
-    
+
     .poof {
       img {
         margin-left: 70px;
