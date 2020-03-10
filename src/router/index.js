@@ -12,6 +12,7 @@ import PageSessionSingle from '../views/PageSessionSingle.vue';
 import PageSpeakers from '../views/PageSpeakers.vue';
 import PageSpeakerSingle from '../views/PageSpeakerSingle.vue';
 import PageVenue from '../views/PageVenue.vue';
+import PageHealth from '../views/PageHealth.vue';
 
 
 Vue.use(VueRouter);
@@ -42,12 +43,20 @@ const routes = [
         }
     },
     {
+        path: "/health",
+        name: "PageHealth",
+        component: PageHealth,
+        meta: {
+            title: "Health and Hygiene"
+        }
+    },
+    {
         path: '/credits',
         name: 'PageCredits',
         component: PageCredits,
         meta: {
             title: 'Credits',
-            layout:'full'
+            layout: 'full'
         }
     },
     {
