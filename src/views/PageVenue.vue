@@ -28,27 +28,25 @@ export default {
     max-height: 500px;
     position: absolute;
     left: 50%;
-    margin-left: -150px;
-    margin-top: 50px;
+    margin-left: -110px;
+    top: 465px;
+    transition: all 0.2s ease;
+    visibility: visible;
+    opacity: 1;
 }
 
 .map {
     position:relative;
-    border-radius:50%;
-    width: 280px;
-    height: 280px;
-    top: 62px;
-    left: 50%;
-    margin-left: -139px;
-    }
+    width: 100%;
+    height: 800px;
+    top: 20px;
+   }
 
-.mapIcon {
-  width: 40px;
-  height: 40px;
-  margin-top: 30px;
-  margin-right: 160px;
-  right: 50%;
-  position: absolute;
+@media (max-width:768px){
+    .loupe {
+        opacity: 0;
+        visibility: hidden;
+    }
 }
 
 </style>
