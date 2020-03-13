@@ -30,6 +30,9 @@ export default {
     left: 50%;
     margin-left: -110px;
     top: 465px;
+    transition: all 0.2s ease;
+    visibility: visible;
+    opacity: 1;
 }
 
 .map {
@@ -39,13 +42,11 @@ export default {
     top: 20px;
    }
 
-.mapIcon {
-  width: 40px;
-  height: 40px;
-  margin-top: 30px;
-  margin-right: 160px;
-  right: 50%;
-  position: absolute;
+@media (max-width:768px){
+    .loupe {
+        opacity: 0;
+        visibility: hidden;
+    }
 }
 
 </style>

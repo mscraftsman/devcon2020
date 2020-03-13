@@ -48,7 +48,7 @@ const routes = [
         component: PageCredits,
         meta: {
             title: 'Credits',
-            layout:'full'
+            layout: 'full'
         }
     },
     {

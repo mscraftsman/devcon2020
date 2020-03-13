@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<h2 class="section-title">Caudan Arts Centre</h2>
-
+	
 		<iframe
 			class="map"
 			title="Map showing the location of the Caudan Arts Center"
@@ -9,23 +9,23 @@
 			allowfullscreen
 		>
 		</iframe>
-		<img class="loupe" src="/images/magnifier.png" />
 
-		<div
-			class="mx-auto w-1/2 h-screen flex flex-col align-center justify-center text-center"
+		<img class="loupe" src="/images/magnifier.png"/>
+
+		<!--div
+			class="mt-10 flex flex-col align-center justify-center text-center"
 		>
 			<h2 class="section-title">How to get to Caudan Arts Centre</h2>
 
-			<img class="mapIcon" src="/images/map.svg" />
 			<span class="tagline"> Caudan Waterfront, Port Louis 11307 </span>
 		</div>
 
 		<div
-			class="mx-auto w-1/2 h-screen flex flex-col align-center justify-center text-center"
+			class="mt-10 mx-auto flex flex-col align-center justify-center text-center"
 		>
 			<h2 class="section-title">Site Plans</h2>
 			<span class="tagline"> Parking House </span>
 			<span class="tagline"> Indoor Site </span>
-		</div>
+		</div-->
 	</div>
 </template>
