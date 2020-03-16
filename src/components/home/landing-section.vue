@@ -5,20 +5,20 @@
         class="meta-title flex flex-col items-center justify-between font-bold uppercase"
       >
         <div class="meta-title__location">Caudan Arts Centre</div>
-        <div class="meta-title__period font-black">2 - 4 April 2020</div>
+        <div class="meta-title__period font-black text-red-500">POSTPONED</div>
       </div>
       <h1 class="title font-hulksmash font-hairline leading-none">
         Developers <span class="text-block">Conference 2020</span>
       </h1>
-      <div class="button-wrapper flex justify-around pt-5">
-        <a
-          href="https://www.meetup.com/MauritiusSoftwareCraftsmanshipCommunity/events/268265742/"
-          target="_blank"
-          class="meta-title__sub bg-red-400 hover:bg-red-500 font-black uppercase font-spiderman text-white px-3"
-        >
-          Register now
-        </a>
-      </div>
+      <!--      <div class="button-wrapper flex justify-around pt-5">-->
+      <!--        <a-->
+      <!--          href="https://www.meetup.com/MauritiusSoftwareCraftsmanshipCommunity/events/268265742/"-->
+      <!--          target="_blank"-->
+      <!--          class="meta-title__sub bg-red-400 hover:bg-red-500 font-black uppercase font-spiderman text-white px-3"-->
+      <!--        >-->
+      <!--          Register now-->
+      <!--        </a>-->
+      <!--      </div>-->
     </div>
 
     <div class="building-rotation building-landing">

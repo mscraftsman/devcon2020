@@ -1,9 +1,19 @@
 <template>
   <div class="page-home snap-parent">
-    <landing-section class="snap-child" />
+    <div class="postponed bg-black text-white font-lg py-4">
+      <div class="container flex justify-center font-bold mx-auto">
+        <div>Developers Conference 2020 is being postponed.</div>
+        <a
+          href="https://www.mscc.mu/newsletter-20200316-devcon-postponed/"
+          class="px-4  mx-4 bg-red-400 hover:bg-red-500 text-sm uppercase font-bold"
+          >Read more</a
+        >
+      </div>
+    </div>
+    <landing-section />
     <!-- <WhyAttend class="snap-child" /> -->
-    <FeaturedSpeakers class="snap-child" />
-    <HomeSponsorsSection class="snap-child" />
+    <!--    <FeaturedSpeakers class="snap-child" />-->
+    <HomeSponsorsSection />
   </div>
 </template>
 
