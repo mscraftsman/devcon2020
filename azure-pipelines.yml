@@ -31,7 +31,7 @@ steps:
     sshEndpoint: 'conference_mscc_mu'
     sourceFolder: 'docs'
     contents: '**'
-    targetFolder: '/home/public/sites/mscc/devcon2020/docs'
+    targetFolder: '/home/public/sites/mscc/devcon2021/docs'
     cleanTargetFolder: true
     readyTimeout: '20000'
   displayName: 'Transfer files via SSH'
