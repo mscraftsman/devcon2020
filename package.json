@@ -34,7 +34,7 @@
     "@vue/cli-plugin-babel": "^4.2.2",
     "@vue/cli-plugin-router": "^4.2.2",
     "@vue/cli-plugin-vuex": "^4.2.2",
-    "@vue/cli-service": "^4.2.2",
+    "@vue/cli-service": "^5.0.8",
     "jslint": "^0.12.1",
     "prettier": "^1.19.1",
     "sass": "^1.25.0",
