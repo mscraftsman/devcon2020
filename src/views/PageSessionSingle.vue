@@ -26,7 +26,7 @@
               </div>
             </div>
 
-            <div class="flex justify-center py-2 bg-gray-800 text-white">
+            <div class="flex flex-wrap justify-center py-2 px-2 bg-gray-800 text-white">
               <div class="flex items-center text-lg mr-4" v-if="session.format">
                 <label>
                   <img src="/images/icons/language.svg" alt />
