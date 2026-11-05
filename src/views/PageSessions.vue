@@ -310,17 +310,25 @@ export default {
 
   .date-track {
     grid-area: date;
-    background: rgb(0, 0, 0);
-    color: white;
+    background: white;
+    color: black;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
 
     .day-item {
       @apply text-2xl flex-1 text-center;
       flex: 1 1 0%;
       width: 33.333333%;
       cursor: pointer;
+      border-right: 1px solid black;
+
+      &:last-child {
+        border-right: none;
+      }
 
       &.active {
         background: red;
+        color: white;
         /*background: theme(colors.blue.500);*/
       }
     }
@@ -332,8 +340,9 @@ export default {
 
   .room-track {
     grid-area: room;
-    background: rgb(43, 43, 43);
-    color: white;
+    background: white;
+    color: black;
+    border-bottom: 2px solid black;
     @media screen and (max-width: 1024px) {
       display: flex;
       justify-content: space-around;
@@ -368,8 +377,10 @@ export default {
 
 .time-item {
   position: relative;
-  background: rgb(43, 43, 43);
-  color: white;
+  background: white;
+  color: black;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
   font-weight: bold;
   align-items: start;
   justify-content: center;
@@ -385,6 +396,12 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-weight: bold;
+  border-right: 1px solid black;
+
+  &:last-child {
+    border-right: none;
+  }
 
   /*scroll-snap-align: start;*/
   text-align: center;
