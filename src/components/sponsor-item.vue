@@ -83,6 +83,8 @@ export default {
       font-size: 1.5rem;
       font-weight: 700;
       text-align: center;
+      max-width: 100%;
+      box-sizing: border-box;
     }
   }
 

@@ -110,6 +110,7 @@ export default {
 
   @media screen and (max-width: 767px) {
     background: none;
+    overflow-x: hidden;
   }
 
   @media screen and (min-width: 769px) {
@@ -142,7 +143,7 @@ export default {
   }
 
   @media screen and (max-width: 1024px) {
-    --size: 300px;
+    --size: 380px;
     --side-padding: 1%;
 
     --power-y: 5%;
@@ -154,7 +155,7 @@ export default {
   }
 
   @media screen and (min-width: 1025px) {
-    --size: 350px;
+    --size: 450px;
     --side-padding: 3%;
 
     --power-y: 3%;
@@ -166,7 +167,7 @@ export default {
   }
 
   @media screen and (min-width: 1400px) {
-    --size: 500px;
+    --size: 600px;
     --side-padding: 3%;
 
     --power-y: 3%;
