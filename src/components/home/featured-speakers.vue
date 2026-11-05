@@ -4,13 +4,14 @@
       class="container mx-auto min-h-screen flex flex-col align-center justify-center text-center"
     >
       <div class>
-        <h2 class="section-title">Featured Speakers</h2>
-        <div class="featured-speakers-container  w-1/2">
+        <h2 class="section-title mb-8 pt-6">Featured Speakers</h2>
+        <div class="featured-speakers-container w-full md:w-1/2 md:ml-auto px-4 md:px-0">
           <div
             class="bg-black border-4 border-black m-1"
             v-for="speaker in getFeaturedSpeakers.slice(0, 4)"
+            :key="speaker.id"
           >
-            <SpeakerBox :key="speaker.id" :speaker="speaker" />
+            <SpeakerBox :speaker="speaker" />
           </div>
         </div>
       </div>
@@ -41,8 +42,12 @@ export default {
 
 .featured-speakers-section {
   background: url("/images/heroes/heroface.svg");
-  background-position: right bottom;
+  background-position: left bottom;
   // background-size: 100% auto;
   background-repeat: no-repeat;
+
+  @media screen and (max-width: 768px) {
+    background: none;
+  }
 }
 </style>
