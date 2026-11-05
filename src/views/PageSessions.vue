@@ -315,6 +315,8 @@ export default {
 
     .day-item {
       @apply text-2xl flex-1 text-center;
+      flex: 1 1 0%;
+      width: 33.333333%;
       cursor: pointer;
 
       &.active {
@@ -353,7 +355,8 @@ export default {
   display: flex;
 
   & > div {
-    flex: 1;
+    flex: 1 1 0%;
+    width: 33.333333%;
   }
   // justify-content: space-between;
 }
