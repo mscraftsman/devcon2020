@@ -113,8 +113,9 @@
       position: absolute;
       top: 100%;
       left: 50%;
-      margin-left: -200px;
-      width: 400px;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 400px;
     }
   }
 

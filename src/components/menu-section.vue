@@ -94,4 +94,16 @@ export default {
     }
   }
 }
+
+.main-menu {
+  ul {
+    li {
+      background: white;
+      padding: 6px 10px;
+      a {
+        padding: 6px 8px;
+      }
+    }
+  }
+}
 </style>

@@ -1,6 +1,6 @@
 <template>
-	<div class="page-single-speaker">
-		<div class="page-content grid grid-cols-3" v-if="speaker">
+	<div class="page-single-speaker px-4 md:px-0 py-6">
+		<div class="page-content grid grid-cols-1 md:grid-cols-3 gap-6" v-if="speaker">
 			<div class="speakers-wrapper" v-if="speakers">
 				<div class="speaker-wrapper">
 					<div class="avatar">
@@ -9,7 +9,7 @@
 				</div>
 			</div>
 
-			<div class="col-span-2">
+			<div class="md:col-span-2">
 				<div class="session-title font-hulksmash text-5xl">{{ speaker.fullName }}</div>
 
 				<div class="descriptions-row text-xs uppercase" v-if="speaker.tagLine">{{ speaker.tagLine }}</div>
