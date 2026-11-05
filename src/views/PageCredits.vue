@@ -68,8 +68,8 @@
       <div class="generic-page py-20">
         <h2 class="group-title pb-5">Resources</h2>
         <ul>
-          <li>Gael Latouche - <a href="#">Link</a></li>
-          <li>Aditya Bholae - <a href="#">Link</a></li>
+          <li>Gael Latouche</li>
+          <li>Aditya Bholae</li>
         </ul>
       </div>
     </div>
