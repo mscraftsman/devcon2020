@@ -107,6 +107,9 @@
             <router-link :to="{ name: 'PageSpeakers' }">Speakers</router-link>
           </li>
           <li>
+            <router-link :to="{ name: 'PageCredits' }">Credits</router-link>
+          </li>
+          <li>
             <a
               target="_blank"
               href="https://github.com/mscraftsman/devcon2020/issues"
@@ -251,6 +254,10 @@
 
             <li>
               <router-link :to="{ name: 'PageSpeakers' }">Speakers</router-link>
+            </li>
+
+            <li>
+              <router-link :to="{ name: 'PageCredits' }">Credits</router-link>
             </li>
 
             <!--          <li>-->
