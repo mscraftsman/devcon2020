@@ -33,7 +33,7 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "^5.0.8",
     "@vue/cli-plugin-router": "^5.0.8",
-    "@vue/cli-plugin-vuex": "^4.2.2",
+    "@vue/cli-plugin-vuex": "^5.0.8",
     "@vue/cli-service": "^5.0.8",
     "jslint": "^0.12.1",
     "prettier": "^1.19.1",
