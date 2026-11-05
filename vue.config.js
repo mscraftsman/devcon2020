@@ -17,5 +17,14 @@ module.exports = {
       .use("svg-to-vue-component")
       .loader("svg-to-vue-component/loader");
   },
+  css: {
+    loaderOptions: {
+      css: {
+        url: {
+          filter: url => !url.startsWith("/")
+        }
+      }
+    }
+  },
   publicPath: process.env.NODE_ENV === "ghpages" ? "/devcon2020/" : "/"
 };
