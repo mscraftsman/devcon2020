@@ -84,6 +84,11 @@
             <router-link :to="{ name: 'PageVenue' }">Venue</router-link>
           </li>
           <li>
+            <router-link :to="{ name: 'PageHealth' }"
+              >Health &amp; Hygiene</router-link
+            >
+          </li>
+          <li>
             <router-link :to="{ name: 'PageExtras' }">Extras</router-link>
           </li>
 
@@ -210,6 +215,11 @@
               <li>
               <router-link :to="{ name: 'PageVenue' }"
                 >Venue</router-link
+              >
+            </li>
+            <li>
+              <router-link :to="{ name: 'PageHealth' }"
+                >Health &amp; Hygiene</router-link
               >
             </li>
             <li>
