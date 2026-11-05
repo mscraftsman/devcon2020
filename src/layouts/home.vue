@@ -1,6 +1,6 @@
 <template>
 	<div class="flex min-h-screen flex-col">
-		<!-- <menu-section class="fixed bottom-0"></menu-section> -->
+		<menu-section class="fixed top-0 z-10"></menu-section>
 		<router-view class="flex-grow" />
 		<footer-section class="snap-child-end" />
 		<!-- <div class="spacer h-32 w-full"></div> -->
