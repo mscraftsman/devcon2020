@@ -10,9 +10,9 @@
 		>
 		</iframe>
 
-		<img class="loupe" src="/images/magnifier.png"/>
+		<img class="loupe" src="/images/magnifier.png" alt="" />
 
-		<!--div
+		<div
 			class="mt-10 flex flex-col align-center justify-center text-center"
 		>
 			<h2 class="section-title">How to get to Caudan Arts Centre</h2>
@@ -21,11 +21,11 @@
 		</div>
 
 		<div
-			class="mt-10 mx-auto flex flex-col align-center justify-center text-center"
+			class="mt-10 mb-10 mx-auto flex flex-col align-center justify-center text-center"
 		>
 			<h2 class="section-title">Site Plans</h2>
 			<span class="tagline"> Parking House </span>
 			<span class="tagline"> Indoor Site </span>
-		</div-->
+		</div>
 	</div>
 </template>
