@@ -4,7 +4,7 @@
       class="main-menu container mx-auto md:flex justify-center md:justify-between items-center py-3 md:py-10"
     >
       <router-link
-        class="hidden text-left md:inline text-5xl bg-white"
+        :class="['hidden text-left md:inline text-5xl bg-white', isHome]"
         :to="'/'"
       >
         <h1 class="leading-none font-hulksmash font-hairline tracking-wider">
@@ -15,11 +15,12 @@
         </h2>
       </router-link>
 
-      <ul class="flex mr-3 font-bold">
+      <ul class="flex mr-3 font-bold ml-auto">
         <li>
           <router-link :to="{ name: 'pagehome' }">Home</router-link>
           <router-link :to="{ name: 'PageSessions' }">Sessions</router-link>
           <router-link :to="{ name: 'PageSpeakers' }">Speakers</router-link>
+          <router-link :to="{ name: 'PageVenue' }">Venue</router-link>
         </li>
       </ul>
     </div>
